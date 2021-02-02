@@ -689,7 +689,7 @@ limit of my powers!\" He grins vilely." CR>)>)>>
 	(FLAGS ACTORBIT INVISIBLE)
 	(ACTION DEMON-F)>
 
-<ROUTINE DEMON-F ("OPTIONAL" (RARG ,M-OBJECT) "AUX" V)
+<ROUTINE DEMON-F ("OPTIONAL" (RARG ,M-OBJECT))
 	<COND (<VERB? HELLO>
 	       <TELL "The genie grins demonically." CR>)
 	      (<EQUAL? ,WINNER ,DEMON>
@@ -987,7 +987,7 @@ a hungry baby, he greedily eats you.">)
       (FLAGS RLANDBIT)
       (ACTION WIZARD-QUARTERS-F)>
 
-<ROUTINE WIZARD-QUARTERS-F (RARG "AUX" PICK L)
+<ROUTINE WIZARD-QUARTERS-F (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK ,M-FLASH>
 		<TELL
 "This is where the Wizard of Frobozz lives. The room is "
@@ -1001,7 +1001,7 @@ a hungry baby, he greedily eats you.">)
 "overhung with palm-trees and lianas. The only furniture is a hammock"
 "a suburban bedroom out of the 1950's, complete with bunk beds"
 "a dim cave, its floor piled with furs and old bones">>
-\
+
 ;"the palantirs"
 
 <OBJECT PALANTIR-1

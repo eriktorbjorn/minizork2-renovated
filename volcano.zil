@@ -586,7 +586,7 @@ of explosives here is strictly prohibited!")>
 	(SIZE 10)
 	(VALUE 20)
 	(FLAGS TAKEBIT)>
-\
+
 ;"bomb"
 
 <OBJECT BRICK

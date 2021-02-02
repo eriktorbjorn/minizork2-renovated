@@ -473,7 +473,7 @@ The Dungeon Master\".)" CR CR>
 "Strands of light vibrate toward you, as if searching for something.
 One by one your possessions glow bright green. Finally, you are attacked
 by these magical wardens, and destroyed!">)>)>>
-\
+
 ;"blue palantir puzzle (the old mat-under-the-door trick)"
 
 <GLOBAL MUD-FLAG <>>
@@ -560,7 +560,7 @@ The light falls upon a dusty wooden table. ">
 	(FLAGS DOORBIT CONTBIT)
 	(ACTION PDOOR-F)>
 
-<ROUTINE PDOOR-F ("AUX" K)
+<ROUTINE PDOOR-F ()
 	 <COND (<AND <VERB? LOOK-UNDER>
 		     ,MUD-FLAG>
 		<TELL ,PLACE-MAT-VISIBLE CR>)

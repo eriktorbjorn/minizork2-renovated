@@ -66,7 +66,7 @@
 		       (<EQUAL? .WRD ,W?QUIT ,W?Q>
 			<QUIT>)>>>
 
-<ROUTINE V-QUIT ("AUX" SCOR)
+<ROUTINE V-QUIT ()
 	 <COND (<DO-YOU-WISH "leave the game">
 	 	<QUIT>)
 	       (T
@@ -461,7 +461,7 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 	       (T
 		<DO-WALK ,P?OUT>)>>
 
-<ROUTINE PRE-FILL ("AUX" TX)
+<ROUTINE PRE-FILL ()
 	 <COND (<NOT ,PRSI>
 		<COND (<GLOBAL-IN? ,GLOBAL-WATER ,HERE>
 		       <PERFORM ,V?FILL ,PRSO ,GLOBAL-WATER>)
@@ -994,7 +994,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 
 <ROUTINE V-ZORK ()
 	 <TELL "At your service!" CR>>
-\
+
 ;"describers"
 
 <GLOBAL INDENTS
@@ -1044,7 +1044,7 @@ long description (fdesc or ldesc), otherwise will print short."
 
 <GLOBAL DESC-OBJECT <>>
 
-<ROUTINE DESCRIBE-OBJECT (OBJ V? LEVEL "AUX" (STR <>) AV)
+<ROUTINE DESCRIBE-OBJECT (OBJ V? LEVEL "AUX" (STR <>))
 	 <SETG DESC-OBJECT .OBJ>
 	 <COND (<AND <0? .LEVEL>
 		     <APPLY <GETP .OBJ ,P?DESCFCN> ,M-OBJDESC>>
@@ -1181,7 +1181,7 @@ long description (fdesc or ldesc), otherwise will print short."
 <ROUTINE SEE-INSIDE? (OBJ)
 	 <AND <NOT <FSET? .OBJ ,INVISIBLE>>
 	      <OR <FSET? .OBJ ,TRANSBIT> <FSET? .OBJ ,OPENBIT>>>>
-\
+
 ;"(nothing is certain but) death and movement"
 
 <GLOBAL DEAD <>>
@@ -1310,7 +1310,7 @@ long description (fdesc or ldesc), otherwise will print short."
 				   <G? ,VERBOSITY 0>>
 			      <DESCRIBE-OBJECTS>)>)>
 		<RTRUE>)>>
-\
+
 ;"object manipulation"
 
 <GLOBAL FUMBLE-NUMBER 7>
@@ -1319,7 +1319,7 @@ long description (fdesc or ldesc), otherwise will print short."
 
 <GLOBAL LOAD-ALLOWED 100>
 
-<ROUTINE ITAKE ("OPTIONAL" (VB T) "AUX" CNT OBJ)
+<ROUTINE ITAKE ("OPTIONAL" (VB T) "AUX" CNT)
 	 <COND (<NOT <FSET? ,PRSO ,TAKEBIT>>
 		<COND (.VB
 		       <TELL <PICK-ONE ,YUKS> CR>)>
