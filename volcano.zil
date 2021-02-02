@@ -377,7 +377,7 @@ within the basket but cannot be removed." CR>)>>
 		       <TELL "east is a narrow">)
 		      (T
 		       <TELL "west is a wide">)>
-		<TELL "ledge." CR>)>>
+		<TELL " ledge." CR>)>>
 
 <ROOM NARROW-LEDGE
       (IN ROOMS)

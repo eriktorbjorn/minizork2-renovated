@@ -25,7 +25,7 @@
 	       (<EQUAL? ,SPELL? ,S-FERMENT>
 		<TELL "drunk">)
 	       (<EQUAL? ,SPELL? ,S-FEEBLE>
-		<TELL "unusually">)
+		<TELL "unusually weak">)
 	       (<EQUAL? ,SPELL? ,S-FLOAT>
 		<TELL "floating">)
 	       (<EQUAL? ,SPELL? ,S-FREEZE>

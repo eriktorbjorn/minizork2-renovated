@@ -35,7 +35,7 @@ gazebo.")
 		       <MOVE ,UNICORN ,FORMAL-GARDEN>
 		       <TELL
 "A beautiful unicorn is peacefully cropping grass across the garden. A gold
-key hangs from a red satin ribbon around its neck.">)>)
+key hangs from a red satin ribbon around its neck." CR>)>)
 	       (T
 		<REMOVE ,UNICORN>
 		<DISABLE <INT I-GARDEN>>
@@ -146,7 +146,7 @@ been reported sharpening their (slavering) fangs..." CR>)>>
 		<COND (<EQUAL? ,PRSI ,PDOOR>
 		       <MOVE ,PRSO ,HERE>
 		       <SETG MUD-FLAG T>
-		       <TELL "The mat slies under the door." CR>)
+		       <TELL "The mat slides under the door." CR>)
 		      (<EQUAL? ,PRSI ,WIZ-DOOR ,RIDDLE-DOOR>
 		       <TELL "There's not enough room." CR>)>)
 	       (<AND <VERB? TAKE MOVE> ,MATOBJ>

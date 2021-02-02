@@ -815,7 +815,7 @@ He seems chagrined to have to admit this." CR>
 "\"" <GET ,DEMON-THANKS ,DEMON-HOARD> "\"" CR>
 			     <COND (<EQUAL? ,DEMON-HOARD 8>
 				    <TELL
-"The Wizard tears his bears and looks at you as if you are a madman." CR>)>
+"The Wizard tears his beard and looks at you as if you are a madman." CR>)>
 			     <RTRUE>)>)
 		     (<BOMB? ,PRSO>
 		      <DEMON-LEAVES <>>
@@ -966,7 +966,7 @@ splashing you with water." CR>)
 
 <ROUTINE MURKY-ROOM-F (RARG)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
-		<TELL " The floor is sandy, and your vision seems blurred.">
+		<TELL "The floor is sandy, and your vision seems blurred.">
 		<COND (<AND <IN? ,SERPENT ,AQUARIUM>
 			    <PROB 20>>
 		       <TELL " A shadow seems to swim by overhead.">)>

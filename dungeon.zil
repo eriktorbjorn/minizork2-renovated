@@ -460,7 +460,7 @@ Dungeon Master for amazing untastefulness.\"")
 		<TELL "A rough-hewn stair leads down into darkness. ">
 		<COND (<IN? ,WAND ,WINNER>
 		       <TELL
-"The wand vibrates and are compelled downward. There is a burst of light,
+"The wand vibrates and you are compelled downward. There is a burst of light,
 and you tumble down the staircase! At the bottom, a vast red-lit hall,
 guarded by sinister statues, is visible far ahead.|
 |
