@@ -49,7 +49,7 @@ cone of the volcano. The only exit is east.")
 "a " D ,BALLOON-INFLATED " is burning in the">)
 			     (T
 			      <TELL "smoke leaks out of the closed">)>
-		       <TELL " receptacle.">)
+		       <TELL " receptacle">)
 		      (T
 		       <TELL
 "The cloth bag is draped over the side of the basket. In the middle of the
@@ -65,12 +65,12 @@ basket is a metal receptacle which is ">
 					    <TELL "nestled">)>
 				     <TELL " inside">)>)
 			     (T
-			      <TELL "closed">)>
-		       <TELL ". A braided wire ">)>
+			      <TELL "closed">)>)>
+		<TELL ". A braided wire ">
 		<COND (,BALLOON-TIED
-		       <TELL "connects the balloon to the hook.">)
+		       <TELL "connects the balloon to the hook">)
 		      (T
-		       <TELL "dangles from the basket.">)>
+		       <TELL "dangles from the basket">)>
 		<TELL ,PERIOD-CR>)
 	       (<EQUAL? .RARG ,M-OBJDESC>
 		<TELL
