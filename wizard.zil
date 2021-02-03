@@ -409,6 +409,7 @@ and you feel suffused with power." CR>)>
       (IN ROOMS)
       (DESC "Guarded Room")
       (NORTH TO ICE-ROOM)
+      (NE TO CAROUSEL-ROOM)
       (SOUTH TO TROPHY-ROOM IF WIZ-DOOR IS OPEN)
       (IN TO TROPHY-ROOM IF WIZ-DOOR IS OPEN)
       (FLAGS RLANDBIT)
