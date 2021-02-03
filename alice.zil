@@ -339,7 +339,7 @@ on the wall are the words \"Protected by the Frobozz Magic Alarm Company.\"")
       (IN ROOMS)
       (DESC "Cage")
       (LDESC "You are trapped in a solid steel cage.")
-      (FLAGS RLANDBIT NWALLBIT ONBIT)
+      (FLAGS RLANDBIT ONBIT)
       (ACTION CAGE-F)>
 
 <GLOBAL CAGE-SOLVE-FLAG <>>

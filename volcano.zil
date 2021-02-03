@@ -344,14 +344,14 @@ within the basket but cannot be removed." CR>)>>
       (DESC "Volcano Core")
       (LDESC
 "You are about one hundred feet above the bottom of the volcano.")
-      (FLAGS NONLANDBIT NWALLBIT)>
+      (FLAGS NONLANDBIT)>
 
 <ROOM VOLCANO-BY-SMALL-LEDGE
       (IN ROOMS)
       (DESC "Volcano By Small Ledge")
       (EAST TO NARROW-LEDGE)
       (LAND TO NARROW-LEDGE)
-      (FLAGS NONLANDBIT NWALLBIT)
+      (FLAGS NONLANDBIT)
       (ACTION VOLCANO-BY-LEDGE-F)>
 
 <ROOM VOLCANO-BY-WIDE-LEDGE
@@ -359,7 +359,7 @@ within the basket but cannot be removed." CR>)>>
       (DESC "Volcano By Wide Ledge")
       (LAND TO WIDE-LEDGE)
       (WEST TO WIDE-LEDGE)
-      (FLAGS NONLANDBIT NWALLBIT)
+      (FLAGS NONLANDBIT)
       (ACTION VOLCANO-BY-LEDGE-F)>
 
 <ROUTINE VOLCANO-BY-LEDGE-F (RARG)
