@@ -323,10 +323,13 @@ expressed or implied.)\"")>
 		<COND (<EQUAL? ,PRSO ,BRAIDED-WIRE>
 		       <TELL " It might be tied, though.">)>
 		<CRLF>)
-	       (<VERB? OPEN>
-		<TELL "The bag is enormous. You can't open it by hand." CR>)
-	       (<VERB? LOOK-INSIDE>
-		<TELL "It seems empty." CR>)
+	       (<AND <EQUAL? ,PRSO ,CLOTH-BAG>
+		     <VERB? LOOK-INSIDE OPEN>>
+		<COND (<VERB? OPEN>
+		       <TELL
+"The bag is enormous. You can't open it by hand." CR>)
+		      (T
+		       <TELL "It seems empty." CR>)>)
 	       (<AND <VERB? EXAMINE>
 		     <EQUAL? ,PRSO ,RECEPTACLE>>
 		<TELL "The receptacle is ">
