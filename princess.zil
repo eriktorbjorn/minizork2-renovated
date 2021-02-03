@@ -608,7 +608,7 @@ through a wall." CR>)
 	       "east" LEDGE-IN-RAVINE "west" P?EAST
 	       "south" DEEP-FORD "north" P?SOUTH
 	       "east" DARK-TUNNEL "west" P?EAST
-	       "south" FORMAL-GARDEN "north" P?SOUTH
+	       "southeast" FORMAL-GARDEN "north" P?SOUTH
 	       "in" GAZEBO "out" P?IN>>
 
 <ROUTINE I-UNICORN ()
