@@ -331,7 +331,7 @@ feel weak, and quickly turn away." CR>)
 	       (<AND <VERB? GIVE>
 		     <EQUAL? ,PRSI ,DRAGON>>
 		<SETG DRAGON-ANGER <+ ,DRAGON-ANGER 1>>
-		<COND (<FSET? ,PRSO ,TREASUREBIT>
+		<COND (<GETPT ,PRSO ,P?VALUE>
 		       <MOVE ,PRSO ,CHEST>
 		       <TELL
 "The dragon excuses himself for a moment and
@@ -494,7 +494,7 @@ With the ice gone, you notice a passage leading west." CR>)
 	(FDESC "Nestled in the chest is a gold statuette of a dragon.")
 	(SYNONYM TREASURE STATUE DRAGON)
 	(ADJECTIVE GOLD)
-	(FLAGS TREASUREBIT TAKEBIT)
+	(FLAGS TAKEBIT)
 	(VALUE 20)>
 
 <OBJECT PRINCESS
