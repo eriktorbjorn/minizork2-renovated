@@ -12,7 +12,7 @@ gazebo.")
       (IN TO GAZEBO)
       (NORTH TO DARK-TUNNEL)
       (SOUTH TO TOPIARY)
-      (FLAGS RLANDBIT)
+      (FLAGS RLANDBIT ONBIT)
       (GLOBAL GAZEBO-OBJECT)
       (ACTION FORMAL-GARDEN-F)>
 
@@ -238,7 +238,7 @@ clearly been shaped: There is a dragon, a unicorn, a great serpent, a huge
 misshapen dog, and several human figures. To the west is a tunnel.")
       (WEST TO CAROUSEL-ROOM)
       (NORTH TO FORMAL-GARDEN)
-      (FLAGS RLANDBIT)
+      (FLAGS RLANDBIT ONBIT)
       (ACTION TOPIARY-F)>
 
 <ROUTINE TOPIARY-F (RARG)
