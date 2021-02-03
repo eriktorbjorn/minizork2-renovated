@@ -151,10 +151,11 @@ been reported sharpening their (slavering) fangs..." CR>)>>
 		       <TELL "There's not enough room." CR>)>)
 	       (<AND <VERB? TAKE MOVE> ,MATOBJ>
 		<MOVE ,MATOBJ ,HERE>
+		<TELL
+"As the place mat is moved, a " D ,MATOBJ " falls from it to the floor." CR>
 		<SETG MATOBJ <>>
 		<SETG MUD-FLAG <>>
-		<TELL
-"As the place mat is moved, a " D ,MATOBJ " falls from it to the floor." CR>)>>
+		<RTRUE>)>>
 
 <OBJECT TEAPOT
 	(IN GAZEBO-TABLE)
