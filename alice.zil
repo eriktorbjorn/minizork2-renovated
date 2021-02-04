@@ -130,11 +130,12 @@ the walls. A passage leads west.")
 	      (<EQUAL? .RARG ,M-END>
 	       <COND (<AND <IN? ,WATER ,BUCKET>
 			   <NOT ,BUCKET-TOP-FLAG>>
+		      <TELL "The bucket rises and" ,STOPS>
 		      <SETG BUCKET-TOP-FLAG T>
 		      <SETG EVAPORATED <>>
 		      <PASS-THE-BUCKET ,TOP-OF-WELL>
 		      <ENABLE <QUEUE I-BUCKET 100>>
-		      <TELL "The bucket rises and" ,STOPS>)
+		      <RTRUE>)
 		     (<AND ,BUCKET-TOP-FLAG
 			   <NOT <IN? ,WATER ,BUCKET>>>
 		      <COND (,EVAPORATED
