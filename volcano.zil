@@ -40,7 +40,7 @@ cone of the volcano. The only exit is east.")
 	(DESCFCN BALLOON-F)
 	(ACTION BALLOON-F)>
 
-<ROUTINE BALLOON-F ("OPTIONAL" (RARG <>) "AUX" M R RC)
+<ROUTINE BALLOON-F ("OPTIONAL" (RARG <>) "AUX" M RC)
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<COND (,BALLOON-INFLATED
 		       <TELL "The cloth bag is inflated and ">
@@ -101,8 +101,9 @@ attached to the basket and ">
 				     <TELL "You are tied to the ledge." CR>
 				     <RTRUE>)
 				    (T
-				     <AND <EQUAL? <PTSIZE .M> 1>
-					  <SETG BALLOON-LOC .R>>
+				     <COND (<EQUAL? <PTSIZE .M> ,UEXIT>
+					    <SETG BALLOON-LOC
+						  <GETB .M ,REXIT>>)>
 				     <ENABLE <QUEUE I-BALLOON 3>>
 				     <RFALSE>)>)
 			     (T
