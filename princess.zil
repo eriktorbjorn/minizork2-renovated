@@ -338,8 +338,8 @@ returns without the " D ,PRSO ,PERIOD-CR>)
 		       <SETG DRAGON-ANGER <+ ,DRAGON-ANGER 2>>
 		       <REMOVE ,BRICK>
 		       <TELL
-"The politely swallows the bomb. A moment later, he belches and smoke curls
-from his nostrils." CR>)
+"The dragon politely swallows the bomb. A moment later, he belches and smoke
+curls from his nostrils." CR>)
 		      (T
 		       <TELL "The dragon refuses it." CR>)>)
 	       (<AND <VERB? WALK>
