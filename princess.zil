@@ -303,11 +303,9 @@ the north. To the east is a small opening.")
 	(DESC "huge red dragon")
 	(SYNONYM DRAGON)
 	(ADJECTIVE RED HUGE)
-	(LDESC "A huge red dragon is lying on the rocks, watching.")
-	(FDESC
-"A huge red dragon is blocking the north exit. Smoke curls from his nostrils.")
 	(FLAGS ACTORBIT)
-	(ACTION DRAGON-F)>
+	(ACTION DRAGON-F)
+	(DESCFCN DRAGON-DESC)>
 
 <ROUTINE DRAGON-F ()
 	 <ENABLE <QUEUE I-DRAGON -1>>
@@ -350,6 +348,14 @@ from his nostrils." CR>)
 		<SETG DRAGON-ANGER <+ ,DRAGON-ANGER 3>>
 		<TELL
 "The dragon puts out a claw and blocks your way." CR>)>>
+
+<ROUTINE DRAGON-DESC ()
+	 <TELL "A " D ,DRAGON " is ">
+	 <COND (<IN? ,DRAGON ,DRAGON-ROOM>
+		<TELL "blocking the north exit. Smoke curls from his nostrils">)
+	       (T
+		<TELL "lying on the rocks, watching">)>
+	 <TELL ,PERIOD-CR>>
 
 <GLOBAL DRAGON-ATTACKS
         <LTABLE
