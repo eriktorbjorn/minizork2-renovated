@@ -532,6 +532,8 @@ The Wizard of Frobozz ">
 		    <VERB? ALARM KISS EXAMINE RUB>>
 		<COND (<AND <IN? ,PRINCESS ,DRAGON-LAIR>
 			    <EQUAL? <GET .DEM ,C-ENABLED?> 0>>
+		       <PUTP ,PRINCESS ,P?FDESC
+"There is a dishevelled and slightly unkempt princess here.">
 		       <ENABLE <QUEUE I-PRINCESS 2>>
 		       <SETG PRINCESS-AWAKE T>
 		       <TELL
