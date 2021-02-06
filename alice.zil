@@ -73,14 +73,22 @@ the walls. A passage leads west.")
 	(DESC "wall with etchings")
 	(SYNONYM ETCHINGS WALL)
 	(FLAGS READBIT NDESCBIT)
-	(TEXT
+	(ACTION BOTTOM-ETCHINGS-F)>
+
+<ROUTINE BOTTOM-ETCHINGS-F ()
+	 <COND (<VERB? EXAMINE READ>
+		<FIXED-FONT-ON>
+		<TELL
 "       o  b  o|
 |
        A  G  I|
 |
         E   L|
 |
-       m  p  a")>
+       m  p  a|
+">
+		 <FIXED-FONT-OFF>
+		 <RTRUE>)>>
 
 <OBJECT PEARL-NECKLACE
 	(IN CIRCULAR-ROOM)
@@ -206,14 +214,22 @@ easily. Another doorway leads northeast.")
 	(DESC "wall with etchings")
 	(SYNONYM ETCHINGS WALL)
 	(FLAGS READBIT NDESCBIT)
-	(TEXT
+	(ACTION TOP-ETCHINGS-F)>
+
+<ROUTINE TOP-ETCHINGS-F ()
+	 <COND (<VERB? EXAMINE READ>
+		<FIXED-FONT-ON>
+		<TELL
 "       o  b  o|
    r             z|
 f   M  A  G  I  C   z|
 |
 c    W  E   L  L    y|
    o             n|
-       m  p  a")>
+       m  p  a|
+">
+		<FIXED-FONT-OFF>
+		<RTRUE>)>>
 
 <OBJECT ROBOT
 	(IN TOP-OF-WELL)

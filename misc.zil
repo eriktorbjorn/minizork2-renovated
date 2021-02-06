@@ -155,6 +155,11 @@
 <DEFMAC P-SONUMS ('SYN)
   <FORM / <FORM GETB .SYN ',P-SPREP1> 64>>
 
+<ROUTINE FIXED-FONT-ON ()
+	 <PUT 0 8 <BOR <GET 0 8> 2>>>
+
+<ROUTINE FIXED-FONT-OFF ()
+	 <PUT 0 8 <BAND <GET 0 8> -3>>>
 
 ;"former MAIN stuff"
 
