@@ -575,7 +575,9 @@ The light falls upon a dusty wooden table. ">
 		     ,MUD-FLAG>
 		<TELL ,PLACE-MAT-VISIBLE CR>)
 	       (<VERB? UNLOCK>
-		<COND (<EQUAL? ,PRSI ,KEY>
+		<COND (,PUNLOCK-FLAG
+		       <TELL ,ALREADY>)
+		      (<EQUAL? ,PRSI ,KEY>
 		       <SETG PUNLOCK-FLAG T>
 		       <TELL "The door is now unlocked." CR>)
 		      (<EQUAL? ,PRSI ,GOLD-KEY>
@@ -583,7 +585,9 @@ The light falls upon a dusty wooden table. ">
 		      (T
 		       <TELL <PICK-ONE ,YUKS> CR>)>)
 	       (<VERB? LOCK>
-		<COND (<EQUAL? ,PRSI ,KEY>
+		<COND (<NOT ,PUNLOCK-FLAG>
+		       <TELL ,ALREADY>)
+		      (<EQUAL? ,PRSI ,KEY>
 		       <SETG PUNLOCK-FLAG <>>
 		       <TELL "The door is locked." CR>)
 		      (<EQUAL? ,PRSI ,GOLD-KEY>
