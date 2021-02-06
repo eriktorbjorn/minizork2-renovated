@@ -242,8 +242,7 @@ the wall is crudely chiseled the number \"8\".")
 		<TELL
 "Large limestone chunks lie about this former quarry, which appears to have
 produced menhirs (standing stones). Obvious passages lead north and south." CR>
-		<COND (<IN? ,MENHIR ,LOCAL-GLOBALS>
-		       <DESCRIBE-MENHIR>)>
+		<DESCRIBE-MENHIR>
 		<RTRUE>)>>
 
 <GLOBAL MENHIR-POSITION <>>
@@ -257,8 +256,6 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 		       <TELL "A menhir lies near a southwest passage.">)
 		      (<EQUAL? ,MENHIR-POSITION 2>
 		       <TELL "A dark opening leads southwest.">)
-		      (<EQUAL? ,MENHIR-POSITION 3>
-		       <TELL "There is a huge menhir here.">)
 		      (T
 		       <TELL
 "A huge menhir is floating in midair above a southwest passage.">)>
@@ -268,9 +265,9 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 
 <OBJECT GLOBAL-MENHIR
 	(IN LOCAL-GLOBALS)
-	(DESC "enormous menhir")
+	(DESC "huge menhir")
 	(SYNONYM MENHIR ROCK STONE)
-	(ADJECTIVE HUGE HEAVY ENORMOUS)
+	(ADJECTIVE LARGE HUGE HEAVY ENORMOUS)
 	(FLAGS NDESCBIT READBIT)
 	(ACTION GLOBAL-MENHIR-F)>
 
@@ -279,9 +276,9 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 
 <OBJECT MENHIR
 	(IN LOCAL-GLOBALS)
-	(DESC "enormous menhir")
+	(DESC "huge menhir")
 	(SYNONYM MENHIR ROCK STONE F)
-	(ADJECTIVE HUGE HEAVY ENORMOUS)
+	(ADJECTIVE LARGE HUGE HEAVY ENORMOUS)
 	(FLAGS NDESCBIT READBIT)
 	(ACTION MENHIR-F)>
 

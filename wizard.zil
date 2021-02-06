@@ -748,7 +748,7 @@ from the room in terror." CR>)
 			     <MOVE ,MENHIR ,PENTAGRAM-ROOM>
 			     <FCLEAR ,MENHIR ,NDESCBIT>
 			     <FCLEAR ,MENHIR ,TAKEBIT>
-			     <SETG MENHIR-POSITION 3>
+			     <SETG MENHIR-POSITION 2>
 			     <TELL
 "He gestures, and the menhir appears at your feet." CR>
 			     <DEMON-LEAVES>)
