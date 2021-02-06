@@ -223,7 +223,6 @@ Release ">
 		<RTRUE>)
 	       (<FSET? ,PRSO ,BURNBIT>
 		<TELL "The " D ,PRSO " catches fire">
-		<REMOVE-CAREFULLY ,PRSO>
 		<COND (<OR <IN? ,PRSO ,WINNER>
 			   <IN? ,WINNER ,PRSO>>
 		       <TELL ". Unfortunately, you were ">
@@ -233,7 +232,8 @@ Release ">
 			      <TELL "holding">)>
 		       <JIGS-UP " it at the time.">)
 		      (T
-		       <TELL " and is consumed." CR>)>)
+		       <TELL " and is consumed." CR>)>
+		<REMOVE-CAREFULLY ,PRSO>)
 	       (T
 		<TELL "You can't burn a " D ,PRSO ,PERIOD-CR>)>>
 
