@@ -255,12 +255,12 @@ misshapen dog, and several human figures. To the west is a tunnel.")
 		       <SETG TOPIARY-COUNTER 1>
 		       <TELL
 "Strangely, the topiary animals seem to have shifted position a bit." CR>)
-		      (<AND <EQUAL? ,TOPIARY-COUNTER 0>
+		      (<AND <EQUAL? ,TOPIARY-COUNTER 1>
 			    <PROB 8>>
 		       <SETG TOPIARY-COUNTER 2>
 		       <TELL
 "You turn, and the topiary animals seem to have closed in on you." CR>)
-		      (<AND <EQUAL? ,TOPIARY-COUNTER 0>
+		      (<AND <EQUAL? ,TOPIARY-COUNTER 2>
 			    <PROB 4>>
 		       <SETG TOPIARY-COUNTER 0>
 		       <JIGS-UP
