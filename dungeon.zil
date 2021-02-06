@@ -508,18 +508,21 @@ by these magical wardens, and destroyed!">)>)>>
 		<TELL
 "To the south, a stream runs through a narrow ravine. It looks as if you
 could scramble down to the stream. A smokey odor drifts in from the west. ">
-		<P-DOOR "north">)
+		<P-DOOR "north" ,KEYHOLE-1>)
 	       (<NOT <VERB? LOOK>>
 		<PCHECK>
 		<RFALSE>)>>
 
-<ROUTINE P-DOOR (STR)
+<ROUTINE P-DOOR (STR KEYHOLE)
 	<COND (,PLOOK-FLAG
 	       <SETG PLOOK-FLAG <>>
 	       <RFALSE>)>
 	<TELL
 "On the " .STR " side of the room is an oak door with a small barred window
-and a formidable lock (with keyhole).">
+and a formidable lock (with ">
+	<COND (<IN? ,KEY .KEYHOLE>
+	       <TELL "a " D ,KEY " in the ">)>
+	<TELL "keyhole).">
 	<COND (,MUD-FLAG
 	       <TELL " " ,PLACE-MAT-VISIBLE>
 	       <COND (,MATOBJ
@@ -554,7 +557,7 @@ and a formidable lock (with keyhole).">
 		<TELL
 "The room is eerily lit by a red glow emanating from a crack in one wall.
 The light falls upon a dusty wooden table. ">
-		<P-DOOR "south">)
+		<P-DOOR "south" KEYHOLE-2>)
 	       (T
 		<PCHECK>
 		<RFALSE>)>>
@@ -667,8 +670,10 @@ The light falls upon a dusty wooden table. ">
 		<COND (<IN? ,KEY ,KEYHOLE-2>
 		       <COND (<EQUAL? ,PRSO ,LETTER-OPENER>
 			      <COND (,MUD-FLAG
-				     <SETG MATOBJ ,KEY>)>
-			      <MOVE ,KEY ,DREARY-ROOM>
+				     <REMOVE ,KEY>
+				     <SETG MATOBJ ,KEY>)
+				    (T
+				     <MOVE ,KEY ,DREARY-ROOM>)>
 			      <TELL
 "There is a faint thud behind the door." CR>)
 			     (T
