@@ -125,6 +125,8 @@ the walls. A passage leads west.")
 		      <SETG BUCKET-TOP-FLAG T>
 		      <ENABLE <QUEUE I-BUCKET 100>>
 		      <TELL "The bucket swiftly rises up, and is gone." CR>)
+		     (<VERB? CLOSE>
+		      <TELL "The bucket has no lid." CR>)
 		     (<VERB? KICK>
 		      <JIGS-UP "If you insist.">)>)
 	      (<EQUAL? .RARG ,M-END>
