@@ -429,17 +429,15 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 		      (T
 		       <RFALSE>)>)
 	       (<PRSO? ,WATER ,GLOBAL-WATER>
-		<RFALSE>)
-	       (T
-		<TELL
-"You hit your head against the " D ,PRSO " as you attempt this feat." CR>)>
-	 <RFATAL>>
+		<RFALSE>)>>
 
 <ROUTINE V-ENTER ()
-	 <TELL "You are now in the " D ,PRSO ,PERIOD-CR>
-	 <MOVE ,WINNER ,PRSO>
-	 <APPLY <GETP ,PRSO ,P?ACTION> ,M-ENTER>
-	 <RTRUE>>
+	 <COND (<FSET? ,PRSO ,VEHBIT>
+		<MOVE ,WINNER ,PRSO>
+		<TELL "You are now in the " D ,PRSO ,PERIOD-CR>)
+	       (T
+		<TELL
+"You hit your head against the " D ,PRSO " as you attempt this feat." CR>)>>
 
 <ROUTINE V-EXAMINE ()
 	 <COND (<GETP ,PRSO ,P?TEXT>
