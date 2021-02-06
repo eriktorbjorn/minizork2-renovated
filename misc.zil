@@ -31,9 +31,6 @@
 						   <=? .P "OBJ">
 						   <=? .P "O">>
 					       <MAPRET <FORM PRINTD .O>>)
-					      (<OR <=? .P "A">
-						   <=? .P "AN">>
-					       <MAPRET <FORM PRINTA .O>>)
 					      (<OR <=? .P "NUM">
 						   <=? .P "N">>
 					       <MAPRET <FORM PRINTN .O>>)
