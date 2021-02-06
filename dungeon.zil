@@ -86,15 +86,21 @@ north a dim cavern.")
 <ROOM DARK-TUNNEL
       (IN ROOMS)
       (DESC "Dark Tunnel")
-      (LDESC
-"This smooth-walled tunnel runs northeast to southwest. A faint whirring sound
-comes from the latter direction. Another opening, choked with leaves, leads
-southeast.")
       (NE TO SHALLOW-FORD)
       (SE TO FORMAL-GARDEN)
       (SW TO CAROUSEL-ROOM)
       (WEST TO DEEP-FORD IF SECRET-DOOR)
-      (FLAGS RLANDBIT)>
+      (FLAGS RLANDBIT)
+      (ACTION DARK-TUNNEL-F)>
+
+<ROUTINE DARK-TUNNEL-F (RARG)
+	 <COND (<EQUAL? .RARG ,M-LOOK>
+		<TELL "This smooth-walled tunnel runs northeast to southwest. ">
+		<COND (,CAROUSEL-ON
+		       <TELL
+"A faint whirring sound comes from the latter direction. ">)>
+		<TELL
+"Another opening, choked with leaves, leads southeast." CR>)>>
 
 <OBJECT SWORD
 	(IN DARK-TUNNEL)
@@ -110,15 +116,23 @@ southeast.")
 <ROOM DEEP-FORD
       (IN ROOMS)
       (DESC "Deep Ford")
-      (LDESC
-"You are waist deep in a cold stream. On the northern bank, the walls rise
-to a small ledge. A \"whir\" comes from an opening to the south.")
       (NORTH TO LEDGE-IN-RAVINE)
       (UP TO LEDGE-IN-RAVINE)
       (SOUTH TO CAROUSEL-ROOM)
       (EAST TO DARK-TUNNEL IF SECRET-DOOR)
       (FLAGS RLANDBIT)
-      (GLOBAL GLOBAL-WATER STREAM)>
+      (GLOBAL GLOBAL-WATER STREAM)
+      (ACTION DEEP-FORD-F)>
+
+<ROUTINE DEEP-FORD-F (RARG)
+	 <COND (<EQUAL? .RARG ,M-LOOK>
+		<TELL
+"You are waist deep in a cold stream. On the northern bank, the walls rise
+to a small ledge.">
+		<COND (,CAROUSEL-ON
+		       <TELL
+" A \"whir\" comes from an opening to the south.">)>
+		<CRLF>)>>
 
 <ROOM CAROUSEL-ROOM
       (IN ROOMS)
