@@ -1175,17 +1175,17 @@ a huge room takes shape">)
 		       <PALANTIR-LOOK .P>)
 		      (<EQUAL? .P ,PALANTIR-1>
 		       <TELL
-"You see a small room with a sign, too blurry to read.">)
+"You see a small room with a sign, too blurry to read." CR>)
 		      (<EQUAL? .P ,PALANTIR-2>
 		       <TELL
 "You see a dreary room with an oak door and a huge table. There
-is an odd glow to the mist.">)
+is an odd glow to the mist." CR>)
 		      (<EQUAL? .P ,PALANTIR-3>
 		       <TELL "A watery room is barely visible.">
 		       <COND (<AND <IN? ,SERPENT ,AQUARIUM>
 				   <PROB 25>>
-			      <TELL " A shadow swims by as you look.">)>)>
-		<CRLF>)
+			      <TELL " A shadow swims by as you look.">)>
+		       <CRLF>)>)
 	       (<AND <EQUAL? .RARG ,M-ENTER>
 		     <EQUAL? ,HERE ,DEAD-PALANTIR-4>>
 		<COND (<IN? ,DEMON ,PENTAGRAM-ROOM>
