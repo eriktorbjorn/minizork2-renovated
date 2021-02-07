@@ -287,8 +287,7 @@ c    W  E   L  L    y|
 	      (<VERB? THROW MUNG>
 	       <TELL
 "The robot (being of shoddy construction) disintegrates before your eyes." CR>
-	       <REMOVE <COND (<VERB? THROW> ,PRSI)
-			     (T ,PRSO)>>)>>
+	       <REMOVE ,ROBOT>)>>
 
 <OBJECT ROBOT-LABEL
 	(IN TOP-OF-WELL)
