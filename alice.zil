@@ -199,7 +199,7 @@ crack runs across the floor at the doorway to the east, but it can be crossed
 easily. Another doorway leads northeast.")
       (EAST TO TEA-ROOM)
       (NE TO MACHINE-ROOM)
-      (DOWN "It's a long way down!")
+      (DOWN "It's a long way down.")
       (VALUE 10)
       (FLAGS RLANDBIT NONLANDBIT)
       (GLOBAL WELL)
