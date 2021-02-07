@@ -397,6 +397,8 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 		       <COND (<AND <EQUAL? ,SPELL-VICTIM ,COLLAR>
 				   <IN? ,COLLAR ,CERBERUS>>
 			      <SETG SPELL-VICTIM ,CERBERUS>)>
+		       <COND (<HELD? ,PRSO>
+			      <MOVE ,PRSO ,HERE>)>
 		       <TELL "The " D ,PRSO " floats serenely in midair." CR>)
 		      (<AND <EQUAL? ,SPELL-USED ,W?FRY>
 			    <FSET? ,PRSO ,TAKEBIT>>
