@@ -283,7 +283,9 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 	(ACTION MENHIR-F)>
 
 <ROUTINE MENHIR-F ()
-	 <COND (<AND <VERB? LOOK-UNDER LOOK-BEHIND>
+	 <COND (<NOT <EQUAL? <LOC ,MENHIR> ,HERE ,LOCAL-GLOBALS>>
+		<GLOBAL-MENHIR-F>)
+	       (<AND <VERB? LOOK-UNDER LOOK-BEHIND>
 		     <NOT ,MENHIR-POSITION>>
 		<TELL "There's a dark passage beyond the menhir." CR>)
 	       (<VERB? TAKE MOVE TURN>
