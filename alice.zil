@@ -562,7 +562,7 @@ oblong roof. To the east is a large hole; to the west a gaping chasm.")
       (EAST TO POOL-ROOM)
       (WEST "A chasm blocks your way.")
       (FLAGS RLANDBIT ONBIT)
-      (VALUE 10)
+      (VALUE 5)
       (GLOBAL CHASM)
       (ACTION POSTS-ROOM-F)>
 

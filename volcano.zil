@@ -348,6 +348,7 @@ within the basket but cannot be removed." CR>)>>
       (DESC "Volcano Core")
       (LDESC
 "You are about one hundred feet above the bottom of the volcano.")
+      (VALUE 10)
       (FLAGS NONLANDBIT)>
 
 <ROOM VOLCANO-BY-SMALL-LEDGE
