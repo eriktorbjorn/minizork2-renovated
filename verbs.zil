@@ -1188,7 +1188,7 @@ long description (fdesc or ldesc), otherwise will print short."
 
 <ROUTINE JIGS-UP (DESC "AUX" F N)
  	 <TELL .DESC CR>
-	 <COND (<NOT <EQUAL? ,ADVENTURER ,WINNER>>
+	 ;<COND (<NOT <EQUAL? ,ADVENTURER ,WINNER>>
 		<TELL "|    ****  The " D ,WINNER " has died  ****" CR CR>
 		<REMOVE ,WINNER>
 		<SETG WINNER ,ADVENTURER>
