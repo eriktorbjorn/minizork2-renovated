@@ -410,14 +410,14 @@ go out!" CR>)>>
 			       <RETURN .P>)>)>>>
 
 <ROUTINE HACK-HACK (STR)
-	 <TELL .STR D ,PRSO <PICK-ONE ,HO-HUM> CR>>
+	 <TELL .STR D ,PRSO <PICK-ONE ,HO-HUM> ,PERIOD-CR>>
 
 <GLOBAL HO-HUM
 	<LTABLE
 	 0
-	 " doesn't seem to work."
-	 " isn't notably helpful."
-	 " has no effect.">>
+	 " doesn't seem to work"
+	 " isn't notably helpful"
+	 " has no effect">>
 
 <GLOBAL YUKS
 	<LTABLE
