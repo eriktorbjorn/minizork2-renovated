@@ -336,7 +336,8 @@ dinosaur). The only exit is northeast.")
 "Bad idea. As you unfasten the collar, the monster rends you
 into little doggy biscuits.">)
 	       (<AND <VERB? ENCHANT>
-		     <EQUAL? ,SPELL-USED ,W?FLOAT>>
+		     <EQUAL? ,SPELL-USED ,W?FLOAT>
+		     ,CERBERUS-LEASHED>
 		<PERFORM ,V?ENCHANT ,CERBERUS>
 		<RTRUE>)>>
 
