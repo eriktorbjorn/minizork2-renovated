@@ -33,16 +33,15 @@ Both Wizard and flowers disappear." CR>)>)
 		       <NOW-DARK?>)>)
 	       (<VERB? ATTACK MUNG>
 		<REMOVE ,WIZARD>
-		<COND (<IN? ,WAND ,WIZARD>
-		       <TELL ,WAVES-WAND "and chants, \"Freeze!\"">)>
+		<TELL ,WAVES-WAND "and chants, \"Freeze!\" ">
 		<COND (<NOT <FSET? ,DEMON ,INVISIBLE>>
 		       <TELL
-" Nothing happens! Terrified, the wizard dashes from the room." CR>)
+"Nothing happens! Terrified, the wizard dashes from the room." CR>)
 		      (T
 		       <SETG SPELL? ,S-FREEZE>
 		       <PUTP ,ADVENTURER ,P?ACTION MAGIC-ACTOR>
 		       <ENABLE <QUEUE I-WIZARD 10>>
-		       <TELL " You suddenly cannot move." CR>)>)>>
+		       <TELL "You suddenly cannot move." CR>)>)>>
 
 <ROUTINE I-WIZARD ("AUX" CAST-PROB (PCNT 0) F (WLOC <LOC ,WINNER>))
 	 <ENABLE <QUEUE I-WIZARD 4>>
