@@ -1111,13 +1111,7 @@ long description (fdesc or ldesc), otherwise will print short."
 	       (T
 		<REPEAT ()
 			<COND (<NOT .Y>
-			       <COND (<AND <0? .LEVEL>
-					   <==? ,SPELL? ,S-FANTASIZE>
-					   <PROB 20>>
-				      <TELL "There is a "
-					    <PICK-ONE ,FANTASIES> " here." CR>
-				      <SET 1ST? <>>)>
-			       <RETURN <NOT .1ST?>>)
+			       <RETURN>)
 			      (<EQUAL? .Y .AV>
 			       <SET PV? T>)
 			      (<EQUAL? .Y ,WINNER>)
@@ -1136,6 +1130,12 @@ long description (fdesc or ldesc), otherwise will print short."
 	 <SET Y <FIRST? .OBJ>>
 	 <REPEAT ()
 		 <COND (<NOT .Y>
+			<COND (<AND <0? .LEVEL>
+				    <==? ,SPELL? ,S-FANTASIZE>
+				    <PROB 20>>
+			       <TELL "There is a "
+				     <PICK-ONE ,FANTASIES> " here." CR>
+			       <SET 1ST? <>>)>
 			<COND (<AND .PV? .AV <FIRST? .AV>>
 			       <SET LEVEL <+ .LEVEL 1>>
 			       <PRINT-CONT .AV .V? .LEVEL>)>
@@ -1156,9 +1156,7 @@ long description (fdesc or ldesc), otherwise will print short."
 			       <DESCRIBE-OBJECT .Y .V? .LEVEL>)
 			      (<AND <FIRST? .Y>
 				    <SEE-INSIDE? .Y>>
-			       <SET LEVEL <+ .LEVEL 1>>
-			       <PRINT-CONT .Y .V? .LEVEL>
-			       <SET LEVEL <- .LEVEL 1>>)>)>
+			       <PRINT-CONT .Y .V? .LEVEL>)>)>
 		 <SET Y <NEXT? .Y>>>
 	 <COND (<AND .1ST? .SHIT>
 		<RFALSE>)
