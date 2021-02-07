@@ -931,7 +931,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 			<RETURN>)>>
 	 <SETG CLOCK-WAIT T>>
 
-<ROUTINE V-WALK ("AUX" PT PTS STR OBJ RM)
+<ROUTINE V-WALK ("AUX" PT PTS STR OBJ ;RM)
 	 <COND (<NOT ,P-WALK-DIR>
 		<PERFORM ,V?WALK-TO ,PRSO>
 		<RTRUE>)
@@ -941,7 +941,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 		      (<EQUAL? .PTS ,NEXIT>
 		       <TELL <GET .PT ,NEXITSTR> CR>
 		       <RFATAL>)
-		      (<EQUAL? .PTS ,FEXIT>
+		      ;(<EQUAL? .PTS ,FEXIT>
 		       <COND (<SET RM <APPLY <GET .PT ,FEXITFCN>>>
 			      <GOTO .RM>)
 			     (T
