@@ -740,7 +740,7 @@ D ,PRSO ,PERIOD-CR>)>>
 	 <COND (<AND <NOT <FSET? ,PRSI ,OPENBIT>>
 		     <NOT <OPENABLE? ,PRSI>>
 		     <NOT <FSET? ,PRSI ,VEHBIT>>>
-		<TELL "You can't do that." CR>)
+		<V-PUT-UNDER>)
 	       (<NOT <FSET? ,PRSI ,OPENBIT>>
 		<SETG P-IT-OBJECT ,PRSI>
 		<TELL "The " D ,PRSI " isn't open." CR>)
