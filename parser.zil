@@ -664,7 +664,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 <ROUTINE UNKNOWN-WORD (PTR "AUX" BUF)
 	<PUT ,OOPS-TABLE ,O-PTR .PTR>
 	<COND (<VERB? SAY>
-	       <TELL "Nothing happens." CR>
+	       <TELL ,NOTHING-HAPPENS ,PERIOD-CR>
 	       <RFALSE>)>
 	<TELL "I don't know the word \"">
 	<WORD-PRINT <GETB <REST ,P-LEXV <SET BUF <* .PTR 2>>> 2>
@@ -675,7 +675,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 
 <ROUTINE CANT-USE (PTR "AUX" BUF)
 	<COND (<VERB? SAY>
-	       <TELL "Nothing happens." CR>
+	       <TELL ,NOTHING-HAPPENS ,PERIOD-CR>
 	       <RFALSE>)>
 	<TELL "You used the word \"">
 	<WORD-PRINT <GETB <REST ,P-LEXV <SET BUF <* .PTR 2>>> 2>

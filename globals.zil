@@ -474,3 +474,5 @@ go out!" CR>)>>
 ", almost as though an invisible hand had tipped it over.|">
 
 <GLOBAL GREEDILY-DEVOURS "The guardian greedily devours ">
+
+<GLOBAL NOTHING-HAPPENS "Nothing happens">

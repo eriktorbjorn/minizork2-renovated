@@ -36,7 +36,7 @@ Both Wizard and flowers disappear." CR>)>)
 		<TELL ,WAVES-WAND "and chants, \"Freeze!\" ">
 		<COND (<NOT <FSET? ,DEMON ,INVISIBLE>>
 		       <TELL
-"Nothing happens! Terrified, the wizard dashes from the room." CR>)
+,NOTHING-HAPPENS "! Terrified, the wizard dashes from the room." CR>)
 		      (T
 		       <SETG SPELL? ,S-FREEZE>
 		       <PUTP ,ADVENTURER ,P?ACTION MAGIC-ACTOR>

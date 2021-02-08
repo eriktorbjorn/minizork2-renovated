@@ -410,7 +410,7 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 		       <TELL ,WAND-STOPS-GLOWING>)>)
 	       (T
 		<SETG SPELL-VICTIM <>>
-		<TELL "Nothing happens." CR>)>>
+		<TELL ,NOTHING-HAPPENS ,PERIOD-CR>)>>
 
 <ROUTINE REMOVE-CAREFULLY (OBJ "AUX" OLIT)
 	 <COND (<EQUAL? .OBJ ,P-IT-OBJECT>
@@ -525,7 +525,7 @@ D ,PRSO ,PERIOD-CR>)>>
 
 <ROUTINE V-INCANT ()
 	 <COND (,SPELL-USED
-		<TELL "Nothing happens." CR>)
+		<TELL ,NOTHING-HAPPENS ,PERIOD-CR>)
 	       (,WAND-ON
 		<SETG SPELL-VICTIM ,WAND-ON>
 		<SETG SPELL-USED <GET ,P-LEXV ,P-CONT>>
