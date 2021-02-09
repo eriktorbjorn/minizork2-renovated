@@ -230,8 +230,7 @@ go out!" CR>)>>
 	 <COND (<VERB? TELL>
 		<SETG P-CONT <>>
 		<SETG QUOTE-FLAG <>>
-		<TELL
-"Talking to yourself is a sign of impending mental collapse." CR>)
+		<TELL ,TALKING-TO-YOURSELF>)
 	       (<AND <VERB? GIVE>
 		     <EQUAL? ,PRSI ,ME>>
 		<PERFORM ,V?TAKE ,PRSO>
@@ -476,3 +475,12 @@ go out!" CR>)>>
 <GLOBAL GREEDILY-DEVOURS "The guardian greedily devours ">
 
 <GLOBAL NOTHING-HAPPENS "Nothing happens">
+
+<GLOBAL TALKING-TO-YOURSELF
+"Talking to yourself is a sign of impending mental collapse.|">
+
+<GLOBAL NOUN-MISSING "There seems to be a noun missing in that sentence!|">
+
+<GLOBAL THERE-IS-NOTHING "There is nothing ">
+
+<GLOBAL STEEL-CAGE-FALLS " the sphere, a solid steel cage falls ">

@@ -1043,7 +1043,7 @@ a hungry baby, he greedily eats you.">)
 		     <NOT ,CAGE-SOLVE-FLAG>>
 		<COND (<EQUAL? ,ADVENTURER ,WINNER>
 	               <TELL
-"As you reach for the sphere, a solid steel cage falls to entrap you. Worse,
+"As you reach for" ,STEEL-CAGE-FALLS "to entrap you. Worse,
 poisonous gas begins seeping in." CR CR>
 	               <COND (<IN? ,ROBOT ,HERE>
 			      <MOVE ,ROBOT ,CAGE>
@@ -1060,7 +1060,7 @@ poisonous gas begins seeping in." CR CR>
 	               <MOVE ,CAGE-OBJECT ,DINGY-CLOSET>
 	               <FCLEAR ,CAGE-OBJECT ,INVISIBLE>
 	               <TELL
-"As the robot touches the sphere, a solid steel cage falls from the ceiling,
+"As the robot touches" ,STEEL-CAGE-FALLS "from the ceiling,
 trapping him. You can faintly hear his last words: " ,B-W-C>
 		       <JIGS-UP "\"">)>)
 	       (<VERB? LOOK-INSIDE>

@@ -468,7 +468,7 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 		      (<IN? ,WATER <LOC ,WINNER>>
 		       <PERFORM ,V?FILL ,PRSO ,WATER>)
 		      (T
-		       <TELL "There is nothing to fill it with." CR>)>
+		       <TELL ,THERE-IS-NOTHING "to fill it with." CR>)>
 		<RTRUE>)
 	       (<NOT <EQUAL? ,PRSI ,WATER ,GLOBAL-WATER>>
 		<PERFORM ,V?PUT ,PRSI ,PRSO>
@@ -623,7 +623,7 @@ D ,PRSO ,PERIOD-CR>)>>
 		<DESCRIBE-OBJECTS T>)>>
 
 <ROUTINE V-LOOK-BEHIND ()
-	 <TELL "There is nothing behind the " D ,PRSO ,PERIOD-CR>>
+	 <TELL ,THERE-IS-NOTHING "behind the " D ,PRSO ,PERIOD-CR>>
 
 <ROUTINE V-LOOK-INSIDE ()
 	 <COND (<FSET? ,PRSO ,DOORBIT>
@@ -634,7 +634,7 @@ D ,PRSO ,PERIOD-CR>)>>
 		       <TELL " is closed." CR>)>)
 	       (<FSET? ,PRSO ,CONTBIT>
 		<COND (<FSET? ,PRSO ,ACTORBIT>
-		       <TELL "There is nothing special to be seen." CR>)
+		       <TELL ,THERE-IS-NOTHING "special to be seen." CR>)
 		      (<SEE-INSIDE? ,PRSO>
 		       <COND (<AND <FIRST? ,PRSO>
 				   <PRINT-CONT ,PRSO>>
@@ -647,7 +647,7 @@ D ,PRSO ,PERIOD-CR>)>>
 		<TELL "You can't look inside a " D ,PRSO ,PERIOD-CR>)>>
 
 <ROUTINE V-LOOK-UNDER ()
-	 <TELL "There is nothing but dust there." CR>>
+	 <TELL ,THERE-IS-NOTHING "but dust there." CR>>
 
 <ROUTINE V-LOWER ()
 	 <HACK-HACK "Playing in this way with the ">>
@@ -804,8 +804,7 @@ D ,PRSO ,PERIOD-CR>)>>
 	 	<COND (<SET V <FIND-IN ,HERE ,ACTORBIT>>
 		       <TELL "You must address the " D .V " directly." CR>)
 		      (T
-		       <TELL
-"Talking to yourself is a sign of impending mental collapse." CR>)>)>>
+		       <TELL ,TALKING-TO-YOURSELF>)>)>>
 
 <ROUTINE V-SEARCH ()
 	 <TELL "You find nothing unusual." CR>>

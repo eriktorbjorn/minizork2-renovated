@@ -1095,8 +1095,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 		     <NOT <EQUAL? ,P-GETFLAGS ,P-ALL>>
 		     <ZERO? ,P-GWIMBIT>>
 		<COND (.VRB
-		       <TELL
-"There seems to be a noun missing in that sentence!" CR>)>
+		       <TELL ,NOUN-MISSING>)>
 		<RFALSE>)>
 	 <COND (<OR <NOT <EQUAL? ,P-GETFLAGS ,P-ALL>> <ZERO? ,P-SLOCBITS>>
 		<SETG P-SLOCBITS -1>)>
@@ -1143,8 +1142,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 				    <ORPHAN <> <>>
 				    <SETG P-OFLAG T>)
 				   (.VRB
-				    <TELL
-"There seems to be a noun missing in that sentence!" CR>)>
+				    <TELL ,NOUN-MISSING>)>
 			     <SETG P-NAM <>>
 			     <SETG P-ADJ <>>
 			     <RFALSE>)>)>
