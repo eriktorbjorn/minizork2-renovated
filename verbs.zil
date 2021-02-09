@@ -1041,10 +1041,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 "DESCRIBE-OBJECT -- takes object and flag.  if flag is true will print a
 long description (fdesc or ldesc), otherwise will print short."
 
-<GLOBAL DESC-OBJECT <>>
-
 <ROUTINE DESCRIBE-OBJECT (OBJ V? LEVEL "AUX" (STR <>))
-	 <SETG DESC-OBJECT .OBJ>
 	 <COND (<AND <0? .LEVEL>
 		     <APPLY <GETP .OBJ ,P?DESCFCN> ,M-OBJDESC>>
 		<RTRUE>)
