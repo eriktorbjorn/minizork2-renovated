@@ -1230,46 +1230,19 @@ long description (fdesc or ldesc), otherwise will print short."
 <CONSTANT DEXITOBJ 1>
 <CONSTANT DEXITSTR 1>
 
-<ROUTINE NO-GO-TELL (AV WLOC)
-	 <TELL "You can't go there ">
-	 <COND (.AV
-		<TELL "in a " D .WLOC>)
-	       (T
-		<TELL "without a vehicle">)>
-	 <TELL ,PERIOD-CR>>
-
 <ROUTINE GOTO (RM "OPTIONAL" (V? T)
-	       "AUX" (LB <FSET? .RM ,RLANDBIT>) (WLOC <LOC ,WINNER>)
-	             (AV <>) OLIT OHERE)
+	       "AUX" (LB <FSET? .RM ,RLANDBIT>) WLOC VEH? OLIT OHERE)
+	 <SET WLOC <LOC ,WINNER>>
+	 <SET VEH? <FSET? .WLOC ,VEHBIT>>
 	 <SET OLIT ,LIT>
 	 <SET OHERE ,HERE>
-	 <COND (<FSET? .WLOC ,VEHBIT>
-		<SET AV <GETP .WLOC ,P?VTYPE>>)>
-	 <COND (<AND <NOT .LB>
-		     <NOT .AV>>
-		<NO-GO-TELL .AV .WLOC>
-		<RFALSE>)
-	       (<AND <NOT .LB>
-		     <NOT <FSET? .RM .AV>>>
-		<NO-GO-TELL .AV .WLOC>
-		<RFALSE>)
-	       (<AND <FSET? ,HERE ,RLANDBIT>
-		     .LB
-		     .AV
-		     <NOT <EQUAL? .AV ,RLANDBIT>>
-		     <NOT <FSET? .RM .AV>>>
-		<NO-GO-TELL .AV .WLOC>
+	 <COND (<AND <FSET? ,HERE ,RLANDBIT>
+		     .VEH?
+		     <NOT <FSET? .RM ,NONLANDBIT>>>
+		<TELL "You can't go there in a " D .WLOC ,PERIOD-CR>
 		<RFALSE>)
 	       (T
-		<COND (<AND .LB
-			    <NOT <FSET? ,HERE ,RLANDBIT>>
-			    <NOT ,DEAD>
-			    <FSET? .WLOC ,VEHBIT>>
-		       <COND (<EQUAL? .WLOC ,BALLOON>
-			      <TELL "The balloon lands." CR>)
-			     (<FSET? .WLOC ,VEHBIT>
-			      <TELL "The " D .WLOC ,STOPS>)>)>
-		<COND (.AV
+		<COND (.VEH?
 		       <MOVE .WLOC .RM>)
 		      (T
 		       <MOVE ,WINNER .RM>)>
@@ -1279,7 +1252,7 @@ long description (fdesc or ldesc), otherwise will print short."
 			    <NOT ,LIT>
 			    <PROB 80>>
 		       <TELL "Oh, no! A lurking grue slithered into the ">
-		       <COND (<FSET? <LOC ,WINNER> ,VEHBIT>
+		       <COND (.VEH?
 			      <TELL D <LOC ,WINNER>>)
 			     (T
 			      <TELL "room">)>

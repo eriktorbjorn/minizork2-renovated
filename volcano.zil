@@ -35,7 +35,6 @@ cone of the volcano. The only exit is east.")
 	(ADJECTIVE WICKER)
 	(CAPACITY 100)
 	(SIZE 70)
-	(VTYPE 0)
 	(FLAGS VEHBIT OPENBIT)
 	(DESCFCN BALLOON-F)
 	(ACTION BALLOON-F)>
