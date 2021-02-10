@@ -43,7 +43,7 @@ Both Wizard and flowers disappear." CR>)>)
 		       <ENABLE <QUEUE I-WIZARD 10>>
 		       <TELL "You suddenly cannot move." CR>)>)>>
 
-<ROUTINE I-WIZARD ("AUX" CAST-PROB (PCNT 0) F (WLOC <LOC ,WINNER>))
+<ROUTINE I-WIZARD ("AUX" CAST-PROB (PCNT 0) F (WLOC <LOC ,WINNER>) STR)
 	 <ENABLE <QUEUE I-WIZARD 4>>
 	 <COND (,DEAD
 		<RFALSE>)
@@ -62,8 +62,8 @@ Both Wizard and flowers disappear." CR>)>)
 		      (<EQUAL? ,SPELL? ,S-FUMBLE>
 		       <SETG FUMBLE-NUMBER 7>
 		       <SETG FUMBLE-PROB 8>)>
-		<COND (<GET ,SPELL-STOPS ,SPELL?>
-		       <TELL <GET ,SPELL-STOPS ,SPELL?> ,PERIOD-CR>)>
+		<COND (<SET STR <GET ,SPELL-STOPS ,SPELL?>>
+		       <TELL .STR ,PERIOD-CR>)>
 		<PUTP ,ADVENTURER ,P?ACTION 0>
 		<SETG SPELL? <>>
 		<RTRUE>)>
@@ -152,8 +152,8 @@ pointed at you!" CR>)>
 			      <TELL
 "The Wizard whispers a word beginning with \"F,\" and disappears." CR>)>
 		       <REMOVE ,WIZARD>
-		       <COND (<GET ,SPELL-HINTS ,SPELL?>
-			      <TELL <GET ,SPELL-HINTS ,SPELL?> ,PERIOD-CR>)>
+		       <COND (<SET STR <GET ,SPELL-HINTS ,SPELL?>>
+			      <TELL .STR ,PERIOD-CR>)>
 		       <COND (<EQUAL? ,SPELL? ,S-FALL>
 			      <COND (<FSET? .WLOC ,VEHBIT>
 				     <TELL
