@@ -484,3 +484,8 @@ go out!" CR>)>>
 <GLOBAL STEEL-CAGE-FALLS " the sphere, a solid steel cage falls ">
 
 <GLOBAL YOU-DONT-HAVE "You don't have ">
+
+<GLOBAL PROVIDING-LIGHT " (providing light)">
+
+<GLOBAL IS-CLOSED " is closed.|">
+

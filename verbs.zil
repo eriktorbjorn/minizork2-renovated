@@ -631,7 +631,7 @@ D ,PRSO ,PERIOD-CR>)>>
 		<COND (<FSET? ,PRSO ,OPENBIT>
 		       <TELL " is open, but you can't see beyond it." CR>)
 		      (T
-		       <TELL " is closed." CR>)>)
+		       <TELL ,IS-CLOSED>)>)
 	       (<FSET? ,PRSO ,CONTBIT>
 		<COND (<FSET? ,PRSO ,ACTORBIT>
 		       <TELL ,THERE-IS-NOTHING "special to be seen." CR>)
@@ -642,7 +642,7 @@ D ,PRSO ,PERIOD-CR>)>>
 			     (T
 			      <TELL "The " D ,PRSO " is empty." CR>)>)
 		      (T
-		       <TELL "The " D ,PRSO " is closed." CR>)>)
+		       <TELL "The " D ,PRSO ,IS-CLOSED>)>)
 	       (T
 		<TELL "You can't look inside a " D ,PRSO ,PERIOD-CR>)>>
 
@@ -959,7 +959,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 			      <TELL .STR CR>
 			      <RFATAL>)
 			     (T
-			      <TELL "The " D .OBJ " is closed." CR>
+			      <TELL "The " D .OBJ ,IS-CLOSED CR>
 			      <SETG P-IT-OBJECT .OBJ>
 			      <RFATAL>)>)>)
 	       (<AND <NOT ,LIT>
@@ -1051,13 +1051,13 @@ long description (fdesc or ldesc), otherwise will print short."
 	       (<0? .LEVEL>
 		<TELL "There is a " D .OBJ " here">
 		<COND (<FSET? .OBJ ,ONBIT>
-		       <TELL " (providing light)">)>
+		       <TELL ,PROVIDING-LIGHT>)>
 		<TELL ".">)
 	       (T
 		<TELL <GET ,INDENTS .LEVEL>>
 		<TELL "A " D .OBJ>
 		<COND (<FSET? .OBJ ,ONBIT>
-		       <TELL " (providing light)">)>)>
+		       <TELL ,PROVIDING-LIGHT>)>)>
 	 <COND (<AND <EQUAL? .OBJ ,SPELL-VICTIM>
 		     <EQUAL? ,SPELL-USED ,W?FLOAT>>
 		<TELL " (floating in midair)">)>
@@ -1330,7 +1330,7 @@ long description (fdesc or ldesc), otherwise will print short."
 		<RFALSE>)
 	       (<AND <NOT <IN? ,PRSO ,WINNER>>
 		     <NOT <FSET? <LOC ,PRSO> ,OPENBIT>>>
-		<TELL "The " D ,PRSO " is closed." CR>
+		<TELL "The " D ,PRSO ,IS-CLOSED>
 		<RFALSE>)
 	       (T
 		<MOVE ,PRSO <LOC ,WINNER>>
