@@ -325,7 +325,7 @@ feel weak, and quickly turn away." CR>)
 		       <TELL
 "With your bare hands? I doubt the dragon even noticed." CR>)
 		      (T
-		       <TELL <RANDOM-ELEMENT ,DRAGON-ATTACKS> CR>)>)
+		       <TELL <RANDOM-ELEMENT ,DRAGON-ATTACKS> ,PERIOD-CR>)>)
 	       (<AND <VERB? GIVE>
 		     <EQUAL? ,PRSI ,DRAGON>>
 		<SETG DRAGON-ANGER <+ ,DRAGON-ANGER 1>>
@@ -360,10 +360,10 @@ curls from his nostrils." CR>)
 <GLOBAL DRAGON-ATTACKS
         <LTABLE
 "Dragon hide is tough as steel, but you have annoyed him a bit. He looks
-as if deciding whether or not to eat you."
-"That captured his interest. He stares at you balefully."
-"The dragon is surprised and interested (for the moment)."
-"That did no damage, but he turns his smoky yellow eyes in your direction.">>
+as if deciding whether or not to eat you"
+"That captured his interest. He stares at you balefully"
+"The dragon is surprised and interested (for the moment)"
+"That did no damage, but he turns his smoky yellow eyes in your direction">>
 
 <GLOBAL DRAGON-ANGER 0>
 
