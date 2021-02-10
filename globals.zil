@@ -206,15 +206,14 @@
 	(DESC "lurking grue")
 	(SYNONYM GRUE)
 	(ADJECTIVE LURKING)
+	(TEXT
+"The grue is a sinister, lurking presence in the dark places of the earth.
+Its favorite diet is adventurers, but its insatiable appetite is tempered
+by its fear of light.")
 	(ACTION GRUE-F)>
 
 <ROUTINE GRUE-F ()
-	 <COND (<VERB? EXAMINE>
-		<TELL
-"The grue is a sinister, lurking presence in the dark places of the earth.
-Its favorite diet is adventurers, but its insatiable appetite is tempered
-by its fear of light." CR>)
-	       (<VERB? FIND>
+	 <COND (<VERB? FIND>
 		<TELL
 "There's probably one lurking in the darkness nearby. Don't let your light
 go out!" CR>)>>
@@ -224,6 +223,7 @@ go out!" CR>)>>
 	(DESC "brave adventurer")
 	(SYNONYM ME MYSELF SELF)
 	(FLAGS ACTORBIT)
+	(TEXT "Difficult, unless your eyes are prehensile.")
 	(ACTION ME-F)>
 
 <ROUTINE ME-F () 
@@ -240,9 +240,7 @@ go out!" CR>)>>
 	       (<VERB? ATTACK MUNG>
 		<JIGS-UP "Poof, you're dead!">)
 	       (<VERB? TAKE>
-		<TELL "How romantic!" CR>)
-	       (<VERB? EXAMINE>
-		<TELL "Difficult, unless your eyes are prehensile." CR>)>>
+		<TELL "How romantic!" CR>)>>
 
 <OBJECT ADVENTURER
 	(IN INSIDE-THE-BARROW)

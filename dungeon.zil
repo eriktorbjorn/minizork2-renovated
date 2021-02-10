@@ -274,6 +274,7 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 	(SYNONYM MENHIR ROCK STONE F)
 	(ADJECTIVE LARGE HUGE HEAVY ENORMOUS)
 	(FLAGS NDESCBIT READBIT)
+	(TEXT "The menhir is carved with an ornate letter \"F\".")
 	(ACTION MENHIR-F)>
 
 <ROUTINE MENHIR-F ()
@@ -286,8 +287,6 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 		<TELL "The menhir weighs many tons!" CR>)
 	       (<VERB? READ>
 		<TELL "\"F\"" CR>)
-	       (<VERB? EXAMINE>
-		<TELL "The menhir is carved with an ornate letter \"F\"." CR>)
 	       (<AND <VERB? ENCHANT>
 		     <EQUAL? ,SPELL-USED ,W?FLOAT>>
 		<SETG MENHIR-POSITION 3>

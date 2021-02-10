@@ -275,12 +275,8 @@ by their thorns.">)>)
 	(DESC "hedge")
 	(SYNONYM HEDGE HEDGES)
 	(FLAGS NDESCBIT)
-	(ACTION HEDGES-F)>
-
-<ROUTINE HEDGES-F ()
-	 <COND (<VERB? EXAMINE>
-		<TELL
-"The hedges are shaped like various animals: dogs, serpents, dragons..." CR>)>>
+	(TEXT
+"The hedges are shaped like various animals: dogs, serpents, dragons...")>
 
 <ROOM DRAGON-ROOM
       (IN ROOMS)

@@ -564,12 +564,8 @@ far wall is a rusty box">
 	(SYNONYM SLOT HOLE)
 	(CAPACITY 10)
 	(FLAGS OPENBIT NDESCBIT)
-	(ACTION SAFE-HOLE-F)>
-
-<ROUTINE SAFE-HOLE-F ()
-	 <COND (<VERB? EXAMINE>
-		<TELL
-"The hole was someone's failed attempt to chip their way into the box." CR>)>>
+	(TEXT
+"The hole was someone's failed attempt to chip their way into the box.")>
 
 <OBJECT CARD
 	(IN SAFE)

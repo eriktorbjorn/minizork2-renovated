@@ -598,12 +598,11 @@ deepest part of the pool.")
 	(SIZE 8)
 	(VALUE 15)
 	(FLAGS FOODBIT TAKEBIT INVISIBLE READBIT)
+	(TEXT
+"\"Frobozz Magic Candy Company -- Special Assortment! Candied Grasshoppers,
+Chocolated Ants, and Worms Glacee!\"")
 	(ACTION CANDY-F)>
 
 <ROUTINE CANDY-F ()
-	 <COND (<VERB? EXAMINE READ>
-		<TELL
-"\"Frobozz Magic Candy Company -- Special Assortment! Candied Grasshoppers,
-Chocolated Ants, and Worms Glacee!\"" CR>)
-	       (<VERB? EAT OPEN>
+	 <COND (<VERB? EAT OPEN>
 		<TELL "It's too rich for your tastes." CR>)>>
