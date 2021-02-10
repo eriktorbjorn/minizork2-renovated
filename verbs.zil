@@ -899,9 +899,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 		      (<AND ,PRSI <FSET? ,PRSI ,ACTORBIT>>
 		       <TELL "The " D ,PRSI " ducks." CR>)
 		      (T
-		       <TELL "Thrown." CR>)>)
-	       (T
-		<TELL "Huh?" CR>)>>
+		       <TELL "Thrown." CR>)>)>>
 
 <ROUTINE V-THROW-OFF ()
 	 <TELL "You can't throw anything off of that!" CR>>
