@@ -1336,9 +1336,9 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 					     <COND (<EQUAL? .OBJ
 							    ,NOT-HERE-OBJECT>
 						    <TELL
-"You don't have that!" CR>
+,YOU-DONT-HAVE "that!" CR>
 						    <RFALSE>)>
-					     <TELL "You don't have the ">
+					     <TELL ,YOU-DONT-HAVE "the ">
 					     <PRINTD .OBJ>
 					     <TELL ,PERIOD-CR>
 					     <RFALSE>)

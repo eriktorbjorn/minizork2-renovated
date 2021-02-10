@@ -183,7 +183,7 @@
 	       (<VERB? DROP GIVE>
 		<COND (<AND <EQUAL? ,PRSO ,WATER>
 			    <NOT <HELD? ,WATER>>>
-		       <TELL "You don't have any water." CR>
+		       <TELL ,YOU-DONT-HAVE "any water." CR>
 		       <RTRUE>)>
 		<REMOVE ,WATER>
 		<COND (.AV
@@ -484,3 +484,5 @@ go out!" CR>)>>
 <GLOBAL THERE-IS-NOTHING "There is nothing ">
 
 <GLOBAL STEEL-CAGE-FALLS " the sphere, a solid steel cage falls ">
+
+<GLOBAL YOU-DONT-HAVE "You don't have ">

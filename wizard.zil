@@ -358,7 +358,7 @@ again"
 	       (<VERB? WAVE RUB RAISE>
 		<COND (<AND <EQUAL? ,PRSO ,WAND>
 			    <NOT <IN? ,WAND ,WINNER>>>
-		       <TELL "You don't have the wand!" CR>
+		       <TELL ,YOU-DONT-HAVE "the wand!" CR>
 		       <RTRUE>)
 		      (<OR ,WAND-ON ,SPELL-USED ,SPELL-VICTIM>
 		       <TELL "A magic wand must recharge after use!" CR>
