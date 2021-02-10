@@ -66,29 +66,35 @@ the walls. A passage leads west.")
       (WEST TO RIDDLE-ROOM)
       (UP "The walls cannot be climbed.")
       (FLAGS RLANDBIT NONLANDBIT)
-      (GLOBAL WELL)>
+      (GLOBAL WELL ETCHINGS)>
 
-<OBJECT BOTTOM-ETCHINGS
-	(IN CIRCULAR-ROOM)
+<OBJECT ETCHINGS
+	(IN LOCAL-GLOBALS)
 	(DESC "wall with etchings")
 	(SYNONYM ETCHINGS WALL)
 	(FLAGS READBIT NDESCBIT)
-	(ACTION BOTTOM-ETCHINGS-F)>
+	(ACTION ETCHINGS-F)>
 
-<ROUTINE BOTTOM-ETCHINGS-F ()
+<ROUTINE ETCHINGS-F ()
 	 <COND (<VERB? EXAMINE READ>
 		<FIXED-FONT-ON>
-		<TELL
-"       o  b  o|
+		<TELL "       o  b  o" CR>
+		<COND (<EQUAL? ,HERE ,CIRCULAR-ROOM>
+		       <TELL CR
+"       A  G  I|
 |
-       A  G  I|
+        E   L||">)
+		      (T
+		       <TELL
+"   r             z|
+f   M  A  G  I  C   z|
 |
-        E   L|
-|
-       m  p  a|
-">
-		 <FIXED-FONT-OFF>
-		 <RTRUE>)>>
+c    W  E   L  L    y|
+   o             n|">)>
+		<TELL "       m  p  a">
+		<FIXED-FONT-OFF>
+		<CRLF>
+		<RTRUE>)>>
 
 <OBJECT PEARL-NECKLACE
 	(IN CIRCULAR-ROOM)
@@ -202,34 +208,12 @@ easily. Another doorway leads northeast.")
       (DOWN "It's a long way down.")
       (VALUE 10)
       (FLAGS RLANDBIT NONLANDBIT)
-      (GLOBAL WELL)
+      (GLOBAL WELL ETCHINGS)
       (PSEUDO "CRACK" CRACK-PSEUDO)>
 
 <ROUTINE CRACK-PSEUDO ()
 	 <COND (<VERB? EXAMINE>
 		<TELL "It's a small, uninteresting crack." CR>)>>
-
-<OBJECT TOP-ETCHINGS
-	(IN TOP-OF-WELL)
-	(DESC "wall with etchings")
-	(SYNONYM ETCHINGS WALL)
-	(FLAGS READBIT NDESCBIT)
-	(ACTION TOP-ETCHINGS-F)>
-
-<ROUTINE TOP-ETCHINGS-F ()
-	 <COND (<VERB? EXAMINE READ>
-		<FIXED-FONT-ON>
-		<TELL
-"       o  b  o|
-   r             z|
-f   M  A  G  I  C   z|
-|
-c    W  E   L  L    y|
-   o             n|
-       m  p  a|
-">
-		<FIXED-FONT-OFF>
-		<RTRUE>)>>
 
 <OBJECT ROBOT
 	(IN TOP-OF-WELL)
