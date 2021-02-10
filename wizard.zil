@@ -63,7 +63,7 @@ Both Wizard and flowers disappear." CR>)>)
 		       <SETG FUMBLE-NUMBER 7>
 		       <SETG FUMBLE-PROB 8>)>
 		<COND (<GET ,SPELL-STOPS ,SPELL?>
-		       <TELL <GET ,SPELL-STOPS ,SPELL?> CR>)>
+		       <TELL <GET ,SPELL-STOPS ,SPELL?> ,PERIOD-CR>)>
 		<PUTP ,ADVENTURER ,P?ACTION 0>
 		<SETG SPELL? <>>
 		<RTRUE>)>
@@ -146,14 +146,14 @@ pointed at you!" CR>)>
 			    <QUEUE I-WIZARD <+ 5 <RANDOM <- 30 <* 5 .PCNT>>>>>>
 		       <COND (<PROB 75>
 			      <TELL
-"The Wizard, in a deep and resonant voice, speaks the word \""
+"The Wizard, in a deep and resonant voice, speaks the word \"F"
 <GET ,SPELL-NAMES ,SPELL?> "!\" He then vanishes, cackling gleefully." CR>)
 			     (T
 			      <TELL
 "The Wizard whispers a word beginning with \"F,\" and disappears." CR>)>
 		       <REMOVE ,WIZARD>
 		       <COND (<GET ,SPELL-HINTS ,SPELL?>
-			      <TELL <GET ,SPELL-HINTS ,SPELL?> CR>)>
+			      <TELL <GET ,SPELL-HINTS ,SPELL?> ,PERIOD-CR>)>
 		       <COND (<EQUAL? ,SPELL? ,S-FALL>
 			      <COND (<FSET? .WLOC ,VEHBIT>
 				     <TELL
@@ -197,7 +197,7 @@ sleeve. He sighs and disappears." CR>)
 		      (<PROB 50>
 		       <REMOVE ,WIZARD>
 		       <TELL
-"The Wizard incants \"" <RANDOM-ELEMENT ,SPELL-NAMES> "!\" but nothing
+"The Wizard incants \"F" <RANDOM-ELEMENT ,SPELL-NAMES> "!\" but nothing
 happens. With an embarrassed glance in your direction, he vanishes." CR>)
 		      (T
 		       <MOVE ,WIZARD ,HERE>
@@ -306,16 +306,16 @@ you intended going." CR CR>
 
 <GLOBAL SPELL-NAMES
 	<LTABLE
-"Feeble" "Fumble" "Freeze" "Fall" "Ferment" "Float" "Fireproof" "Fence"
-"Fantasize">>
+"eeble" "umble" "reeze" "all" "erment" "loat" "ireproof" "ence"
+"antasize">>
 
 <GLOBAL SPELL-HINTS
 	<LTABLE
-"All at once you feel very tired."
+"All at once you feel very tired"
 <>
-"Your limbs suddenly feel like stone. You can't move a muscle."
+"Your limbs suddenly feel like stone. You can't move a muscle"
 <>
-"You begin to feel lightheaded."
+"You begin to feel lightheaded"
 <>
 <>
 <>
@@ -323,13 +323,13 @@ you intended going." CR CR>
 
 <GLOBAL SPELL-STOPS
 	<LTABLE
-"You feel more energetic now."
+"You feel more energetic now"
 <>
 "Your little finger begins to twitch, and then your whole body is free
-again."
+again"
 <>
-"Your head is clearer now."
-"You sink quietly down again."
+"Your head is clearer now"
+"You sink quietly down again"
 <>
 <>
 <>>>
