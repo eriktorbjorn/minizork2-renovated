@@ -270,7 +270,7 @@ easily. Another doorway leads northeast.")
 	      (<VERB? THROW MUNG>
 	       <TELL
 "The robot (being of shoddy construction) disintegrates before your eyes." CR>
-	       <REMOVE ,ROBOT>)>>
+	       <REMOVE-CAREFULLY ,ROBOT>)>>
 
 <OBJECT ROBOT-LABEL
 	(IN TOP-OF-WELL)
