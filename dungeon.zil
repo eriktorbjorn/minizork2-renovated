@@ -53,14 +53,14 @@
 		       <TELL
 "You'd better have more light than from the " D ,LAMP ,PERIOD-CR>)
 		      (T
-		       <TELL <GET .TBL 1> CR>)>)>
+		       <TELL "The lamp " <GET .TBL 1> ,PERIOD-CR>)>)>
 	 <COND (<NOT <0? .TICK>>
 		<SETG LAMP-TABLE <REST .TBL 4>>)>>
 
 <GLOBAL LAMP-TABLE
-	<TABLE 225 "The lamp appears a bit dimmer."
-	        75 "The lamp is definitely dimmer now."
-	        25 "The lamp is nearly out." 0>>
+	<TABLE 225 "appears a bit dimmer"
+	        75 "is definitely dimmer now"
+	        25 "is nearly out" 0>>
 
 <ROOM GREAT-CAVERN
       (IN ROOMS)
