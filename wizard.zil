@@ -799,7 +799,8 @@ He seems chagrined to have to admit this." CR>
 			    (T
 			     <TELL
 "\"" <GET ,DEMON-THANKS ,DEMON-HOARD> "\"" CR>
-			     <COND (<EQUAL? ,DEMON-HOARD 8>
+			     <COND (<AND <EQUAL? ,DEMON-HOARD 8>
+					 <IN? ,WIZARD ,HERE>>
 				    <TELL
 "The Wizard tears his beard and looks at you as if you are a madman." CR>)>
 			     <RTRUE>)>)
