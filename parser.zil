@@ -511,7 +511,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 		<SET FIRST?? <>>
 		<SET PTR <+ .PTR ,P-LEXELEN>>>>
 
-<ROUTINE NUMBER? (PTR "AUX" CNT BPTR CHR (SUM 0) (TIM <>))
+;<ROUTINE NUMBER? (PTR "AUX" CNT BPTR CHR (SUM 0) (TIM <>))
 	 <SET CNT <GETB <REST ,P-LEXV <* .PTR 2>> 2>>
 	 <SET BPTR <GETB <REST ,P-LEXV <* .PTR 2>> 3>>
 	 <REPEAT ()
@@ -532,6 +532,23 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 		<COND (<L? .TIM 8> <SET TIM <+ .TIM 12>>)
 		      (<G? .TIM 23> <RFALSE>)>
 		<SET SUM <+ .SUM <* .TIM 60>>>)>
+	 <SETG P-NUMBER .SUM>
+	 ,W?INTNUM>
+
+<ROUTINE NUMBER? (PTR "AUX" CNT BPTR CHR (SUM 0))
+	 <SET CNT <GETB <REST ,P-LEXV <* .PTR 2>> 2>>
+	 <SET BPTR <GETB <REST ,P-LEXV <* .PTR 2>> 3>>
+	 <REPEAT ()
+		 <COND (<L? <SET CNT <- .CNT 1>> 0> <RETURN>)
+		       (T
+			<SET CHR <GETB ,P-INBUF .BPTR>>
+			<COND (<G? .SUM 10000> <RFALSE>)
+			      (<AND <L? .CHR 58> <G? .CHR 47>>
+			       <SET SUM <+ <* .SUM 10> <- .CHR 48>>>)
+			      (T <RFALSE>)>
+			<SET BPTR <+ .BPTR 1>>)>>
+	 <PUT ,P-LEXV .PTR ,W?INTNUM>
+	 <COND (<G? .SUM 1000> <RFALSE>)>
 	 <SETG P-NUMBER .SUM>
 	 ,W?INTNUM>
 
