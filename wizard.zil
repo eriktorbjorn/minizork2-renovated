@@ -451,27 +451,11 @@ visitors. To the south is a">
 	 <COND (<AND <NOT ,GUARDIAN-FED>
 		     <VERB? OPEN UNLOCK>>
 		<TELL "The lizard snaps at you as you reach for the door." CR>)
-	       (<VERB? UNLOCK>
-		<COND (,WIZ-DOOR-FLAG
-		       <TELL ,ALREADY>)
-		      (<EQUAL? ,PRSI ,GOLD-KEY>
-		       <SETG WIZ-DOOR-FLAG T>
-		       <TELL "The door is unlocked." CR>)
-		      (T
-		       <TELL ,DOESNT-FIT-LOCK>)>)
-	       (<VERB? LOCK>
-		<COND (<NOT ,WIZ-DOOR-FLAG>
-		       <TELL ,ALREADY>)
-		      (<EQUAL? ,PRSI ,GOLD-KEY>
-		       <SETG WIZ-DOOR-FLAG <>>
-		       <TELL "The door is now locked." CR>)
-		      (T
-		       <TELL ,DOESNT-FIT-LOCK>)>)
+	       (<VERB? UNLOCK LOCK>
+		<SETG WIZ-DOOR-FLAG <UNLOCK-LOCK ,WIZ-DOOR-FLAG ,GOLD-KEY>>
+		<RTRUE>)
 	       (<VERB? OPEN CLOSE>
-		<COND (,WIZ-DOOR-FLAG
-		       <OPEN-CLOSE>)
-		      (<VERB? OPEN>
-		       <TELL "The door is locked!" CR>)>)>>
+		<OPEN-CLOSE ,WIZ-DOOR-FLAG>)>>
 
 <GLOBAL WIZ-DOOR-FLAG <>>
 

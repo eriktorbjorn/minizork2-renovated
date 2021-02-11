@@ -327,8 +327,10 @@ go out!" CR>)>>
 	(SYNONYM WALL)
 	(ADJECTIVE EAST EASTERN WEST WESTERN SOUTH SOUTHE NORTH NORTHE)>
 
-<ROUTINE OPEN-CLOSE ()
-	 <COND (<VERB? OPEN>
+<ROUTINE OPEN-CLOSE (FLAG)
+	 <COND (<NOT .FLAG>
+	        <TELL "The door is locked." CR>)
+	       (<VERB? OPEN>
 		<COND (<FSET? ,PRSO ,OPENBIT>
 		       <TELL ,LOOK-AROUND>)
 		      (T
@@ -339,6 +341,34 @@ go out!" CR>)>>
 		<TELL "The " D ,PRSO " is now closed." CR>)
 	       (T
 		<TELL ,LOOK-AROUND>)>>
+
+<ROUTINE UNLOCK-LOCK (UNLOCKED? KEY)
+	 <COND (<VERB? UNLOCK>
+		<COND (.UNLOCKED?
+		       <TELL ,ALREADY>
+		       <RTRUE>)
+		      (<EQUAL? ,PRSI .KEY>
+		       <TELL "The door is now unlocked." CR>
+		       <RTRUE>)
+		      (<FSET? ,PRSI ,TOOLBIT>
+		       <TELL ,DOESNT-FIT-LOCK>
+		       <RFALSE>)
+		      (T
+		       <TELL <PICK-ONE ,YUKS> CR>
+		       <RFALSE>)>)
+	       (T
+		<COND (<NOT .UNLOCKED?>
+		       <TELL ,ALREADY>
+		       <RFALSE>)
+		      (<EQUAL? ,PRSI .KEY>
+		       <TELL "The door is now locked." CR>
+		       <RFALSE>)
+		      (<FSET? ,PRSI ,TOOLBIT>
+		       <TELL ,DOESNT-FIT-LOCK>
+		       <RTRUE>)
+		      (T
+		       <TELL <PICK-ONE ,YUKS> CR>
+		       <RTRUE>)>)>>
 
 <ROUTINE HELLO? (WHO)
 	 <COND (<OR <EQUAL? ,WINNER .WHO>
@@ -488,4 +518,3 @@ go out!" CR>)>>
 <GLOBAL PROVIDING-LIGHT " (providing light)">
 
 <GLOBAL IS-CLOSED " is closed.|">
-

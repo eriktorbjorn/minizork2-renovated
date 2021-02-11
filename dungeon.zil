@@ -581,26 +581,9 @@ The light falls upon a dusty wooden table. ">
 	 <COND (<AND <VERB? LOOK-UNDER>
 		     ,MUD-FLAG>
 		<TELL ,PLACE-MAT-VISIBLE CR>)
-	       (<VERB? UNLOCK>
-		<COND (,PUNLOCK-FLAG
-		       <TELL ,ALREADY>)
-		      (<EQUAL? ,PRSI ,KEY>
-		       <SETG PUNLOCK-FLAG T>
-		       <TELL "The door is now unlocked." CR>)
-		      (<EQUAL? ,PRSI ,GOLD-KEY>
-		       <TELL ,DOESNT-FIT-LOCK>)
-		      (T
-		       <TELL <PICK-ONE ,YUKS> CR>)>)
-	       (<VERB? LOCK>
-		<COND (<NOT ,PUNLOCK-FLAG>
-		       <TELL ,ALREADY>)
-		      (<EQUAL? ,PRSI ,KEY>
-		       <SETG PUNLOCK-FLAG <>>
-		       <TELL "The door is locked." CR>)
-		      (<EQUAL? ,PRSI ,GOLD-KEY>
-		       <TELL ,DOESNT-FIT-LOCK>)
-		      (T
-		       <TELL <PICK-ONE ,YUKS> CR>)>)
+	       (<VERB? UNLOCK LOCK>
+		<SETG PUNLOCK-FLAG <UNLOCK-LOCK ,PUNLOCK-FLAG ,KEY>>
+		<RTRUE>)
 	       (<VERB? PUT-UNDER>
 		<COND (<EQUAL? ,PRSO ,ROBOT-LABEL>
 		       <TELL "The tiny paper vanishes under the door." CR>
@@ -612,10 +595,7 @@ The light falls upon a dusty wooden table. ">
 		       <TELL
 "The newspaper crumples up and won't go under the door." CR>)>)
 	       (<VERB? OPEN CLOSE>
-		<COND (,PUNLOCK-FLAG
-		       <OPEN-CLOSE>)
-		      (T
-		       <TELL "The door is locked." CR>)>)>>
+		<OPEN-CLOSE ,PUNLOCK-FLAG>)>>
 
 <OBJECT PWINDOW
 	(IN LOCAL-GLOBALS)
