@@ -27,7 +27,7 @@
 <CONSTANT CC-DEPTR 3>
 
 <GLOBAL P-LEN 0>
-<GLOBAL P-DIR 0>
+;<GLOBAL P-DIR 0>
 <GLOBAL HERE 0>
 <GLOBAL WINNER 0>
 
@@ -65,7 +65,7 @@
 <GLOBAL P-MERGED <>>
 <GLOBAL P-ACLAUSE <>>
 <GLOBAL P-ANAM <>>
-<GLOBAL P-AADJ <>>
+;<GLOBAL P-AADJ <>>
 ;"Parser variables and temporaries"
 
 ;"Byte offset to # of entries in LEXV"
@@ -116,7 +116,7 @@
 		       <PUT ,P-ITBL .CNT 0>)>>
 	<SET OWINNER ,WINNER>
 	<SET OMERGED ,P-MERGED>
-	<SETG P-ADVERB <>>
+	;<SETG P-ADVERB <>>
 	<SETG P-MERGED <>>
 	<SETG P-END-ON-PREP <>>
 	<PUT ,P-PRSO ,P-MATCHLEN 0>
@@ -242,7 +242,7 @@
 					  <GETB ,P-LEXV <- .LEN 2>>>>
 	       <SETG RESERVE-PTR <>>
 	       <SET LEN ,P-LEN>
-	       <SETG P-DIR <>>
+	       ;<SETG P-DIR <>>
 	       <SETG P-NCN 0>
 	       <SETG P-GETFLAGS 0>
 	       <REPEAT ()
@@ -335,7 +335,7 @@
 				     <RFALSE>)
 				    (T
 				     <SETG P-NCN <+ ,P-NCN 1>>
-				     <SETG P-ACT .VERB>
+				     ;<SETG P-ACT .VERB>
 				     <OR <SET PTR <CLAUSE .PTR .VAL .WRD>>
 					 <RFALSE>>
 				     <COND (<L? .PTR 0>
@@ -381,7 +381,7 @@ or creatures." CR>
 			   <TAKE-CHECK>>
 		      T)>)>>
 
-<GLOBAL P-ACT <>>
+;<GLOBAL P-ACT <>>
 <GLOBAL P-WALK-DIR <>>
 <GLOBAL AGAIN-DIR <>>
 
@@ -1003,7 +1003,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 
 <GLOBAL P-NAM <>>
 <GLOBAL P-ADJ <>>
-<GLOBAL P-ADVERB <>>
+;<GLOBAL P-ADVERB <>>
 <GLOBAL P-ADJN <>>
 <GLOBAL P-PRSO <ITABLE NONE 50>>
 <GLOBAL P-PRSI <ITABLE NONE 50>>
@@ -1137,7 +1137,7 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 				    <SETG P-ACLAUSE
 					  <COND (<EQUAL? .TBL ,P-PRSO> ,P-NC1)
 						(T ,P-NC2)>>
-				    <SETG P-AADJ ,P-ADJ>
+				    ;<SETG P-AADJ ,P-ADJ>
 				    <SETG P-ANAM ,P-NAM>
 				    <ORPHAN <> <>>
 				    <SETG P-OFLAG T>)
