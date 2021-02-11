@@ -959,7 +959,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 			      <TELL .STR CR>
 			      <RFATAL>)
 			     (T
-			      <TELL "The " D .OBJ ,IS-CLOSED CR>
+			      <TELL "The " D .OBJ ,IS-CLOSED>
 			      <SETG P-IT-OBJECT .OBJ>
 			      <RFATAL>)>)>)
 	       (<AND <NOT ,LIT>
