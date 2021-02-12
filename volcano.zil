@@ -168,16 +168,6 @@ attached to the basket and ">
 	<MOVE ,BALLOON .THERE>
 	<SETG BALLOON-LOC .THERE>>
 
-<GLOBAL BALLOON-UPS
-	<LTABLE VOLCANO-CORE VOLCANO-BY-SMALL-LEDGE VOLCANO-BY-WIDE-LEDGE>>
-
-<GLOBAL BALLOON-FLOATS
-	<LTABLE NARROW-LEDGE VOLCANO-BY-SMALL-LEDGE
-		WIDE-LEDGE VOLCANO-BY-WIDE-LEDGE>>
-
-<GLOBAL BALLOON-DOWNS
-	<LTABLE VOLCANO-BY-WIDE-LEDGE  VOLCANO-BY-SMALL-LEDGE VOLCANO-CORE>>
-
 <ROUTINE RISE-AND-SHINE ("AUX" (IN <IN? ,WINNER ,BALLOON>) R)
 	<ENABLE <QUEUE I-BALLOON 3>>
 	<COND (<EQUAL? ,BALLOON-LOC ,VOLCANO-BY-WIDE-LEDGE>
@@ -193,14 +183,14 @@ snow-capped (and jagged) cliffs of the Flathead Mountains!">)
 		      <TELL
 "You watch the balloon drift over the rim and away on the wind." CR>)>
 	       <SETG BALLOON-LOC ,VOLCANO-BOTTOM>)
-	      (<SET R <LKP ,BALLOON-LOC ,BALLOON-UPS>>
+	      (<SET R <GETP ,BALLOON-LOC ,P?BALLOON-UP>>
 	       <COND (.IN
 		      <TELL "The balloon ascends." CR CR>
 		      <SETG BALLOON-LOC .R>
 		      <GOTO .R>)
 		     (T
 		      <PUT-BALLOON .R "ascends.">)>)
-	      (<SET R <LKP ,BALLOON-LOC ,BALLOON-FLOATS>>
+	      (<SET R <GETP ,BALLOON-LOC ,P?BALLOON-FLOAT>>
 	       <COND (.IN
 		      <TELL "The balloon leaves the ledge." CR CR>
 		      <SETG BALLOON-LOC .R>
@@ -234,22 +224,13 @@ You, miraculously, survive." CR CR>
 			 <GOTO ,VOLCANO-BOTTOM>)>)
 		 (T
 		  <PUT-BALLOON ,VOLCANO-BOTTOM "lands.">)>)
-	   (<SET R <LKP ,BALLOON-LOC ,BALLOON-DOWNS>>
+	   (<SET R <GETP ,BALLOON-LOC ,P?BALLOON-DOWN>>
 	    <COND (.IN
 		   <TELL "The balloon descends." CR CR>
 		   <SETG BALLOON-LOC .R>
 		   <GOTO .R>)
 		  (T
 		   <PUT-BALLOON .R "descends.">)>)>>
-
-<ROUTINE LKP (ITM TBL "AUX" (CNT 0) (LEN <GET .TBL 0>))
-	 <REPEAT ()
-		 <COND (<G? <SET CNT <+ .CNT 1>> .LEN>
-			<RFALSE>)
-		       (<EQUAL? <GET .TBL .CNT> .ITM>
-			<COND (<EQUAL? .CNT .LEN> <RFALSE>)
-			      (T
-			       <RETURN <GET .TBL <+ .CNT 1>>>)>)>>>
 
 <ROUTINE I-BURNUP ("AUX" (OBJ <FIRST? ,RECEPTACLE>))
 	 <COND (<EQUAL? ,HERE ,BALLOON-LOC>
@@ -348,6 +329,7 @@ within the basket but cannot be removed." CR>)>>
       (LDESC
 "You are about one hundred feet above the bottom of the volcano.")
       (VALUE 10)
+      (BALLOON-UP VOLCANO-BY-SMALL-LEDGE)
       (FLAGS NONLANDBIT)>
 
 <ROOM VOLCANO-BY-SMALL-LEDGE
@@ -356,6 +338,8 @@ within the basket but cannot be removed." CR>)>>
       (EAST TO NARROW-LEDGE)
       (LAND TO NARROW-LEDGE)
       (FLAGS NONLANDBIT)
+      (BALLOON-UP VOLCANO-BY-WIDE-LEDGE)
+      (BALLOON-DOWN VOLCANO-CORE)
       (ACTION VOLCANO-BY-LEDGE-F)>
 
 <ROOM VOLCANO-BY-WIDE-LEDGE
@@ -364,6 +348,7 @@ within the basket but cannot be removed." CR>)>>
       (LAND TO WIDE-LEDGE)
       (WEST TO WIDE-LEDGE)
       (FLAGS NONLANDBIT)
+      (BALLOON-DOWN VOLCANO-BY-SMALL-LEDGE)
       (ACTION VOLCANO-BY-LEDGE-F)>
 
 <ROUTINE VOLCANO-BY-LEDGE-F (RARG)
@@ -391,6 +376,7 @@ within the basket but cannot be removed." CR>)>>
       (IN TO LIBRARY)
       (FLAGS RLANDBIT NONLANDBIT)
       (GLOBAL HOOK)
+      (BALLOON-FLOAT VOLCANO-BY-SMALL-LEDGE)
       (ACTION LEDGE-F)>
 
 <OBJECT COIN
@@ -513,6 +499,7 @@ appropriate magic word. (Amazing how credulous these ancients were.)")
 "The opening is blocked by rubble.")
       (FLAGS RLANDBIT NONLANDBIT)
       (GLOBAL HOOK)
+      (BALLOON-FLOAT VOLCANO-BY-WIDE-LEDGE)
       (ACTION LEDGE-F)>
 
 <ROOM DUSTY-ROOM
