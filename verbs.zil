@@ -166,24 +166,6 @@ Release ">
 	       (T
 		<TELL CR "** Failed! **" CR>)>>
 
-<ROUTINE V-COMMAND-FILE ()
-	 <DIRIN 1>
-	 <RTRUE>>
-
-<ROUTINE V-RANDOM ()
-	 <COND (<NOT <EQUAL? ,PRSO ,INTNUM>>
-		<TELL "Illegal call to #RND." CR>)
-	       (T
-		<RANDOM <- 0 ,P-NUMBER>>
-		<RTRUE>)>>
-
-<ROUTINE V-RECORD ()
-	 <DIROUT 4>
-	 <RTRUE>>
-
-<ROUTINE V-UNRECORD ()
-	 <DIROUT -4>
-	 <RTRUE>>
 \^L
 "Real Verb Functions"
 
