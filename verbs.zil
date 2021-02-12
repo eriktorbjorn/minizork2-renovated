@@ -1164,9 +1164,9 @@ long description (fdesc or ldesc), otherwise will print short."
 		<COND (<G? .LEVEL 0>
 		       <TELL <GET ,INDENTS .LEVEL>>)>
 		<COND (<FSET? .OBJ ,SURFACEBIT>
-		       <TELL "Sitting on the " D .OBJ " is: " CR>)
+		       <TELL "Sitting on the " D .OBJ " is:" CR>)
 		      (<FSET? .OBJ ,ACTORBIT>
-		       <TELL "The " D .OBJ " is holding: " CR>)
+		       <TELL "The " D .OBJ " is holding:" CR>)
 		      (T
 		       <TELL "The " D .OBJ " contains:" CR>)>)>>
 
