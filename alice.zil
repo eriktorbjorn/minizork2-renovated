@@ -576,7 +576,7 @@ oblong roof. To the east is a large hole; to the west a gaping chasm.")
 	(LDESC
 "The depressed area is filled with water. There is something hazy at the
 deepest part of the pool.")
-	(SYNONYM POOL)
+	(SYNONYM POOL WATER)
 	(ACTION POOL-F)>
 
 <ROUTINE POOL-F ()
