@@ -334,7 +334,7 @@ Release ">
 <ROUTINE V-EAT ()
 	 <COND (<FSET? ,PRSO ,FOODBIT>
 		<HIT-SPOT>)
-	       (<PRSO? ,GLOBAL-WATER>
+	       (<PRSO? ,GLOBAL-WATER, POOL>
 		<HIT-SPOT>)
 	       (<PRSO? ,WATER>
 		<COND (<NOT <HELD? <LOC ,PRSO>>>
@@ -347,7 +347,7 @@ Release ">
 "It's doubtful the " D ,PRSO " would agree with you." CR>)>>
 
 <ROUTINE HIT-SPOT ()
-	 <COND (<NOT <PRSO? ,GLOBAL-WATER>>
+	 <COND (<NOT <PRSO? ,GLOBAL-WATER ,POOL>>
 		<REMOVE-CAREFULLY ,PRSO>)>
 	 <TELL "That really hit the spot." CR>>
 

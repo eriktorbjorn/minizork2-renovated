@@ -580,9 +580,8 @@ deepest part of the pool.")
 	(ACTION POOL-F)>
 
 <ROUTINE POOL-F ()
-	 <COND (<VERB? DRINK>
-		<PERFORM ,V?DRINK ,WATER>
-		<RTRUE>)
+	 <COND (<VERB? DRINK-FROM>
+	        <HIT-SPOT>)
 	       (<VERB? LOOK-UNDER>
 		<TELL "You can't make out what's below the surface." CR>)
 	       (<VERB? ENTER>
