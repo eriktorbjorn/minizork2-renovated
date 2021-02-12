@@ -436,7 +436,6 @@ north is an exit.")
 	(SYNONYM BOOK BOOKS)
 	(ADJECTIVE WHITE)
 	(CAPACITY 2)
-	(SIZE 5)
 	(FLAGS READBIT TAKEBIT CONTBIT BURNBIT)
 	(TEXT
 "The book details the use of the so-called \"magic wand\". Apparently, these
