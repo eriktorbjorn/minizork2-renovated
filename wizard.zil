@@ -910,7 +910,7 @@ sits amid the sand and broken glass in the aquarium." CR>)>)
 <OBJECT SERPENT
 	(IN AQUARIUM)
 	(DESC "baby sea serpent")
-	(LDESC "There is a baby sea serpent swimming in the aquarium.")
+	(FDESC "There is a baby sea serpent swimming in the aquarium.")
 	(SYNONYM SERPENT SNAKE)
 	(ADJECTIVE BABY SEA)
 	(FLAGS ACTORBIT)
