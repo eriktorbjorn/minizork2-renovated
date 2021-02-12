@@ -409,11 +409,7 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 	        <DO-WALK .M>)
 	       (<FSET? ,PRSO ,VEHBIT>
 		<COND (<FSET? <LOC ,ADVENTURER> ,VEHBIT>
-		       <TELL ,LOOK-AROUND>)
-		      (T
-		       <RFALSE>)>)
-	       (<PRSO? ,WATER ,GLOBAL-WATER>
-		<RFALSE>)>>
+		       <TELL ,LOOK-AROUND>)>)>>
 
 <ROUTINE V-ENTER ()
 	 <COND (<FSET? ,PRSO ,VEHBIT>
