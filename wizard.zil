@@ -231,9 +231,7 @@ and peers at you from under his bushy eyebrows." CR>)>)>>
 			      <TELL
 "You get in the " D ,PRSO " but you fall out again" ,INVISIBLE-HAND>)>)
 		      (<EQUAL? ,SPELL? ,S-FLOAT>
-		       <COND (<VERB? DIAGNOSE WAIT>
-			      <RFALSE>)
-			     (<VERB? WALK>
+		       <COND (<VERB? WALK>
 			      <TELL
 "Your feet are nowhere near the ground." CR>)
 			     (<VERB? DROP>
