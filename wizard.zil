@@ -152,8 +152,6 @@ pointed at you!" CR>)>
 			      <TELL
 "The Wizard whispers a word beginning with \"F,\" and disappears." CR>)>
 		       <REMOVE ,WIZARD>
-		       <COND (<SET STR <GET ,SPELL-HINTS ,SPELL?>>
-			      <TELL .STR ,PERIOD-CR>)>
 		       <COND (<EQUAL? ,SPELL? ,S-FALL>
 			      <COND (<FSET? .WLOC ,VEHBIT>
 				     <TELL
@@ -176,11 +174,17 @@ pointed at you!" CR>)>
 				     <TELL ", leaving the " D .WLOC>)>
 			      <TELL ", stopping about five feet up." CR>)
 			     (<EQUAL? ,SPELL? ,S-FEEBLE>
+			      <TELL "All at once you feel very tired." CR>
 			      <SETG LOAD-ALLOWED 50>
 			      <COND (<SET F <FIRST? ,WINNER>>
 				     <TELL
 "You feel so weak, you drop the " D .F ,PERIOD-CR>
 				     <MOVE .F .WLOC>)>)
+			     (<EQUAL? ,SPELL? ,S-FREEZE>
+			      <TELL
+"Your limbs suddenly feel like stone. You can't move a muscle." CR>)
+			     (<EQUAL? ,SPELL? ,S-FERMENT>
+			      <TELL "You begin to feel lightheaded." CR>)
 			     (<EQUAL? ,SPELL? ,S-FUMBLE>
 			      <SETG FUMBLE-NUMBER 3>
 			      <SETG FUMBLE-PROB 25>
@@ -308,18 +312,6 @@ you intended going." CR CR>
 	<LTABLE
 "eeble" "umble" "reeze" "all" "erment" "loat" "ireproof" "ence"
 "antasize">>
-
-<GLOBAL SPELL-HINTS
-	<LTABLE
-"All at once you feel very tired"
-<>
-"Your limbs suddenly feel like stone. You can't move a muscle"
-<>
-"You begin to feel lightheaded"
-<>
-<>
-<>
-<>>>
 
 <GLOBAL SPELL-STOPS
 	<LTABLE
