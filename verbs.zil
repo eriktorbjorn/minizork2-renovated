@@ -104,24 +104,21 @@
 	       (T
 		<TELL "Failed." CR>)>>
 
+<GLOBAL RANKINGS
+	<TABLE "Amateur" "Junior" "Senior" "Master">>
+
 <ROUTINE V-SCORE ()
 	 <TELL
 "Your score is " N ,SCORE " (out of 400 points), in " N ,MOVES " move">
 	 <COND (<NOT <1? ,MOVES>>
 		<TELL "s">)>
 	 <TELL ". This score gives you the rank of ">
-	 <COND (<EQUAL? ,SCORE 400>
+	 <COND (<G? ,SCORE 399>
 		<TELL "Wizard">)
-	       (<G? ,SCORE 320>
-		<TELL "Master Adventurer">)
-	       (<G? ,SCORE 240>
-		<TELL "Senior Adventurer">)
-	       (<G? ,SCORE 160>
-		<TELL "Junior Adventurer">)
-	       (<G? ,SCORE 80>
-		<TELL "Amateur Adventurer">)
+	       (<L? ,SCORE 81>
+		<TELL "Beginner">)
 	       (T
-		<TELL "Beginner">)>
+		<TELL <GET ,RANKINGS </ <- ,SCORE 81> 80>> " Adventurer">)>
 	 <TELL ,PERIOD-CR>>
 
 <GLOBAL SCORE 0>
