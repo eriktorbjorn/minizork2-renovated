@@ -813,7 +813,7 @@ D ,PRSO ,PERIOD-CR>)>>
 
 <ROUTINE V-SWIM ()
 	 <TELL "Swimming isn't usually allowed in the ">
-	 <COND (<NOT <EQUAL? ,PRSO ,WATER ,GLOBAL-WATER>>
+	 <COND (<NOT <EQUAL? ,PRSO <> ,WATER ,GLOBAL-WATER>>
 		<TELL D ,PRSO ".">)
 	       (T
 		<TELL "dungeon.">)>
