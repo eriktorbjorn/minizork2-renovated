@@ -286,7 +286,9 @@ go out!" CR>)>>
 	(ACTION STREAM-F)>
 
 <ROUTINE STREAM-F ()
-	 <COND (<VERB? ENTER>
+	 <COND (<VERB? DRINK-FROM>
+		<HIT-SPOT>)
+	       (<VERB? ENTER>
 		<V-SWIM>)>>
 
 <OBJECT CHASM
