@@ -1178,7 +1178,7 @@ and everything goes black.">
 		<TELL
 "Perhaps you may be of use in gaining my freedom from this place. I return
 you to your foolish quest! Mayhap you will repay this favor in kind someday.\"
-The mist swirls, and you are returned to the world of life." CR>
+The mist swirls, and you are returned to the world of life." CR CR>
 		<SETG DEAD <>>
 		<GOTO ,INSIDE-THE-BARROW>)>>
 
