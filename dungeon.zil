@@ -192,8 +192,7 @@ is lost in gloom.">
 	(ACTION VIOLIN-F)>
 
 <ROUTINE VIOLIN-F ()
-	 <COND (<AND <VERB? PLAY>
-		     <EQUAL? ,PRSO ,VIOLIN>>
+	 <COND (<VERB? PLAY>
 	        <TELL "An offensive noise issues from the violin." CR>)>>
 
 <ROOM ROOM-8
