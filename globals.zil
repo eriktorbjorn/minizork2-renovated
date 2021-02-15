@@ -300,13 +300,12 @@ go out!" CR>)>>
 	(ACTION CHASM-F)>
 
 <ROUTINE CHASM-F ()
-	 <COND (<VERB? LEAP>
-		<JIGS-UP "You should have looked before you leaped.">)
-	       (<AND <VERB? PUT>
+	 <COND (<AND <VERB? PUT>
 		     <EQUAL? ,PRSI ,CHASM>>
 		<TELL "The " D ,PRSO " disappears into the chasm." CR>
 		<REMOVE-CAREFULLY ,PRSO>
-		<RTRUE>)>>
+		<RTRUE>)>
+	 <BRIDGE-F>>
 
 <OBJECT BRIDGE
 	(IN LOCAL-GLOBALS)
