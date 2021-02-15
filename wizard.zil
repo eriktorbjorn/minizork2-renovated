@@ -774,8 +774,7 @@ He seems chagrined to have to admit this." CR>
 	       <TELL "The demon laughs uproariously." CR>)
 	      (<AND <VERB? GIVE>
 		    <EQUAL? ,PRSI ,DEMON>>
-	       <COND (<AND <GETPT ,PRSO ,P?VALUE>
-			   <NOT <EQUAL? ,PRSO ,SWORD>>>
+	       <COND (<GETPT ,PRSO ,P?VALUE>
 		      <REMOVE-CAREFULLY ,PRSO>
 		      <SETG DEMON-HOARD <+ ,DEMON-HOARD 1>>
 		      <SETG SCORE <+ ,SCORE 2>>
