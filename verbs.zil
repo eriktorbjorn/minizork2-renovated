@@ -571,17 +571,12 @@ D ,PRSO ,PERIOD-CR>)>>
 <ROUTINE V-LAUNCH ()
 	 <TELL "You can't launch that by saying \"launch\"!" CR>>
 
-<ROUTINE V-LEAP ("AUX" TX S)
+<ROUTINE V-LEAP ("AUX" TX)
 	 <COND (,PRSO
 		<TELL "That would be a good trick." CR>)
-	       (<SET TX <GETPT ,HERE ,P?DOWN>>
-		<SET S <PTSIZE .TX>>
-		<COND (<OR <EQUAL? .S 2> ;NEXIT
-       			   <AND <EQUAL? .S 4> ;CEXIT
-				<NOT <VALUE <GETB .TX 1>>>>>
-		       <JIGS-UP "You should have looked before you leaped.">)
-		      (T
-		       <V-SKIP>)>)
+	       (<AND <SET TX <GETPT ,HERE ,P?DOWN>>
+		     <EQUAL? <PTSIZE .TX> ,NEXIT>>
+		<JIGS-UP "You should have looked before you leaped.">)
 	       (T
 		<V-SKIP>)>>
 
