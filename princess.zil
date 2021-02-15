@@ -106,7 +106,7 @@ here. A tea table adorns the center of the gazebo.")
 		      (T
 		       <TELL ,LOOK-AROUND>)>)
 	       (<AND <EQUAL? ,HERE ,GAZEBO>
-		     <VERB? LEAVE EXIT>>
+		     <VERB? DROP EXIT>>
 		<DO-WALK ,P?OUT>)>>
 
 <OBJECT GAZEBO-TABLE
