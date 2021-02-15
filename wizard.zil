@@ -641,21 +641,20 @@ In its center is a black circle.")
 	(CAPACITY 200)
 	(ACTION PENTAGRAM-F)>
 
-<ROUTINE PENTAGRAM-F ("OPTIONAL" (RARG ,M-BEG))
-	 <COND (<EQUAL? .RARG ,M-BEG>
-		<COND (<VERB? ENTER>
-		       <TELL "You are forced back by an invisible power." CR>)
-	              (<AND <VERB? PUT PUT-ON>
-			    <EQUAL? ,PRSO ,PALANTIR-4>>
-		       <REMOVE ,PALANTIR-4>
-		       <FCLEAR ,DEMON ,INVISIBLE>
-		       <MOVE ,DEMON ,PENTAGRAM-ROOM>
-		       <TELL
+<ROUTINE PENTAGRAM-F ()
+	 <COND (<VERB? ENTER>
+		<TELL "You are forced back by an invisible power." CR>)
+	       (<AND <VERB? PUT PUT-ON>
+		     <EQUAL? ,PRSO ,PALANTIR-4>>
+		<REMOVE ,PALANTIR-4>
+		<FCLEAR ,DEMON ,INVISIBLE>
+		<MOVE ,DEMON ,PENTAGRAM-ROOM>
+		<TELL
 "A chill wind blasts from the pentagram as a dim shape appears and resolves
 into a formidable-looking demon. He tests the walls of the pentagram
 experimentally, then sees you! \"Greetings, oh new master! Wouldst desire a
 service? For a pittance of wealth, I will gratify thy desires to the utmost
-limit of my powers!\" He grins vilely." CR>)>)>>
+limit of my powers!\" He grins vilely." CR>)>>
 
 <OBJECT DEMON
 	(SYNONYM DEVIL DEMON GENIE)
