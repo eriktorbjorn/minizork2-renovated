@@ -1166,14 +1166,14 @@ is an odd glow to the mist." CR>)
 		<COND (<IN? ,DEMON ,PENTAGRAM-ROOM>
 		       <TELL
 "The room is empty. A huge face looks down from outside and laughs
-sardonically. It doesn't look like you're getting out of this predicament!" CR>
+sardonically. It doesn't look like you're getting out of this predicament!">
 		       <FINISH>)>
 		<TELL
 "A huge and horrible face materializes out of the mist. \"">
 		<COND (<NOT <L? ,DEATHS 3>>
 		       <TELL
 "You again! You'll obviously be no help to me.\" The face disappears
-and everything goes black." CR>
+and everything goes black.">
 		       <FINISH>)>
 		<TELL
 "Perhaps you may be of use in gaining my freedom from this place. I return

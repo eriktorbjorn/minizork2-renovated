@@ -479,7 +479,7 @@ guarded by sinister statues, is visible far ahead.|
 |
 You have conquered the Wizard of Frobozz and become master of his domain,
 but the final challenge awaits! (The Zork Trilogy concludes with \"Zork III:
-The Dungeon Master\".)" CR CR>
+The Dungeon Master\".)">
 		       <FINISH>)
 		      (T
 		       <JIGS-UP

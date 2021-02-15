@@ -49,6 +49,8 @@
 		<TELL "You are empty-handed." CR>)>>
 
 <ROUTINE FINISH ("AUX" WRD)
+	 <CRLF>
+	 <CRLF>
 	 <V-SCORE>
 	 <REPEAT ()
 		 <CRLF>
