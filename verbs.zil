@@ -733,10 +733,7 @@ D ,PRSO ,PERIOD-CR>)>>
 		<TELL "Done." CR>)>>
 
 <ROUTINE V-PUT-ON ()
-	 <COND (<EQUAL? ,PRSI ,GROUND>
-		<PERFORM ,V?DROP ,PRSO>
-		<RTRUE>)
-	       (<FSET? ,PRSI ,SURFACEBIT>
+	 <COND (<FSET? ,PRSI ,SURFACEBIT>
 		<V-PUT>)
 	       (T
 		<TELL "There's no good surface on the " D ,PRSI ,PERIOD-CR>)>>
