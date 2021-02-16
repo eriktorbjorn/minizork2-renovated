@@ -207,7 +207,7 @@ easily. Another doorway leads northeast.")
       (NE TO MACHINE-ROOM)
       (DOWN "It's a long way down.")
       (VALUE 10)
-      (FLAGS RLANDBIT NONLANDBIT)
+      (FLAGS RLANDBIT NONLANDBIT ALICEBIT)
       (GLOBAL WELL ETCHINGS)
       (PSEUDO "CRACK" CRACK-PSEUDO)>
 
@@ -295,7 +295,7 @@ triangular button labelled, \"DANGER -- HIGH VOLTAGE.\" There are exits to the
 south and southwest.")
       (SOUTH TO DINGY-CLOSET)
       (SW TO TOP-OF-WELL)
-      (FLAGS RLANDBIT ONBIT)>
+      (FLAGS RLANDBIT ONBIT ALICEBIT)>
 
 <OBJECT TRIANGULAR-BUTTON
 	(IN MACHINE-ROOM)
@@ -328,7 +328,7 @@ south and southwest.")
 on the wall are the words \"Protected by the Frobozz Magic Alarm Company.\"")
       (OUT TO MACHINE-ROOM)
       (NORTH TO MACHINE-ROOM)
-      (FLAGS ONBIT RLANDBIT)>
+      (FLAGS ONBIT RLANDBIT ALICEBIT)>
 
 <OBJECT CAGE-OBJECT
 	(IN DINGY-CLOSET)
@@ -341,7 +341,7 @@ on the wall are the words \"Protected by the Frobozz Magic Alarm Company.\"")
       (IN ROOMS)
       (DESC "Cage")
       (LDESC "You are trapped in a solid steel cage.")
-      (FLAGS RLANDBIT ONBIT)>
+      (FLAGS RLANDBIT ONBIT ALICEBIT)>
 
 <GLOBAL CAGE-SOLVE-FLAG <>>
 
@@ -359,7 +359,7 @@ were indeed mad. To the east is a small hole (perhaps four inches high). A
 doorway leads west.")
       (EAST "Only a mouse could fit.")
       (WEST TO TOP-OF-WELL)
-      (FLAGS RLANDBIT ONBIT)
+      (FLAGS RLANDBIT ONBIT ALICEBIT)
       (PSEUDO "HOLE" ALICE-HOLE)>
 
 <ROUTINE ALICE-HOLE ()
@@ -521,9 +521,7 @@ rare candies." CR>)
 		<SET CAKE ,PRSO>)
 	       (T
 		<SET CAKE ,PRSI>)>
-	 <COND (<OR <EQUAL? ,HERE ,TEA-ROOM ,POSTS-ROOM ,POOL-ROOM>
-		    <EQUAL? ,HERE ,MACHINE-ROOM ,DINGY-CLOSET ,TOP-OF-WELL>
-		    <EQUAL? ,HERE ,CAGE>>
+	 <COND (<FSET? ,HERE ,ALICEBIT>
 	        <RFALSE>)
 	       (T
 	        <REMOVE .CAKE>
@@ -537,7 +535,7 @@ rare candies." CR>)
 oblong roof. To the east is a large hole; to the west a gaping chasm.")
       (EAST TO POOL-ROOM)
       (WEST "A chasm blocks your way.")
-      (FLAGS RLANDBIT ONBIT)
+      (FLAGS RLANDBIT ONBIT ALICEBIT)
       (VALUE 5)
       (GLOBAL CHASM)
       (ACTION POSTS-ROOM-F)>
@@ -562,7 +560,7 @@ oblong roof. To the east is a large hole; to the west a gaping chasm.")
       (LDESC "The far half of this room is depressed. The only exit is west.")
       (OUT TO POSTS-ROOM)
       (WEST TO POSTS-ROOM)
-      (FLAGS RLANDBIT)>
+      (FLAGS RLANDBIT ALICEBIT)>
 
 <OBJECT POOL
 	(IN POOL-ROOM)
