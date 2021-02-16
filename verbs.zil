@@ -629,7 +629,7 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 	       (T
 		<TELL "You can't move the " D ,PRSO ,PERIOD-CR>)>>
 
-<ROUTINE PRE-MUNG ()
+<ROUTINE V-MUNG ()
 	 <COND (<OR <NOT ,PRSI>
 		    <NOT <FSET? ,PRSI ,WEAPONBIT>>>
 		<TELL "Trying to destroy the " D ,PRSO " with ">
@@ -637,10 +637,8 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 		       <TELL "your bare hands">)
 		      (T
 		       <TELL "a " D ,PRSI>)>
-		<TELL " is futile." CR>)>>
-
-<ROUTINE V-MUNG ()
-	 <COND (<FSET? ,PRSO ,ACTORBIT>
+		<TELL " is futile." CR>)
+	       (<FSET? ,PRSO ,ACTORBIT>
 		<PERFORM ,V?ATTACK ,PRSO>
 		<RTRUE>)
 	       (T
