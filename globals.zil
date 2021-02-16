@@ -229,10 +229,6 @@ go out!" CR>)>>
 		<SETG P-CONT <>>
 		<SETG QUOTE-FLAG <>>
 		<TELL ,TALKING-TO-YOURSELF>)
-	       (<AND <VERB? GIVE>
-		     <EQUAL? ,PRSI ,ME>>
-		<PERFORM ,V?TAKE ,PRSO>
-		<RTRUE>)
 	       (<VERB? EAT>
 		<TELL "Auto-cannibalism is not the answer." CR>)
 	       (<VERB? ATTACK MUNG>
