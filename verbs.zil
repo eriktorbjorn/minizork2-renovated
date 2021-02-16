@@ -204,14 +204,9 @@ Release ">
 		<RTRUE>)
 	       (<FSET? ,PRSO ,BURNBIT>
 		<TELL "The " D ,PRSO " catches fire">
-		<COND (<OR <IN? ,PRSO ,WINNER>
-			   <IN? ,WINNER ,PRSO>>
-		       <TELL ". Unfortunately, you were ">
-		       <COND (<IN? ,WINNER ,PRSO>
-			      <TELL "in">)
-			     (T
-			      <TELL "holding">)>
-		       <JIGS-UP " it at the time.">)
+		<COND (<IN? ,PRSO ,WINNER>
+		       <JIGS-UP
+". Unfortunately, you were holding it at the time.">)
 		      (T
 		       <TELL " and is consumed." CR>)>
 		<REMOVE-CAREFULLY ,PRSO>)
@@ -267,12 +262,9 @@ Release ">
 		<TELL
 "The \"cutting edge\" of a " D ,PRSI " is inadequate." CR>)
 	       (<FSET? ,PRSO ,BURNBIT>
-		<COND (<IN? ,WINNER ,PRSO>
-		       <TELL "You're in it!" CR>)
-		      (T
-		       <REMOVE-CAREFULLY ,PRSO>
-		       <TELL
-"You skillfully slice the " D ,PRSO " into slivers, which blow away." CR>)>)
+		<REMOVE-CAREFULLY ,PRSO>
+		<TELL
+"You skillfully slice the " D ,PRSO " into slivers, which blow away." CR>)
 	       (T
 		<TELL "Strange concept, cutting the " D ,PRSO "...." CR>)>>
 
