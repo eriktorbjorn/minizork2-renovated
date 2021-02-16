@@ -27,3 +27,16 @@ and Oddly-angled rooms have been dropped completely, and the Wizard
 has lost a few of his spells.
 
 I think it still holds up pretty well, though.
+
+## Known bugs
+
+* If you fill the teapot with water, there are ways to empty the
+  teapot without even being near it. That's because ```WATER-F``` will
+  remove the ```WATER``` object in some cases.
+
+* Certain actions on the ```RECEPTACLE``` are handled by
+  ```BALLOON-F```. This only works if you are inside the balloon when
+  they happen. If, for instance, you put an object in the receptacle
+  from outside the balloon, that object will not get ```NDESCBIT```
+  like it should, and it's possible to put multiple objects into the
+  receptacle.
