@@ -51,9 +51,10 @@
 	 <COND (<ACCESSIBLE? ,LAMP>
 		<COND (<0? .TICK>
 		       <TELL
-"You'd better have more light than from the " D ,LAMP ,PERIOD-CR>)
+"You'd better have more light than from the " D ,LAMP>)
 		      (T
-		       <TELL "The lamp " <GET .TBL 1> ,PERIOD-CR>)>)>
+		       <TELL "The lamp " <GET .TBL 1>>)>
+		<TELL ,PERIOD-CR>)>
 	 <COND (<NOT <0? .TICK>>
 		<SETG LAMP-TABLE <REST .TBL 4>>)>>
 
