@@ -467,15 +467,13 @@ normal size)." CR CR>
 		      <TELL "\"." CR>)>)
 	      (<AND <VERB? EAT>
 		    <EQUAL? ,HERE ,TEA-ROOM ,POSTS-ROOM ,POOL-ROOM>>
+	       <REMOVE ,PRSO>
 	       <COND (<EQUAL? ,PRSO ,ORANGE-CAKE>
-		      <REMOVE ,PRSO>
     		      <JIGS-UP
 "You are blasted to smithereens (wherever they are).">)
 		     (<EQUAL? ,PRSO ,RED-CAKE>
-		      <REMOVE ,PRSO>
 		      <JIGS-UP "Taste: yum. Effect: massive dehydration.">)
-		     (<EQUAL? ,PRSO ,BLUE-CAKE>
-		      <REMOVE ,PRSO>
+		     (T ;<EQUAL? ,PRSO ,BLUE-CAKE>
 		      <TELL "The room shrinks." CR CR>
 		      <COND (<EQUAL? ,HERE ,POSTS-ROOM>
 			     <FCLEAR ,ROBOT ,INVISIBLE>
@@ -496,7 +494,7 @@ normal size)." CR CR>
 			    (T
 			     <JIGS-UP
 "The room is now too small to hold you, and the walls are tougher
-than your body." >)>)>)
+than your body.">)>)>)
 	      (<AND <VERB? THROW PUT>
 		    <EQUAL? ,PRSO ,ORANGE-CAKE>
 		    <EQUAL? ,HERE ,TEA-ROOM ,POSTS-ROOM ,POOL-ROOM>>
@@ -505,7 +503,7 @@ than your body." >)>)>)
 "You are blasted to smithereens (wherever they are).">)
 	      (<AND <VERB? THROW PUT>
 		    <EQUAL? ,PRSI ,POOL>>
-	       <COND (<EQUAL? ,PRSO ,BLUE-CAKE ,ORANGE-CAKE>
+	       <COND (<EQUAL? ,PRSO ,BLUE-CAKE>
 		      <TELL "\"Splash!\"" CR>
 		      <REMOVE ,PRSO>
 		      <RTRUE>)>
