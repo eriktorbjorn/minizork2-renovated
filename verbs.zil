@@ -1163,7 +1163,6 @@ long description (fdesc or ldesc), otherwise will print short."
 	 <GOTO ,DEAD-PALANTIR-1>
 	 <SETG P-CONT <>>
 	 <DRAGON-LEAVES>
-	 <DISABLE <INT I-MATCH>>
 	 <RFATAL>>
 
 <CONSTANT REXIT 0>

@@ -227,7 +227,9 @@ your local computer store for details.\"")
 <ROUTINE I-MATCH ()
 	 <FCLEAR ,MATCH ,FLAMEBIT>
 	 <FCLEAR ,MATCH ,ONBIT>
-	 <TELL "The match has gone out." CR>>
+	 <COND (<ACCESSIBLE? ,MATCH>
+		<TELL "The match has gone out." CR>
+		<NOW-DARK?>)>>
 
 <ROOM TOPIARY
       (IN ROOMS)
