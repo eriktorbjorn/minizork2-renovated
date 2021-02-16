@@ -191,7 +191,8 @@ c    W  E   L  L    y|
     	<COND (<AND <VERB? THROW PUT DROP>
 		    <FSET? ,PRSO ,TAKEBIT>>
 	       <MOVE ,PRSO ,CIRCULAR-ROOM>
-	       <TELL "The " D ,PRSO " is now at the bottom of the well." CR>)
+	       <TELL "The " D ,PRSO " is now at the bottom of the well." CR>
+	       <NOW-DARK?>)
 	      (<VERB? CLIMB CLIMB-DOWN>
 	       <TELL "You can't climb the well." CR>)>>
 
