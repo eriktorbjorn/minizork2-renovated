@@ -209,7 +209,8 @@ your local computer store for details.\"")
 		<FCLEAR ,MATCH ,FLAMEBIT>
 		<FCLEAR ,MATCH ,ONBIT>
 		<QUEUE I-MATCH 0>
-		<TELL "The match is out." CR>)
+		<TELL "The match is out." CR>
+		<NOW-DARK?>)
 	       (<VERB? COUNT>
 		<TELL "You have ">
 		<SET CNT <- ,MATCH-COUNT 1>>
