@@ -340,14 +340,9 @@ on the wall are the words \"Protected by the Frobozz Magic Alarm Company.\"")
       (IN ROOMS)
       (DESC "Cage")
       (LDESC "You are trapped in a solid steel cage.")
-      (FLAGS RLANDBIT ONBIT)
-      (ACTION CAGE-F)>
+      (FLAGS RLANDBIT ONBIT)>
 
 <GLOBAL CAGE-SOLVE-FLAG <>>
-
-<ROUTINE CAGE-F (RARG)
-	 <COND (,CAGE-SOLVE-FLAG
-		<SETG HERE ,DINGY-CLOSET>)>>
 
 <ROUTINE I-CAGE-DEATH ()
 	 <COND (<EQUAL? ,HERE ,DINGY-CLOSET ,CAGE>
