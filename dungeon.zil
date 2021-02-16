@@ -161,7 +161,7 @@ is lost in gloom.">
 	       (<AND ,CAROUSEL-ON
 		     <EQUAL? .RARG ,M-BEG>
 		     <VERB? WALK>
-		     <NOT <PRSO? ,P?UP ,P?DOWN>>>
+		     <GETPT ,HERE ,PRSO>>
 		<TELL
 "You're not sure which direction is which..." CR CR>
 		<COND (<OR <EQUAL? ,PRSO ,P?WEST>
