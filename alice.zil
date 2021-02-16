@@ -222,7 +222,7 @@ easily. Another doorway leads northeast.")
 	(FLAGS ACTORBIT CONTBIT OPENBIT)
 	(ACTION ROBOT-F)>
 
-<ROUTINE ROBOT-F ("OPTIONAL" (RARG ,M-OBJECT)) ;"RARG necesary?"
+<ROUTINE ROBOT-F ()
 	<COND (<EQUAL? ,WINNER ,ROBOT>
 	       <COND (<VERB? SGIVE>
 		      <RFALSE>)
