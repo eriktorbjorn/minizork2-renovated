@@ -2,7 +2,7 @@
 	        Mini-Zork II: The Wizard of Frobozz
 	(c) Copyright 1988 Infocom, Inc.  All Rights Reserved."
 
-<CONSTANT RELEASEID 9>
+<CONSTANT RELEASEID 10>
 <VERSION ZIP>
 
 <ORDER-TREE? REVERSE-DEFINED>
