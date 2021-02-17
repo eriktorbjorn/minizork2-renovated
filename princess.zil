@@ -603,19 +603,18 @@ through a wall." CR>)
 	       "in" GAZEBO "out">>
 
 <ROUTINE I-UNICORN ()
+	 <REMOVE ,PRINCESS>
 	 <COND (<EQUAL? ,HERE ,GAZEBO ,FORMAL-GARDEN>
 		<FCLEAR ,GOLD-KEY ,NDESCBIT>
 		<MOVE ,GOLD-KEY ,WINNER>
 		<SCORE-OBJ ,GOLD-KEY>
 		<PUTP ,GOLD-KEY ,P?ACTION 0>
-		<REMOVE ,PRINCESS>
 		<TELL
 "Shyly, a unicorn peeks out of the hedges and approaches the princess. Around
 its neck hangs a gold key. The princess takes the key and, smiling, hands it
 to you. \"It is the least I can do for one who rescued me from a fate I dare
 not contemplate.\" With that, she mounts the unicorn and rides away." CR>)
 	       (T
-		<REMOVE ,PRINCESS>
 		<RFALSE>)>>
 
 <ROOM STONE-BRIDGE
