@@ -424,7 +424,7 @@ north is an exit.")
 	(CAPACITY 2)
 	(SIZE 10)
 	(TEXT "This book is written in an unfamiliar tongue.")
-	(FLAGS READBIT TAKEBIT CONTBIT BURNBIT)
+	(FLAGS READBIT TAKEBIT TRYTAKEBIT CONTBIT BURNBIT)
 	(ACTION RANDOM-BOOK-F)>
 
 <OBJECT WHITE-BOOK
@@ -434,7 +434,7 @@ north is an exit.")
 	(SYNONYM BOOK BOOKS)
 	(ADJECTIVE WHITE)
 	(CAPACITY 2)
-	(FLAGS READBIT TAKEBIT CONTBIT BURNBIT)
+	(FLAGS READBIT TAKEBIT TRYTAKEBIT CONTBIT BURNBIT)
 	(TEXT
 "The book details the use of the so-called \"magic wand\". Apparently, these
 work by pointing them at the object to be ensorcelled, and then chanting the
@@ -456,7 +456,7 @@ appropriate magic word. (Amazing how credulous these ancients were.)")
 	(ADJECTIVE PURPLE)
 	(CAPACITY 2)
 	(SIZE 10)
-	(FLAGS READBIT TAKEBIT CONTBIT SEARCHBIT BURNBIT)
+	(FLAGS READBIT TAKEBIT TRYTAKEBIT CONTBIT SEARCHBIT BURNBIT)
 	(TEXT "This book is written in an unfamiliar tongue.")
 	(ACTION PURPLE-BOOK-F)>
 
