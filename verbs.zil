@@ -176,7 +176,7 @@ Release ">
 		<TELL "Fight a " D ,PRSO "!?!" CR>
 		<RTRUE>)>
 	 <COND (<NOT ,PRSI>
-		<COND (<IN? ,ADVENTURER ,SWORD>
+		<COND (<IN? ,SWORD ,ADVENTURER>
 		       <SETG PRSI ,SWORD>)
 		      (T
 		       <SETG PRSI ,HANDS>)>)>
