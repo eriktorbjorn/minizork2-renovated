@@ -511,10 +511,7 @@ and she appears to be in a trance.")
 
 <ROUTINE PRINCESS-F ("AUX" (DEM <INT I-PRINCESS>))
 	 <COND (<VERB? FOLLOW>
-		<COND (,PRFOLLOW
-		       <DO-WALK ,PRFOLLOW>)
-		      (T
-		       <TELL "You've lost track of her." CR>)>)
+		<TELL "You can't follow her until she leaves..." CR>)
 	       (<VERB? ATTACK MUNG RAPE>
 		<REMOVE ,PRINCESS>
 		<TELL
@@ -549,22 +546,19 @@ purposefully out of the lair." CR>)
 			     (<EQUAL? ,HERE ,LEDGE-IN-RAVINE>
 			      <TELL "ledge">)
 			     (T
-			      <TELL <GET ,PRDIRS <* ,PRCOUNT 4>>>)>
+			      <TELL <GET ,PRDIRS <* ,PRCOUNT 3>>>)>
 		       <TELL ,PERIOD-CR>)>)
 	       (<NOT ,PRINCESS-AWAKE>
 		<TELL "She's in a trance!" CR>)>>
 
 <ROUTINE I-PRINCESS ("AUX" (DEM <INT I-PRINCESS>) (OLDP <LOC ,PRINCESS>)
-		     (PC <* ,PRCOUNT 4>))
+		     (PC <* ,PRCOUNT 3>))
 	 <MOVE ,PRINCESS <GET ,PRDIRS <+ .PC 1>>>
-	 <SETG PRFOLLOW <>>
 	 <COND (<AND <IN? ,PRINCESS ,DARK-TUNNEL>
 		     <IN? ,ADVENTURER ,DEEP-FORD>>
 		<TELL
 "The princess touches the ravine wall and a section slides away, revealing
 a passage to the east. She enters it." CR>
-		<COND (<IN? ,WINNER .OLDP>
-		       <SETG PRFOLLOW <GET ,PRDIRS <+ .PC 3>>>)>
 		<SETG SECRET-DOOR T>)
 	       (<AND <IN? ,PRINCESS ,DARK-TUNNEL>
 		     <IN? ,WINNER ,DARK-TUNNEL>>
@@ -573,7 +567,6 @@ a passage to the east. She enters it." CR>
 "The princess appears from behind some rocks, as though she had walked
 through a wall." CR>)
 	       (<IN? ,WINNER .OLDP>
-		<SETG PRFOLLOW <GET ,PRDIRS <+ .PC 3>>>
 	        <COND (<EQUAL? .OLDP ,FORMAL-GARDEN>
 		       <TELL "The princess enters the gazebo." CR>)
 		      (<EQUAL? .OLDP ,LEDGE-IN-RAVINE>
@@ -603,15 +596,13 @@ through a wall." CR>)
 
 <GLOBAL PRCOUNT 0>
 
-<GLOBAL PRFOLLOW <>>
-
 <GLOBAL PRDIRS
-	<TABLE "south" DRAGON-ROOM "north" P?SOUTH
-	       "east" LEDGE-IN-RAVINE "west" P?EAST
-	       "south" DEEP-FORD "north" P?SOUTH
-	       "east" DARK-TUNNEL "west" P?EAST
-	       "southeast" FORMAL-GARDEN "north" P?SOUTH
-	       "in" GAZEBO "out" P?IN>>
+	<TABLE "south" DRAGON-ROOM "north"
+	       "east" LEDGE-IN-RAVINE "west"
+	       "south" DEEP-FORD "north"
+	       "east" DARK-TUNNEL "west"
+	       "southeast" FORMAL-GARDEN "north"
+	       "in" GAZEBO "out">>
 
 <ROUTINE I-UNICORN ()
 	 <COND (<EQUAL? ,HERE ,GAZEBO ,FORMAL-GARDEN>
