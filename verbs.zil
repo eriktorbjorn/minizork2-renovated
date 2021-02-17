@@ -469,6 +469,12 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 <ROUTINE V-FOLLOW ()
 	 <V-COUNT>>
 
+<ROUTINE PRE-GIVE ()
+	 <COND (<NOT <HELD? ,PRSO>>
+		<TELL 
+"That's easy for you to say since you don't even have the "
+D ,PRSO ,PERIOD-CR>)>>
+
 <ROUTINE V-GIVE ()
 	 <COND (<NOT <FSET? ,PRSI ,ACTORBIT>>
 		<TELL "You can't give a " D ,PRSO " to a " D ,PRSI "!" CR>)
@@ -688,6 +694,9 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 
 <ROUTINE V-PUSH ()
 	 <HACK-HACK "Pushing the ">>
+
+<ROUTINE PRE-PUT ()
+	 <PRE-GIVE>> ;"That's easy for you to say..."
 
 <ROUTINE V-PUT ()
 	 <COND (<AND <NOT <FSET? ,PRSI ,OPENBIT>>
