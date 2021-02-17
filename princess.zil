@@ -546,14 +546,14 @@ purposefully out of the lair." CR>)
 			     (<EQUAL? ,HERE ,LEDGE-IN-RAVINE>
 			      <TELL "ledge">)
 			     (T
-			      <TELL <GET ,PRDIRS <* ,PRCOUNT 3>>>)>
+			      <TELL <GET ,PRDIRS 0>>)>
 		       <TELL ,PERIOD-CR>)>)
 	       (<NOT ,PRINCESS-AWAKE>
 		<TELL "She's in a trance!" CR>)>>
 
 <ROUTINE I-PRINCESS ("AUX" (DEM <INT I-PRINCESS>) (OLDP <LOC ,PRINCESS>)
-		     (PC <* ,PRCOUNT 3>))
-	 <MOVE ,PRINCESS <GET ,PRDIRS <+ .PC 1>>>
+		     (TBL <VALUE PRDIRS>))
+	 <MOVE ,PRINCESS <GET .TBL 1>>
 	 <COND (<AND <IN? ,PRINCESS ,DARK-TUNNEL>
 		     <IN? ,ADVENTURER ,DEEP-FORD>>
 		<TELL
@@ -574,7 +574,7 @@ through a wall." CR>)
 "The princess climbs daintily down the rock face." CR>)
 		      (T
 		       <TELL "The princess walks ">
-		       <TELL <GET ,PRDIRS .PC>>
+		       <TELL <GET .TBL 0>>
 		       <TELL ". She glances back at you as she goes." CR>)>)
 	       (<IN? ,PRINCESS ,HERE>
 		<COND (<EQUAL? ,HERE ,GAZEBO>
@@ -583,18 +583,16 @@ through a wall." CR>)
 		       <TELL "The princess clambers down from the ledge." CR>)
 		      (T
 		       <TELL "The princess enters from the ">
-		       <TELL <GET ,PRDIRS <+ 2 .PC>>>
+		       <TELL <GET .TBL 2>>
 		       <TELL ". She seems surprised to see you." CR>)>)>
 	 <COND (<IN? ,PRINCESS ,GAZEBO>
 		<DISABLE .DEM>
 		<ENABLE <QUEUE I-UNICORN 6>>)
 	       (T
-		<SETG PRCOUNT <+ ,PRCOUNT 1>>
+		<SETG PRDIRS <REST .TBL 6>>
 		<ENABLE <QUEUE I-PRINCESS <COND (<PROB 75> 1)
 						(T 2)>>>)>
 	 <RTRUE>>
-
-<GLOBAL PRCOUNT 0>
 
 <GLOBAL PRDIRS
 	<TABLE "south" DRAGON-ROOM "north"
