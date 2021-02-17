@@ -241,14 +241,15 @@ expressed or implied.)\"")>
 	(ACTION BRAIDED-WIRE-F)>
 
 <ROUTINE BRAIDED-WIRE-F ()
-        <COND (<VERB? TAKE FIND EXAMINE>
-	       <BCONTENTS>)
-	      (<AND <VERB? TIE>
+        <COND (<AND <VERB? TIE>
 		    <EQUAL? ,PRSO ,BRAIDED-WIRE>
 		    <EQUAL? ,PRSI ,HOOK>>
-	       <SETG BALLOON-TIED ,PRSI>
 	       <DISABLE <INT I-BALLOON>>
-	       <TELL "The balloon is fastened to the hook." CR>)
+	       <TELL "The balloon is ">
+	       <COND (,BALLOON-TIED
+		      <TELL "already ">)>
+	       <TELL "fastened to the hook." CR>
+	       <SETG BALLOON-TIED T>)
 	      (<AND <VERB? UNTIE>
 	            <EQUAL? ,PRSO ,BRAIDED-WIRE>>
 	       <TELL "The wire is no">
@@ -257,7 +258,9 @@ expressed or implied.)\"")>
 		      <SETG BALLOON-TIED <>>
 	              <TELL "w unhooked." CR>)
 		     (T
-		      <TELL "t tied to anything." CR>)>)>>
+		      <TELL "t tied to anything." CR>)>)
+	      (T
+	       <BCONTENTS>)>>
 
 <OBJECT CLOTH-BAG
 	(IN BALLOON)
