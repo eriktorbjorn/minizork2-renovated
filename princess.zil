@@ -340,13 +340,7 @@ returns without the " D ,PRSO ,PERIOD-CR>)
 "The dragon politely swallows the bomb. A moment later, he belches and smoke
 curls from his nostrils." CR>)
 		      (T
-		       <TELL "The dragon refuses it." CR>)>)
-	       (<AND <VERB? WALK>
-		     <EQUAL? ,HERE ,DRAGON-ROOM>
-		     <EQUAL? ,PRSO ,P?NORTH>>
-		<SETG DRAGON-ANGER <+ ,DRAGON-ANGER 3>>
-		<TELL
-"The dragon puts out a claw and blocks your way." CR>)>>
+		       <TELL "The dragon refuses it." CR>)>)>>
 
 <ROUTINE DRAGON-DESC ()
 	 <TELL "A " D ,DRAGON " is ">
