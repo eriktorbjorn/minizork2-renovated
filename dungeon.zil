@@ -415,6 +415,8 @@ enthusiastically, almost blowing you over from the breeze it creates." CR>)
 		       <TELL
 "What an effect! He now has the strength of just one elephant, rather
 than ten!" CR>)>)
+	       (<VERB? DISENCHANT>
+		<RFALSE>)
 	       (<NOT ,CERBERUS-LEASHED>
 		<TELL "The three-headed dog snaps at you viciously!" CR>)
 	       (<AND ,CERBERUS-LEASHED
