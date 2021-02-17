@@ -514,7 +514,7 @@ by these magical wardens, and destroyed!">)>)>>
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
 "To the south, a stream runs through a narrow ravine. It looks as if you
-could scramble down to the stream. A smokey odor drifts in from the west. ">
+could scramble down to the stream. A smokey odor drifts in from the west.">
 		<P-DOOR "north" ,KEYHOLE-1>)
 	       (<NOT <VERB? LOOK>>
 		<PCHECK>
@@ -523,9 +523,10 @@ could scramble down to the stream. A smokey odor drifts in from the west. ">
 <ROUTINE P-DOOR (STR KEYHOLE)
 	<COND (,PLOOK-FLAG
 	       <SETG PLOOK-FLAG <>>
+	       <CRLF>
 	       <RFALSE>)>
 	<TELL
-"On the " .STR " side of the room is an oak door with a small barred window
+" On the " .STR " side of the room is an oak door with a small barred window
 and a formidable lock (with ">
 	<COND (<IN? ,KEY .KEYHOLE>
 	       <TELL "a " D ,KEY " in the ">)>
@@ -563,7 +564,7 @@ and a formidable lock (with ">
 	 <COND (<EQUAL? .RARG ,M-LOOK>
 		<TELL
 "The room is eerily lit by a red glow emanating from a crack in one wall.
-The light falls upon a dusty wooden table. ">
+The light falls upon a dusty wooden table.">
 		<P-DOOR "south" KEYHOLE-2>)
 	       (T
 		<PCHECK>
