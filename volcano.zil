@@ -464,7 +464,7 @@ appropriate magic word. (Amazing how credulous these ancients were.)")
 	 <COND (<AND <VERB? READ>
 		     <IN? ,STAMP ,PURPLE-BOOK>
 		     <NOT <FSET? ,PURPLE-BOOK ,OPENBIT>>>
-		<TELL <GETP ,PURPLE-BOOK ,P?TEXT> CR>
+		<V-READ>
 		<PERFORM ,V?OPEN ,PURPLE-BOOK>
 		<RTRUE>)
 	       (T
