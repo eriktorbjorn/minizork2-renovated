@@ -408,6 +408,7 @@ enthusiastically, almost blowing you over from the breeze it creates." CR>)
 	       (<VERB? ENCHANT>
 		<COND (<EQUAL? ,SPELL-USED ,W?FLOAT>
 		       <SETG SPELL-HANDLED? T>
+		       <SETG SPELL-VICTIM ,GLOBAL-CERBERUS>
 		       <TELL
 "The huge dog rises an inch off the ground, for a moment." CR>)
 		      (<EQUAL? ,SPELL-USED ,W?FEEBLE>
