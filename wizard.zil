@@ -415,7 +415,7 @@ visitors. To the south is a">
 		<COND (<FSET? ,WIZ-DOOR ,OPENBIT>
 		       <TELL "n open">)
 		      (T
-		       <TELL "battered (but very strong-looking)">)>
+		       <TELL " battered (but very strong-looking)">)>
 		<TELL " door. Mounted on the door is a ">
 		<COND (<NOT ,GUARDIAN-FED>
 		       <TELL "nast">)
