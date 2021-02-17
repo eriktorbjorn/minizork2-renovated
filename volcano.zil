@@ -109,28 +109,6 @@ attached to the basket and ">
 			      <TELL
 "You can't control the balloon this way." CR>
 			      <RTRUE>)>)
-		      (<AND <VERB? OPEN>
-			    ,BALLOON-INFLATED
-			    <EQUAL? ,PRSO ,RECEPTACLE>
-			    <FIRST? ,RECEPTACLE>>
-		       <FSET ,RECEPTACLE ,OPENBIT>
-		       <TELL
-"Opening it reveals a burning " D ,BALLOON-INFLATED ,PERIOD-CR>
-		       <RTRUE>)
-		      (<AND <VERB? TAKE>
-			    <EQUAL? ,BALLOON-INFLATED ,PRSO>>
-		       <TELL
-"You don't really want to hold a burning " D ,PRSO ,PERIOD-CR>
-		       <RTRUE>)
-		      (<AND <VERB? PUT>
-			    <EQUAL? ,PRSI ,RECEPTACLE>
-			    <FIRST? ,RECEPTACLE>>
-		       <TELL "The receptacle is already occupied." CR>
-		       <RTRUE>)
-		      (<AND <VERB? PUT>
-			    <EQUAL? ,PRSI ,RECEPTACLE>>
-		       <FSET ,PRSO ,NDESCBIT>
-		       <RFALSE>)
 		      (<VERB? INFLATE>
 		       <TELL
 "It takes more than words to inflate a balloon." CR>)>)>>
@@ -295,7 +273,44 @@ expressed or implied.)\"")>
 	(ADJECTIVE METAL)
 	(CAPACITY 6)
 	(FLAGS CONTBIT SEARCHBIT NDESCBIT)
-	(ACTION BCONTENTS)>
+	(CONTFCN RECEPTACLE-CONT)
+	(ACTION RECEPTACLE-F)>
+
+<ROUTINE RECEPTACLE-F ("AUX" OBJ)
+	 <COND (<VERB? EXAMINE>
+		<TELL "The receptacle is ">
+		<COND (<FSET? ,PRSO ,OPENBIT>
+		       <TELL "open." CR>)
+		      (T
+		       <TELL "closed." CR>)>)
+	       (<AND <VERB? LOOK-INSIDE>
+		     <SET OBJ <FIRST? ,PRSO>>
+		     <FIRST? ,PRSO>>
+		<FCLEAR .OBJ ,NDESCBIT>
+		<V-LOOK-INSIDE>
+		<FSET .OBJ ,NDESCBIT>)
+	       (<AND <VERB? OPEN>
+		     <NOT <FSET? ,PRSO ,OPENBIT>>
+		     ,BALLOON-INFLATED
+		     <FIRST? ,PRSO>>
+		<FSET ,PRSO ,OPENBIT>
+		<TELL
+"Opening it reveals a burning " D ,BALLOON-INFLATED ,PERIOD-CR>)
+	       (<AND <VERB? PUT>
+		     <PRSI? ,RECEPTACLE>>
+		<COND (<FIRST? ,PRSI>
+		       <TELL "The receptacle is already occupied." CR>)
+		      (T
+		       <FSET ,PRSO ,NDESCBIT>
+		       <RFALSE>)>)
+	       (T
+		<BCONTENTS>)>>
+
+<ROUTINE RECEPTACLE-CONT ()
+	 <COND (<AND <VERB? TAKE>
+		     <PRSO? ,BALLOON-INFLATED>>
+		<TELL
+"You don't really want to hold a burning " D ,PRSO ,PERIOD-CR>)>>
 
 <ROUTINE BCONTENTS ()
 	 <COND (<VERB? TAKE>
@@ -311,13 +326,6 @@ expressed or implied.)\"")>
 "The bag is enormous. You can't open it by hand." CR>)
 		      (T
 		       <TELL "It seems empty." CR>)>)
-	       (<AND <VERB? EXAMINE>
-		     <EQUAL? ,PRSO ,RECEPTACLE>>
-		<TELL "The receptacle is ">
-		<COND (<FSET? ,PRSO ,OPENBIT>
-		       <TELL "open." CR>)
-		      (T
-		       <TELL "closed." CR>)>)
 	       (<VERB? FIND EXAMINE>
 	        <TELL
 "The " D ,PRSO " is part of the basket. It may be manipulated
