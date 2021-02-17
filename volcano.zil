@@ -108,8 +108,9 @@ attached to the basket and ">
 			     (T
 			      <TELL
 "You can't control the balloon this way." CR>
-			      <RTRUE>)>)
-		      (<VERB? INFLATE>
+			      <RTRUE>)>)>)
+	       (<ZERO? .RARG>
+	        <COND (<VERB? INFLATE>
 		       <TELL
 "It takes more than words to inflate a balloon." CR>)>)>>
 
