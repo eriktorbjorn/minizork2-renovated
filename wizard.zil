@@ -870,7 +870,7 @@ the east is fitful light.")
 		<COND (<IN? ,DEAD-SERPENT ,HERE>
 		       <TELL "The aquarium is already broken!" CR>)
 		      (<BOMB? .OBJ>
-		       <DISABLE <INT I-FUSE>>)
+		       <I-FUSE>)
 		      (<OR <FSET? .OBJ ,WEAPONBIT>
 			   <G? <GETP .OBJ ,P?SIZE> 10>>
 		       <REMOVE ,SERPENT>
