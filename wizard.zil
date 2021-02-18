@@ -227,7 +227,9 @@ and peers at you from under his bushy eyebrows." CR>)>)>>
 					   (T
 				    	    <TELL
 "but regain your balance and avoid a fatal fall." CR>)>)>)
-			     (<VERB? ENTER>
+			     (<AND <VERB? ENTER>
+				   ,PRSO
+				   <FSET? ,PRSO ,VEHBIT>>
 			      <TELL
 "You get in the " D ,PRSO " but you fall out again" ,INVISIBLE-HAND>)>)
 		      (<EQUAL? ,SPELL? ,S-FLOAT>
