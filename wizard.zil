@@ -485,9 +485,9 @@ eyes bulge out. It hisses angrily." CR>)
 		       <TELL
 ,GREEDILY-DEVOURS "the sphere but then spits it out." CR>)
 		      (T
-		       <REMOVE ,PRSO>
 		       <TELL
-,GREEDILY-DEVOURS "the " D ,PRSO ,PERIOD-CR>)>)
+,GREEDILY-DEVOURS "the " D ,PRSO ,PERIOD-CR>
+		       <REMOVE-CAREFULLY ,PRSO>)>)
 	       (<VERB? ATTACK MUNG>
 		<TELL "The guardian seems impervious." CR>)>>
 
