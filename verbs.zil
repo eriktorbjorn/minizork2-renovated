@@ -998,7 +998,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 "DESCRIBE-OBJECT -- takes object and flag.  if flag is true will print a
 long description (fdesc or ldesc), otherwise will print short."
 
-<ROUTINE DESCRIBE-OBJECT (OBJ V? LEVEL "AUX" (STR <>))
+<ROUTINE DESCRIBE-OBJECT (OBJ V? LEVEL "AUX" (STR <>) (PERIOD? <>))
 	 <COND (<AND <0? .LEVEL>
 		     <APPLY <GETP .OBJ ,P?DESCFCN> ,M-OBJDESC>>
 		<RTRUE>)
@@ -1011,7 +1011,7 @@ long description (fdesc or ldesc), otherwise will print short."
 		<TELL "There is a " D .OBJ " here">
 		<COND (<FSET? .OBJ ,ONBIT>
 		       <TELL ,PROVIDING-LIGHT>)>
-		<TELL ".">)
+		<SET PERIOD? T>)
 	       (T
 		<TELL <GET ,INDENTS .LEVEL>>
 		<TELL "A " D .OBJ>
@@ -1020,6 +1020,8 @@ long description (fdesc or ldesc), otherwise will print short."
 	 <COND (<AND <EQUAL? .OBJ ,SPELL-VICTIM>
 		     <EQUAL? ,SPELL-USED ,W?FLOAT>>
 		<TELL " (floating in midair)">)>
+	 <COND (.PERIOD?
+		<TELL ".">)>
 	 <CRLF>
 	 <COND (<AND <SEE-INSIDE? .OBJ>
 		     <FIRST? .OBJ>>
