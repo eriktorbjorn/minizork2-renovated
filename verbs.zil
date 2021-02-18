@@ -684,8 +684,11 @@ D ,PRSO ,PERIOD-CR>)>>
 		       <TELL "The " D ,PRSI " is extinguished." CR>
 		       <COND (<EQUAL? ,PRSI ,BALLOON-INFLATED>
 			      <SETG BALLOON-INFLATED <>>)>
+		       <COND (<EQUAL? ,PRSI ,MATCH>
+			      <QUEUE I-MATCH 0>)>
 		       <FCLEAR ,PRSI ,ONBIT>
-		       <FCLEAR ,PRSI ,FLAMEBIT>)
+		       <FCLEAR ,PRSI ,FLAMEBIT>
+		       <NOW-DARK?>)
 	              (T
 		       <TELL
 "The water spills over the " D ,PRSI " and evaporates." CR>)>)
