@@ -413,6 +413,8 @@ doorway leads west.")
 		   <SET N <NEXT? .F>>
 		   <COND (<AND <NOT <EQUAL? .F ,ADVENTURER>>
 			       <FSET? .F ,TAKEBIT>>
+			  <COND (<FSET? .F ,TRYTAKEBIT>
+				 <FSET .F ,RLANDBIT>)>
 			  <FSET .F ,NONLANDBIT>
 			  <FSET .F ,TRYTAKEBIT>
 			  <MOVE .F ,POSTS-ROOM>)>
@@ -487,7 +489,9 @@ normal size)." CR CR>
 				<COND (<AND <NOT <EQUAL? .F ,ADVENTURER>>
 					    <FSET? .F ,TAKEBIT>>
 				       <FCLEAR .F ,NONLANDBIT>
-				       <FCLEAR .F ,TRYTAKEBIT>
+				       <COND (<NOT <FSET? .F ,RLANDBIT>>
+					      <FCLEAR .F ,TRYTAKEBIT>)>
+				       <FCLEAR .F ,RLANDBIT>
 				       <MOVE .F ,TEA-ROOM>)>
 				<SET F .N>>
 			     <GOTO ,TEA-ROOM>)
