@@ -722,7 +722,6 @@ D ,PRSO ,PERIOD-CR>)>>
 	       (T
 		<MOVE ,PRSO ,PRSI>
 		<FSET ,PRSO ,TOUCHBIT>
-		<SCORE-OBJ ,PRSO>
 		<TELL "Done." CR>)>>
 
 <ROUTINE V-PUT-ON ()
