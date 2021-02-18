@@ -853,6 +853,8 @@ the east is fitful light.")
 <ROUTINE AQUARIUM-F ("AUX" OBJ)
 	 <COND (<VERB? ENTER>
 		<DO-WALK ,P?IN>)
+	       (<VERB? OPEN CLOSE>
+		<TELL "The aquarium has no lid." CR>)
 	       (<AND <VERB? LOOK-INSIDE>
 		     <IN? ,SERPENT ,AQUARIUM>>
 		<TELL
