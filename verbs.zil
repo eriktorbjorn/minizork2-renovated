@@ -376,8 +376,8 @@ hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
 		      (<AND <EQUAL? ,SPELL-USED ,W?FRY>
 			    <FSET? ,PRSO ,TAKEBIT>>
 		       <SETG SPELL-HANDLED? T>
-		       <REMOVE-CAREFULLY ,PRSO>
-		       <TELL "The " D ,PRSO " goes up in a puff of smoke." CR>)
+		       <TELL "The " D ,PRSO " goes up in a puff of smoke." CR>
+		       <REMOVE-CAREFULLY ,PRSO>)
 		      (T
 		       <SETG SPELL-VICTIM <>>
 		       <TELL ,WAND-STOPS-GLOWING>)>)
