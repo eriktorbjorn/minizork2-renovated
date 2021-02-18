@@ -818,7 +818,8 @@ D ,PRSO ,PERIOD-CR>)>>
 		     <NOT <FSET? <LOC ,PRSO> ,OPENBIT>>>
 		<TELL "You can't reach into a closed container." CR>)
 	       (,PRSI
-		<COND (<PRSI? ,GROUND ,DOOR-KEEPER>
+		<COND (<OR <EQUAL? ,PRSI ,GROUND>
+		           <EQUAL? ,PRSO ,DOOR-KEEPER>>
 		       <SETG PRSI <>>
 		       <RFALSE>)
 		      (<NOT <EQUAL? ,PRSI <LOC ,PRSO>>>
