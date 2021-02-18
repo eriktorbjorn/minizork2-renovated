@@ -426,7 +426,7 @@ glacier. Thinking that another dragon has invaded his territory, he rears
 up to his full height and roars a challenge! The intruder responds! The
 dragon takes a deep breath and expels a massive gout of flame. It washes
 over the ice, which melts rapidly, sending out huge cloud of steam! When
-the steam dissipates, the glacier is gone, and so is the dragon.
+the steam dissipates, the glacier is gone, and so is the dragon.|
 |
 With the ice gone, you notice a passage leading west." CR>)
 		      (T
