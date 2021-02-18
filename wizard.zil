@@ -17,7 +17,7 @@
 "The Wizard seems surprised, much as you might be if a dog talked." CR>)
 	       (<AND <VERB? GIVE>
 		     <EQUAL? ,PRSI ,WIZARD>>
-		<REMOVE-CAREFULLY ,PRSO>
+		<REMOVE ,PRSO>
 		<COND (<BOMB? ,PRSO>
 		       <COND (<IN? ,DEMON ,PENTAGRAM-ROOM>
 			      <MOVE ,PRSO ,HERE>
