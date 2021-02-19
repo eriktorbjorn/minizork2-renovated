@@ -159,10 +159,7 @@ c    W  E   L  L    y|
 			    (T
 			     <TELL "The bucket descends and" ,STOPS>)>
 		      <SETG BUCKET-TOP-FLAG <>>
-		      <PASS-THE-BUCKET ,CIRCULAR-ROOM>)>)
-	      (<VERB? CLIMB-ON>
-	       <PERFORM ,V?ENTER ,PRSO>
-	       <RTRUE>)>>
+		      <PASS-THE-BUCKET ,CIRCULAR-ROOM>)>)>>
 
 <ROUTINE PASS-THE-BUCKET (R)
 	 <MOVE ,BUCKET .R>
