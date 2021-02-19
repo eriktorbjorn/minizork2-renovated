@@ -623,15 +623,10 @@ of explosives here is strictly prohibited!")>
 	       <TELL "The string starts to burn." CR>
 	       <ENABLE <QUEUE I-FUSE 2>>)>>
 
-<ROUTINE I-FUSE ("AUX" (BRICK-ROOM <LOC ,BRICK>) F)
+<ROUTINE I-FUSE ("AUX" BRICK-ROOM F)
 	 <COND (<IN? ,FUSE ,BRICK>
-		<REPEAT ()
-			<COND (<NOT .BRICK-ROOM>
-			       <RFALSE>)
-			      (<IN? .BRICK-ROOM ,ROOMS>
-			       <RETURN>)
-			      (T
-			       <SET BRICK-ROOM <LOC .BRICK-ROOM>>)>>
+		<COND (<NOT <SET BRICK-ROOM <META-LOC ,BRICK>>>
+		       <RFALSE>)>
 		<MOVE ,EXPLOSION .BRICK-ROOM>
 		<FCLEAR .BRICK-ROOM ,TOUCHBIT>
 		<COND (<EQUAL? .BRICK-ROOM ,HERE>
