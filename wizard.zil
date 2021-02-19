@@ -43,19 +43,24 @@ Both Wizard and flowers disappear." CR>)>)
 		       <ENABLE <QUEUE I-WIZARD 10>>
 		       <TELL "You suddenly cannot move." CR>)>)>>
 
+<ROUTINE PLUNGE-DOWN ()
+	 <COND (<EQUAL? ,HERE ,TOP-OF-WELL>
+		<JIGS-UP "You plunge down the well.">
+		<RTRUE>)
+	       (<AND <FSET? ,HERE ,NONLANDBIT>
+		     <NOT <EQUAL? ,HERE ,CIRCULAR-ROOM ,VOLCANO-BOTTOM>>>
+		<JIGS-UP "You plunge down the volcano.">
+		<RTRUE>)
+	       (T
+		<RFALSE>)>>
+
 <ROUTINE I-WIZARD ("AUX" CAST-PROB (PCNT 0) F (WLOC <LOC ,WINNER>) STR)
 	 <ENABLE <QUEUE I-WIZARD 4>>
 	 <COND (,DEAD
 		<RFALSE>)
 	       (,SPELL?
 		<COND (<EQUAL? ,SPELL? ,S-FLOAT>
-		       <COND (<EQUAL? ,HERE ,TOP-OF-WELL>
-			      <JIGS-UP "You plunge down the well.">
-			      <RTRUE>)
-			     (<AND <FSET? ,HERE ,NONLANDBIT>
-				   <NOT <EQUAL? ,HERE ,CIRCULAR-ROOM
-						      ,VOLCANO-BOTTOM>>>
-			      <JIGS-UP "You plunge down the volcano.">
+		       <COND (<PLUNGE-DOWN>
 			      <RTRUE>)>)
 		      (<EQUAL? ,SPELL? ,S-FEEBLE>
 		       <SETG LOAD-ALLOWED 100>)
@@ -156,16 +161,7 @@ pointed at you!" CR>)>
 			      <COND (<FSET? .WLOC ,VEHBIT>
 				     <TELL
 "You suddenly fall out of the " D .WLOC ,INVISIBLE-HAND>
-				     <COND (<EQUAL? ,HERE ,TOP-OF-WELL>
-					    <JIGS-UP
-"You plunge down the well.">)
-					   (<AND <FSET? ,HERE ,NONLANDBIT>
-						 <NOT <EQUAL? ,HERE
-							      ,VOLCANO-BOTTOM
-							      ,CIRCULAR-ROOM>>>
-					    <JIGS-UP
-"You plunge down the volcano.">)
-					   (T
+				     <COND (<NOT <PLUNGE-DOWN>>
 					    <MOVE ,WINNER ,HERE>)>)>)
 			     (<EQUAL? ,SPELL? ,S-FLOAT>
 			      <TELL "You slowly rise into the air">
