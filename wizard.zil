@@ -239,7 +239,7 @@ and peers at you from under his bushy eyebrows." CR>)>)>>
 			      <TELL
 "You're floating and can't reach it." CR>)>)
 		      (<EQUAL? ,SPELL? ,S-FREEZE>
-		       <COND (<VERB? DIAGNOSE WAIT>
+		       <COND (<VERB? DIAGNOSE WAIT QUIT SAVE RESTART RESTORE>
 			      <RFALSE>)
 			     (T
 			      <TELL
