@@ -1170,7 +1170,7 @@ long description (fdesc or ldesc), otherwise will print short."
 		 <COND (<NOT .F>
 			<RETURN>)>
 		 <SET N <NEXT? .F>>
-		 <COND (<GETP .F ,P?VALUE>
+		 <COND (<GETPT .F ,P?VALUE>
 			<MOVE .F ,CAROUSEL-ROOM>)
 		       (T
 			<MOVE .F ,GAZEBO>)>>
