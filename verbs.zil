@@ -325,7 +325,7 @@ Release ">
 <ROUTINE V-EAT ()
 	 <COND (<FSET? ,PRSO ,FOODBIT>
 		<HIT-SPOT>)
-	       (<PRSO? ,GLOBAL-WATER, POOL>
+	       (<PRSO? ,GLOBAL-WATER ,POOL>
 		<HIT-SPOT>)
 	       (<PRSO? ,WATER>
 		<COND (<NOT <HELD? <LOC ,PRSO>>>
