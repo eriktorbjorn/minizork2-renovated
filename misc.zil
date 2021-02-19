@@ -309,6 +309,10 @@
 		       <NOT <OR <FSET? .O ,TAKEBIT>
 				<FSET? .O ,TRYTAKEBIT>>>>>
 	      <AGAIN>)
+	     (<AND <EQUAL? ,P-GETFLAGS ,P-ALL>
+		   <VERB? DROP PUT PUT-ON GIVE SGIVE>
+		   <NOT <IN? .O ,WINNER>>>
+	      <AGAIN>)
 	     (ELSE
 	      <COND (<EQUAL? .OBJ1 ,IT>
 		     <PRINTD ,P-IT-OBJECT>)
