@@ -103,7 +103,8 @@ expectantly." CR>)>)>
 	 <COND (<AND <PROB 10>
 		     <NOT <EQUAL? ,HERE ,POSTS-ROOM ,POOL-ROOM>>>
 		<COND (<NOT ,LIT>
-		       <TELL ,MOVED-IN-DARK>)
+		       <TELL
+"You feel a rush of air as something moved nearby." CR>)
 		      (<FSET? ,HERE ,NONLANDBIT>
 		       <TELL
 "The Wizard appears, floating nonchalantly in the air beside you." CR>)
@@ -115,9 +116,7 @@ astrological signs, and has a long, unkempt beard." CR>)>
 		       <REMOVE ,WIZARD>
 		       <COND (,LIT
 			      <TELL
-"The Wizard notices the Black Crystal, and hastily vanishes." CR>)
-			     (T
-			      <TELL ,MOVED-IN-DARK>)>
+"The Wizard notices the Black Crystal, and hastily vanishes." CR>)>
 		       <RTRUE>)
 		      (<PROB 20>
 		       <REMOVE ,WIZARD>

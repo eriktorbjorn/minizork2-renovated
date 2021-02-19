@@ -459,8 +459,6 @@ go out!" CR>)>>
 
 <GLOBAL DEMON-GONE "The demon is gone for a moment. ">
 
-<GLOBAL MOVED-IN-DARK "You feel a rush of air as something moved nearby.|">
-
 <GLOBAL STRANGE-VISION
 "As you peer into the sphere, a strange vision takes shape">
 
