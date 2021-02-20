@@ -43,7 +43,3 @@ Just to name a few:
   won't work as intended. Perhaps this should be changed to
   $DISENCHANT to mark it as something internal? (You could still use
   it, but not by mistake.)
-
-* "PUT *object* IN KEYHOLE" will respond "It already is!" if the door
-  isn't locked. That's because the action is interpreted as "UNLOCK
-  DOOR WITH *object*".

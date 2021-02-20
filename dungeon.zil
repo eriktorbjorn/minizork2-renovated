@@ -673,9 +673,11 @@ The light falls upon a dusty wooden table.">
 "There is a faint thud behind the door." CR>)
 			     (T
 			      <TELL "The " D ,PRSO " doesn't fit." CR>)>)
-		      (T
+		      (<NOT ,PUNLOCK-FLAG>
 		       <PERFORM ,V?UNLOCK ,PDOOR ,PRSO>
-		       <RTRUE>)>)>>
+		       <RTRUE>)
+		      (T
+		       <TELL "That" <PICK-ONE ,HO-HUM> ,PERIOD-CR>)>)>>
 
 <OBJECT KEY
 	(IN KEYHOLE-2)
