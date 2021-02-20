@@ -19,14 +19,18 @@ to bring the total back to 400.
 Making it small enough to fit in the memory of a C64, along with its
 interpreter? Well... that's a different matter!
 
-## Differences
+## Differences compared to the full game
 
-Compared to the full game, the map and some of the puzzles have been
-simplified and much of the text has been shortened. The Bank of Zork
-and Oddly-angled rooms have been dropped completely, and the Wizard
-has lost a few of his spells.
+Just to name a few:
 
-I think it still holds up pretty well, though.
+* Much of the text has been cut.
+
+* The map and some of the puzzles have been simplified. The Bank of
+  Zork and the Oddly-angled rooms have been dropped completely.
+
+* The Wizard has lost a few spells, namely Fear, Filch and Fierce.
+
+* The sword does not glow when there is danger nearby.
 
 ## Known bugs
 
