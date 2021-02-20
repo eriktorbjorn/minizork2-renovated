@@ -985,7 +985,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 		    <G? ,VERBOSITY 0>
 		    <EQUAL? ,HERE ,ZORK3>>
 		<COND (<AND .V? <APPLY <GETP ,HERE ,P?ACTION> ,M-LOOK>>
-		       T) ;"Was RTRUE, but that blocks the ballon description"
+		       T) ;"Was RTRUE, but that blocks the balloon description"
 		      (<AND .V? <SET STR <GETP ,HERE ,P?LDESC>>>
 		       <TELL .STR CR>)
 		      (T
