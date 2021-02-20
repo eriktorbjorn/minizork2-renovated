@@ -10,6 +10,7 @@
 210217	10	60160	54082
 210218	11	60154	54068
 210219	12	60140	54032
+210220	13	60258	54160
 
 (Size with abbreviations is approximate, since ZILF 0.9 doesn't always
 generate the same abbreviations on consecutive runs.)
