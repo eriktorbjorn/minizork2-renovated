@@ -293,7 +293,7 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 		<TELL
 "The menhir floats majestically into the air. The passage beyond
 beckons invitingly." CR>)
-	       (<AND <VERB? DISENCHANT>
+	       (<AND <VERB? $DISENCHANT>
 		     <EQUAL? ,SPELL-USED ,W?FLOAT>>
 		<SETG MENHIR-POSITION <>>
 		<COND (<EQUAL? ,HERE ,MENHIR-ROOM ,KENNEL>
@@ -415,7 +415,7 @@ enthusiastically, almost blowing you over from the breeze it creates." CR>)
 		       <TELL
 "What an effect! He now has the strength of just one elephant, rather
 than ten!" CR>)>)
-	       (<VERB? DISENCHANT>
+	       (<VERB? $DISENCHANT>
 		<RFALSE>)
 	       (<NOT ,CERBERUS-LEASHED>
 		<TELL "The three-headed dog snaps at you viciously!" CR>)

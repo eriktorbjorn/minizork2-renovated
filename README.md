@@ -37,9 +37,3 @@ Just to name a few:
 * If you fill the teapot with water, there are ways to empty the
   teapot without even being near it. That's because ```WATER-F``` will
   remove the ```WATER``` object in some cases.
-
-* The game uses the DISENCHANT action when spells time out. Since this
-  is a regular verb you can type "DISENCHANT *object*" yourself, but it
-  won't work as intended. Perhaps this should be changed to
-  $DISENCHANT to mark it as something internal? (You could still use
-  it, but not by mistake.)
