@@ -287,7 +287,7 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 		<TELL "The menhir weighs many tons!" CR>)
 	       (<VERB? READ>
 		<TELL "\"F\"" CR>)
-	       (<AND <VERB? ENCHANT>
+	       (<AND <VERB? $ENCHANT>
 		     <EQUAL? ,SPELL-USED ,W?FLOAT>>
 		<SETG MENHIR-POSITION 3>
 		<TELL
@@ -328,10 +328,10 @@ dinosaur). The only exit is northeast.")
 		<JIGS-UP
 "Bad idea. As you unfasten the collar, the monster rends you
 into little doggy biscuits.">)
-	       (<AND <VERB? ENCHANT>
+	       (<AND <VERB? $ENCHANT>
 		     <EQUAL? ,SPELL-USED ,W?FLOAT>
 		     ,CERBERUS-LEASHED>
-		<PERFORM ,V?ENCHANT ,CERBERUS>
+		<PERFORM ,V?$ENCHANT ,CERBERUS>
 		<RTRUE>)>>
 
 <ROOM CERBERUS-ROOM
@@ -405,7 +405,7 @@ of dust which blows away into nothing." CR>)
 		<TELL
 "All three heads begin licking your face, and its huge tail wags
 enthusiastically, almost blowing you over from the breeze it creates." CR>)
-	       (<VERB? ENCHANT>
+	       (<VERB? $ENCHANT>
 		<COND (<EQUAL? ,SPELL-USED ,W?FLOAT>
 		       <SETG SPELL-HANDLED? T>
 		       <SETG SPELL-VICTIM ,GLOBAL-CERBERUS>

@@ -346,11 +346,14 @@ Release ">
 	 <TELL "That really hit the spot." CR>>
 
 <ROUTINE V-ENCHANT ()
+	 <TELL "You must be more specific." CR>>
+
+<ROUTINE V-$ENCHANT ()
 	 <COND (,WAND-ON
 		<SETG SPELL-VICTIM ,WAND-ON>)>
 	 <COND (,SPELL-VICTIM
 		<COND (<NOT ,SPELL-USED>
-		       <TELL "You must be more specific." CR>
+		       <V-ENCHANT>
 		       <RTRUE>)>
 		<COND (<OR <EQUAL? ,SPELL-USED ,W?FEEBLE ,W?FUMBLE>
 			  <EQUAL? ,SPELL-USED ,W?FREEZE ,W?FALL ,W?FERMENT>
@@ -504,7 +507,7 @@ D ,PRSO ,PERIOD-CR>)>>
 		<TELL "The wand glows very brightly for a moment." CR>
 		<ENABLE <QUEUE I-SPELL <+ 10 <RANDOM 10>>>>
 		<SETG WAND-ON <>>
-		<PERFORM ,V?ENCHANT ,SPELL-VICTIM>)
+		<PERFORM ,V?$ENCHANT ,SPELL-VICTIM>)
 	       (T
 		<TELL
 "The incantation echoes back faintly, but nothing else happens." CR>)>
