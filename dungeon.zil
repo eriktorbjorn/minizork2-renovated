@@ -399,7 +399,7 @@ of dust which blows away into nothing." CR>)
 		<SETG CERBERUS-LEASHED T>
 		<MOVE ,COLLAR ,CERBERUS>
 		<FSET ,COLLAR ,NDESCBIT>
-		<FSET ,COLLAR ,TRYTAKEBIT>
+		<FCLEAR ,COLLAR ,TAKEBIT>
 		<PUTP ,CERBERUS ,P?LDESC
 "A grinning, three-headed dog, wearing a huge collar, wags its tail here.">
 		<TELL
