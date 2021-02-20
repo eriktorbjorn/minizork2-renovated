@@ -44,12 +44,6 @@ Just to name a few:
   $DISENCHANT to mark it as something internal? (You could still use
   it, but not by mistake.)
 
-* The Float spell prevents you from picking up objects in the room.
-  But it does not prevent you from picking up objects inside
-  containers in the room (e.g. objects on the table in the Gazebo),
-  nor does it prevent implicit taking (e.g. reading an object on the
-  ground).
-
 * "PUT *object* IN KEYHOLE" will respond "It already is!" if the door
   isn't locked. That's because the action is interpreted as "UNLOCK
   DOOR WITH *object*".

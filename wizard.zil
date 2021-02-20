@@ -235,7 +235,7 @@ and peers at you from under his bushy eyebrows." CR>)>)>>
 			      <MOVE ,PRSO ,HERE>
 			      <TELL "The " D ,PRSO " drops to the ground." CR>)
 			     (<AND <VERB? TAKE>
-				   <IN? ,PRSO ,HERE>>
+				   <NOT <HELD? ,PRSO>>>
 			      <TELL
 "You're floating and can't reach it." CR>)>)
 		      (<EQUAL? ,SPELL? ,S-FREEZE>

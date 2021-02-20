@@ -1338,7 +1338,8 @@ OOPS-INBUF, leaving the appropriate pointers in AGAIN-LEXV"
 			       <COND (<AND <NOT <HELD? .OBJ>>
 					   <NOT <EQUAL? .OBJ ,HANDS ,ME>>>
 				      <SETG PRSO .OBJ>
-				      <COND (<FSET? .OBJ ,TRYTAKEBIT>
+				      <COND (<OR <FSET? .OBJ ,TRYTAKEBIT>
+						 <EQUAL? ,SPELL? ,S-FLOAT>>
 					     <SET TAKEN T>)
 					    (<NOT <EQUAL? ,WINNER ,ADVENTURER>>
 					     <SET TAKEN <>>)
