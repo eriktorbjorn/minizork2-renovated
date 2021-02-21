@@ -35,5 +35,5 @@ Just to name a few:
 ## Known bugs
 
 * If you fill the teapot with water, there are ways to empty the
-  teapot without even being near it. That's because ```WATER-F``` will
-  remove the ```WATER``` object in some cases.
+  teapot without even being near it. That's because `WATER-F` will
+  remove the `WATER` object in some cases.
