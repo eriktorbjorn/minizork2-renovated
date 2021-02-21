@@ -231,7 +231,8 @@ go out!" CR>)>>
 		<TELL ,TALKING-TO-YOURSELF>)
 	       (<VERB? EAT>
 		<TELL "Auto-cannibalism is not the answer." CR>)
-	       (<VERB? ATTACK MUNG>
+	       (<AND <VERB? ATTACK MUNG>
+		     <EQUAL? ,PRSO ,ME>>
 		<JIGS-UP "Poof, you're dead!">)
 	       (<VERB? TAKE>
 		<TELL "How romantic!" CR>)>>
