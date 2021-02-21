@@ -45,7 +45,7 @@ cone of the volcano. The only exit is east.")
 		       <TELL "The cloth bag is inflated and ">
 		       <COND (<FSET? ,RECEPTACLE ,OPENBIT>
 			      <TELL
-"a " D ,BALLOON-INFLATED " is burning in the">)
+A ,BALLOON-INFLATED " is burning in the">)
 			     (T
 			      <TELL "smoke leaks out of the closed">)>
 		       <TELL " receptacle">)
@@ -57,7 +57,7 @@ basket is a metal receptacle which is ">
 			      <TELL "open">
 			      <SET RC <FIRST? ,RECEPTACLE>>
 			      <COND (.RC
-				     <TELL ". A " D .RC " is ">
+				     <TELL ". " CA .RC " is ">
 				     <COND (<EQUAL? ,BALLOON-INFLATED .RC>
 					    <TELL "burning">)
 					   (T

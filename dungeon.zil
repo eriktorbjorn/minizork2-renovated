@@ -109,7 +109,7 @@ north a dim cavern.")
 	(LDESC "An Elvish sword of great antiquity is here.")
 	(SYNONYM SWORD BLADE)
 	(ADJECTIVE ELVISH OLD ANTIQUE)
-	(FLAGS TAKEBIT WEAPONBIT TRYTAKEBIT)
+	(FLAGS TAKEBIT WEAPONBIT TRYTAKEBIT VOWELBIT)
 	(SIZE 30)>
 
 <GLOBAL SECRET-DOOR <>>
@@ -259,10 +259,10 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 
 <OBJECT GLOBAL-MENHIR
 	(IN LOCAL-GLOBALS)
-	(DESC "huge menhir")
+	(DESC "enormous menhir")
 	(SYNONYM MENHIR ROCK STONE)
 	(ADJECTIVE LARGE HUGE HEAVY ENORMOUS)
-	(FLAGS NDESCBIT READBIT)
+	(FLAGS NDESCBIT READBIT VOWELBIT)
 	(ACTION GLOBAL-MENHIR-F)>
 
 <ROUTINE GLOBAL-MENHIR-F ()
@@ -270,10 +270,10 @@ produced menhirs (standing stones). Obvious passages lead north and south." CR>
 
 <OBJECT MENHIR
 	(IN LOCAL-GLOBALS)
-	(DESC "huge menhir")
+	(DESC "enormous menhir")
 	(SYNONYM MENHIR ROCK STONE F)
 	(ADJECTIVE LARGE HUGE HEAVY ENORMOUS)
-	(FLAGS NDESCBIT READBIT)
+	(FLAGS NDESCBIT READBIT VOWELBIT)
 	(TEXT "The menhir is carved with an ornate letter \"F\".")
 	(ACTION MENHIR-F)>
 
@@ -532,12 +532,12 @@ could scramble down to the stream. A smokey odor drifts in from the west.">
 " On the " .STR " side of the room is an oak door with a small barred window
 and a formidable lock (with ">
 	<COND (<IN? ,KEY .KEYHOLE>
-	       <TELL "a " D ,KEY " in the ">)>
+	       <TELL A ,KEY " in the ">)>
 	<TELL "keyhole).">
 	<COND (,MUD-FLAG
 	       <TELL " " ,PLACE-MAT-VISIBLE>
 	       <COND (,MATOBJ
-		      <TELL " Lying on the place mat is a " D ,MATOBJ ".">)>)>
+		      <TELL " Lying on the place mat is " A ,MATOBJ ".">)>)>
 	<CRLF>>
 
 <ROUTINE PCHECK ()

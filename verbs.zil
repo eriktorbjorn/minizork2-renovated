@@ -173,18 +173,18 @@ Release ">
 
 <ROUTINE V-ATTACK ()
 	 <COND (<NOT <FSET? ,PRSO ,ACTORBIT>>
-		<TELL "Fight a " D ,PRSO "!?!" CR>
+		<TELL "Fight " A ,PRSO "!?!" CR>
 		<RTRUE>)>
 	 <COND (<NOT ,PRSI>
 		<COND (<IN? ,SWORD ,ADVENTURER>
 		       <SETG PRSI ,SWORD>)
 		      (T
 		       <SETG PRSI ,HANDS>)>)>
-	 <TELL "Trying to attack a " D ,PRSO " with ">
+	 <TELL "Trying to attack " A ,PRSO " with ">
 	 <COND (<PRSI? ,HANDS>
 		<TELL "your bare hands">)
 	       (T
-		<TELL "a " D ,PRSI>)>
+		<TELL A ,PRSI>)>
 	 <TELL " is suicidal." CR>>
 
 <ROUTINE V-BLAST ()
@@ -196,7 +196,7 @@ Release ">
 	       (<FLAMING? ,PRSI>
 	        <RFALSE>)
 	       (T
-	        <TELL "With a " D ,PRSI "??!?" CR>)>>
+	        <TELL "With " A ,PRSI "??!?" CR>)>>
 
 <ROUTINE V-BURN ()
 	 <COND (<EQUAL? <LOC ,PRSO> ,RECEPTACLE>
@@ -211,7 +211,7 @@ Release ">
 		       <TELL " and is consumed." CR>)>
 		<REMOVE-CAREFULLY ,PRSO>)
 	       (T
-		<TELL "You can't burn a " D ,PRSO ,PERIOD-CR>)>>
+		<TELL "You can't burn " A ,PRSO ,PERIOD-CR>)>>
 
 <ROUTINE V-CLIMB-DOWN ()
 	 <DO-WALK ,P?DOWN>>
@@ -235,7 +235,7 @@ Release ">
 	 	       <TELL ,ALREADY>)>)
 	       (<OR <FSET? ,PRSO ,SURFACEBIT>
 		    <NOT <FSET? ,PRSO ,CONTBIT>>>
-		<TELL "You can't close a " D ,PRSO ,PERIOD-CR>)
+		<TELL "You can't close " A ,PRSO ,PERIOD-CR>)
 	       (<FSET? ,PRSO ,OPENBIT>
 		<FCLEAR ,PRSO ,OPENBIT>
 		<TELL "Closed." CR>
@@ -260,7 +260,7 @@ Release ">
 		<PERFORM ,V?ATTACK ,PRSO ,PRSI>)
 	       (<NOT <FSET? ,PRSI ,WEAPONBIT>>
 		<TELL
-"The \"cutting edge\" of a " D ,PRSI " is inadequate." CR>)
+"The \"cutting edge\" of " A ,PRSI " is inadequate." CR>)
 	       (<FSET? ,PRSO ,BURNBIT>
 		<REMOVE-CAREFULLY ,PRSO>
 		<TELL
@@ -363,7 +363,7 @@ Release ">
 			     (T
 			      <TELL
 "That might have done something, but it's
-hard to tell with a " D ,PRSO ,PERIOD-CR>)>)
+hard to tell with " A ,PRSO ,PERIOD-CR>)>)
 		      (<EQUAL? ,SPELL-USED ,W?FUDGE>
 		       <TELL "An odor of chocolate permeates the room." CR>)
 		      (<EQUAL? ,SPELL-USED ,W?FLUORESCE>
@@ -483,7 +483,7 @@ D ,PRSO ,PERIOD-CR>)>>
 
 <ROUTINE V-GIVE ()
 	 <COND (<NOT <FSET? ,PRSI ,ACTORBIT>>
-		<TELL "You can't give a " D ,PRSO " to a " D ,PRSI "!" CR>)
+		<TELL "You can't give " A ,PRSO " to " A ,PRSI "!" CR>)
 	       (T
 		<TELL "The " D ,PRSI " refuses it politely." CR>)>>
 
@@ -494,7 +494,7 @@ D ,PRSO ,PERIOD-CR>)>>
 "The " D ,PRSO " bows his head to you in greeting." CR>)
 		      (T
 		       <TELL
-"Only schizophrenics say \"Hello\" to a " D ,PRSO ,PERIOD-CR>)>)
+"Only schizophrenics say \"Hello\" to " A ,PRSO ,PERIOD-CR>)>)
 	       (T
 		<TELL "Goodbye." CR>)>>
 
@@ -536,7 +536,7 @@ D ,PRSO ,PERIOD-CR>)>>
 	 <COND (<FSET? ,PRSO ,DOORBIT>
 		<TELL "Nobody's home." CR>)
 	       (T
-		<TELL "Why knock on a " D ,PRSO "?" CR>)>>
+		<TELL "Why knock on " A ,PRSO "?" CR>)>>
 
 <ROUTINE V-LAMP-OFF ()
 	 <COND (<FSET? ,PRSO ,LIGHTBIT>
@@ -614,7 +614,7 @@ D ,PRSO ,PERIOD-CR>)>>
 		      (T
 		       <TELL "The " D ,PRSO ,IS-CLOSED>)>)
 	       (T
-		<TELL "You can't look inside a " D ,PRSO ,PERIOD-CR>)>>
+		<TELL "You can't look inside " A ,PRSO ,PERIOD-CR>)>>
 
 <ROUTINE V-LOOK-UNDER ()
 	 <TELL ,THERE-IS-NOTHING "but dust there." CR>>
@@ -623,7 +623,7 @@ D ,PRSO ,PERIOD-CR>)>>
 	 <HACK-HACK "Playing in this way with the ">>
 
 <ROUTINE V-MELT ()
-	 <TELL "You can't melt a " D ,PRSO ,PERIOD-CR>>
+	 <TELL "You can't melt " A ,PRSO ,PERIOD-CR>>
 
 <ROUTINE V-MOVE ()
 	 <COND (<HELD? ,PRSO>
@@ -640,7 +640,7 @@ D ,PRSO ,PERIOD-CR>)>>
 		<COND (<NOT ,PRSI>
 		       <TELL "your bare hands">)
 		      (T
-		       <TELL "a " D ,PRSI>)>
+		       <TELL A ,PRSI>)>
 		<TELL " is futile." CR>)
 	       (<FSET? ,PRSO ,ACTORBIT>
 		<PERFORM ,V?ATTACK ,PRSO>
@@ -675,7 +675,7 @@ D ,PRSO ,PERIOD-CR>)>>
 		       <FSET ,PRSO ,OPENBIT>
 		       <TELL "The " D ,PRSO " opens." CR>)>)
 	       (T
-		<TELL "You can't open a " D ,PRSO ,PERIOD-CR>)>>
+		<TELL "You can't open " A ,PRSO ,PERIOD-CR>)>>
 
 <ROUTINE V-PICK ()
 	 <TELL "You can't pick that." CR>>
@@ -754,7 +754,7 @@ D ,PRSO ,PERIOD-CR>)>>
 
 <ROUTINE V-READ ()
 	 <COND (<NOT <FSET? ,PRSO ,READBIT>>
-		<TELL "How does one read a " D ,PRSO "?" CR>)
+		<TELL "How does one read " A ,PRSO "?" CR>)
 	       (T
 		<TELL <GETP ,PRSO ,P?TEXT> CR>)>>
 
@@ -790,7 +790,7 @@ D ,PRSO ,PERIOD-CR>)>>
 	 <TELL "Wheeeeeeee!!!" CR>>
 
 <ROUTINE V-SMELL ()
-	 <TELL "It smells like a " D ,PRSO ,PERIOD-CR>>
+	 <TELL "It smells like " A ,PRSO ,PERIOD-CR>>
 
 <ROUTINE V-STAND ()
 	 <COND (<FSET? <LOC ,WINNER> ,VEHBIT>
@@ -1020,13 +1020,13 @@ long description (fdesc or ldesc), otherwise will print short."
 			 <SET STR <GETP .OBJ ,P?LDESC>>>>
 		<TELL .STR>)
 	       (<0? .LEVEL>
-		<TELL "There is a " D .OBJ " here">
+		<TELL "There is " A .OBJ " here">
 		<COND (<FSET? .OBJ ,ONBIT>
 		       <TELL ,PROVIDING-LIGHT>)>
 		<SET PERIOD? T>)
 	       (T
 		<TELL <GET ,INDENTS .LEVEL>>
-		<TELL "A " D .OBJ>
+		<TELL CA .OBJ>
 		<COND (<FSET? .OBJ ,ONBIT>
 		       <TELL ,PROVIDING-LIGHT>)>)>
 	 <COND (<AND <EQUAL? .OBJ ,SPELL-VICTIM>
@@ -1049,7 +1049,7 @@ long description (fdesc or ldesc), otherwise will print short."
 			       <TELL ", ">
 			       <COND (<NOT .N>
 				      <TELL "and ">)>)>
-			<TELL "a " D .F>
+			<TELL A .F>
 			<COND (<AND <NOT .IT?>
 				    <NOT .TWO?>>
 			       <SET IT? .F>)
@@ -1211,7 +1211,7 @@ long description (fdesc or ldesc), otherwise will print short."
 	 <COND (<AND <FSET? ,HERE ,RLANDBIT>
 		     .VEH?
 		     <NOT <FSET? .RM ,NONLANDBIT>>>
-		<TELL "You can't go there in a " D .WLOC ,PERIOD-CR>
+		<TELL "You can't go there in " A .WLOC ,PERIOD-CR>
 		<RFALSE>)
 	       (T
 		<COND (.VEH?

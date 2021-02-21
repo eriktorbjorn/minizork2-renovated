@@ -152,7 +152,7 @@ been reported sharpening their (slavering) fangs..." CR>)>>
 	       (<AND <VERB? TAKE MOVE> ,MATOBJ>
 		<MOVE ,MATOBJ ,HERE>
 		<TELL
-"As the place mat is moved, a " D ,MATOBJ " falls from it to the floor." CR>
+"As the place mat is moved, " A ,MATOBJ " falls from it to the floor." CR>
 		<SETG MATOBJ <>>
 		<SETG MUD-FLAG <>>
 		<RTRUE>)>>
@@ -343,7 +343,7 @@ curls from his nostrils." CR>)
 		       <TELL "The dragon refuses it." CR>)>)>>
 
 <ROUTINE DRAGON-DESC ()
-	 <TELL "A " D ,DRAGON " is ">
+	 <TELL CA ,DRAGON " is ">
 	 <COND (<IN? ,DRAGON ,DRAGON-ROOM>
 		<TELL "blocking the north exit. Smoke curls from his nostrils">)
 	       (T

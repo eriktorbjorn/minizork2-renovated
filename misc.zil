@@ -34,6 +34,12 @@
 					      (<OR <=? .P "NUM">
 						   <=? .P "N">>
 					       <MAPRET <FORM PRINTN .O>>)
+					      (<OR <=? .P "A">
+						   <=? .P "AN">>
+					       <MAPRET <FORM PRINTA .O>>)
+					      (<OR <=? .P "CA">
+						   <=? .P "CAN">>
+					       <MAPRET <FORM PRINTA .O T>>)
 					      (<OR <=? .P "CHAR">
 						   <=? .P "CHR">
 						   <=? .P "C">>
@@ -48,8 +54,14 @@
 				 <MAPRET <FORM PRINT .E>>)
 				(ELSE <ERROR UNKNOWN-TYPE .E>)>>>>>
 
-;<ROUTINE PRINTA (O)
-	 <TELL "a " D .O>>
+<ROUTINE PRINTA (O "OPT" (UPPER? <>))
+	 <COND (.UPPER?
+		<TELL "A">)
+	       (T
+		<TELL "a">)>
+	 <COND (<FSET? .O ,VOWELBIT>
+		<TELL "n">)>
+	 <TELL " " D .O>>
 
 <DEFMAC VERB? ("ARGS" ATMS)
 	<MULTIFROB PRSA .ATMS>>

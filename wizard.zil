@@ -751,7 +751,7 @@ the smoke clears, leaving no trace of the Wizard but his wand." CR>
 "The demon crushes you with his enormous hand.">)
 			    (T
 			     <TELL 
-"\"I know no way to kill a " D ,PRSO ".\"" CR>)>)
+"\"I know no way to kill " A ,PRSO ".\"" CR>)>)
 		     (<VERB? FIND EXAMINE>
 		      <TELL "\"I am not permitted to ">
 		      <COND (<VERB? FIND>
@@ -841,7 +841,7 @@ the east is fitful light.")
 	(LDESC "Filling the northern half of the room is a huge aquarium.")
 	(SYNONYM AQUARIUM GLASS)
 	(ADJECTIVE HUGE)
-	(FLAGS OPENBIT CONTBIT)
+	(FLAGS OPENBIT CONTBIT VOWELBIT)
 	(CAPACITY 200)
 	(ACTION AQUARIUM-F)>
 
@@ -1056,7 +1056,7 @@ look into it..." CR>)>>
 		<TELL ,ONLY-DARKNESS>)
 	       (<NOT <IN? .L ,ROOMS>>
 		<COND (<FSET? .L ,OPENBIT>
-		       <TELL "You see the inside of a " D .L ,PERIOD-CR>)
+		       <TELL "You see the inside of " A .L ,PERIOD-CR>)
 		      (T
 		       <TELL ,ONLY-DARKNESS>)>)
 	       (T
