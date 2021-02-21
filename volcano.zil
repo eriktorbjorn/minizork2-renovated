@@ -627,7 +627,7 @@ of explosives here is strictly prohibited!")>
 	 <COND (<IN? ,FUSE ,BRICK>
 		<COND (<NOT <SET BRICK-ROOM <META-LOC ,BRICK>>>
 		       <RFALSE>)>
-		<MOVE ,EXPLOSION .BRICK-ROOM>
+		<FSET .BRICK-ROOM ,RMUNGBIT>
 		<FCLEAR .BRICK-ROOM ,TOUCHBIT>
 		<COND (<EQUAL? .BRICK-ROOM ,HERE>
 		       <JIGS-UP ,OTHER-PROPERTIES>)
@@ -657,7 +657,7 @@ of explosives here is strictly prohibited!")>
 	      (T
 	       <RFALSE>)>>
 
-<OBJECT EXPLOSION
+;<OBJECT EXPLOSION
 	(DESC "debris from an explosion")
 	(LDESC
 "The room is cluttered with debris from an explosion. The walls seem ready

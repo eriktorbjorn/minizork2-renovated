@@ -994,14 +994,18 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 		    <G? ,VERBOSITY 0>
 		    <EQUAL? ,HERE ,ZORK3>>
 		<COND (<AND .V? <APPLY <GETP ,HERE ,P?ACTION> ,M-LOOK>>
-		       T) ;"Was RTRUE, but that blocks the balloon description"
+		       T) ;"Was RTRUE but that blocks subsequent descriptions."
 		      (<AND .V? <SET STR <GETP ,HERE ,P?LDESC>>>
 		       <TELL .STR CR>)
 		      (T
 		       <APPLY <GETP ,HERE ,P?ACTION> ,M-FLASH>)>
 		<COND (<AND <NOT <EQUAL? ,HERE .AV>>
 			    <FSET? .AV ,VEHBIT>>
-		       <APPLY <GETP .AV ,P?ACTION> ,M-LOOK>)>)>>
+		       <APPLY <GETP .AV ,P?ACTION> ,M-LOOK>)>
+		<COND (<AND .V? <FSET? ,HERE ,RMUNGBIT>>
+		       <TELL
+"The room is cluttered with debris from an explosion. The walls seem ready
+to collapse." CR>)>)>>
 
 <ROUTINE DESCRIBE-OBJECTS ("OPTIONAL" (V? <>))
 	<COND (<FIRST? ,HERE>
