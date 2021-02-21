@@ -705,7 +705,10 @@ D ,PRSO ,PERIOD-CR>)>>
 	 <HACK-HACK "Pushing the ">>
 
 <ROUTINE PRE-PUT ()
-	 <PRE-GIVE>> ;"That's easy for you to say..."
+	 <COND (<EQUAL? ,PRSO ,SERPENT>
+		<RFALSE>)     ;"Handled by SERPENT-F"
+	       (T
+		<PRE-GIVE>)>> ;"That's easy for you to say..."
 
 <ROUTINE V-PUT ()
 	 <COND (<AND <NOT <FSET? ,PRSI ,OPENBIT>>

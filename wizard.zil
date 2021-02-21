@@ -911,7 +911,7 @@ sits amid the sand and broken glass in the aquarium." CR>)>)
 doesn't want to crash into the aquarium wall, and contents himself with
 splashing you with water." CR>)
 	       (<AND <VERB? PUT>
-		     <EQUAL? ,PRSI ,SERPENT>> ;"Was PRSO. Why?"
+		     <EQUAL? ,PRSO ,SERPENT>>
 		<TELL "Impossible!" CR>)
 	       (<VERB? TAKE GIVE>
 		<JIGS-UP "He takes you instead. \"Uurrp!\"">)>>
