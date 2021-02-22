@@ -343,7 +343,7 @@ curls from his nostrils." CR>)
 		       <TELL "The dragon refuses it." CR>)>)>>
 
 <ROUTINE DRAGON-DESC ()
-	 <TELL CA ,DRAGON " is ">
+	 <TELL "A huge red dragon is ">
 	 <COND (<IN? ,DRAGON ,DRAGON-ROOM>
 		<TELL "blocking the north exit. Smoke curls from his nostrils">)
 	       (T
