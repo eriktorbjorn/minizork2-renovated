@@ -496,7 +496,7 @@ go out!" CR>)>>
 
 <GLOBAL GREEDILY-DEVOURS "The guardian greedily devours ">
 
-<GLOBAL NOTHING-HAPPENS "Nothing happens">
+<GLOBAL NOTHING-HAPPENS "Nothing happens.|">
 
 <GLOBAL TALKING-TO-YOURSELF
 "Talking to yourself is a sign of impending mental collapse.|">
