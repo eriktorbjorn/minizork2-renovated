@@ -1,23 +1,35 @@
-# Mini-Zork II
+# Mini-Zork II - The Wizard of Frobozz
 
 ## Background
 
-The only interactive fiction that Infocom ever released for
-casette-based systems was a stripped-down version of Zork I, known as
-Mini-Zork I. It appears to have been a second attempt, because an
-earlier, and quite buggy, version exists.
+A typical Infocom game clocks in at about 75-127 KB. This is much too
+big to fit in the memory of an 8-bit computer, particularly since you
+also need space for the interpreter itself. That meant you needed a
+floppy drive, but those were quite expensive in the early 80s.
 
-I was not, however, aware that there existed a Mini-Zork II. As it
-turns out, the game was *almost* completed, with only a couple of
-completely game-breaking bugs. This is my attempt at restoring it to
-working condition.
+There were at least two different attempts at making a stripped down
+version of Zork I, in 1984 and 1987 respectively. There was also a
+stripped-down version of Zork II made in 1987.
 
-I have fixed all the bugs I've come across (including some that are
-still present in the full game!) and made some changes to the scoring
-to bring the total back to 400.
+All of these are complete games, but the 1984 version of Zork I is
+*very* buggy. Zork II is in much better shape, but still has
+game-breaking bugs. Only the 1987 versio of Zork I was ever released.
+This is known as Mini-Zork I.
 
-Making it small enough to fit in the memory of a C64, along with its
-interpreter? Well... that's a different matter!
+In 2019 the Infocom source code was leaked to the Internet by Jason
+Scott, of Internet Archive fame. This included the source code for the
+Mini-Zorks.
+
+This project is my attempt at turning Mini-Zork II into a playable
+game that can be compiled with Jesse McGrew's
+[ZILF](http://www.zilf.io) compiler. I have fixed several bugs (some
+of which still appear in the full version of the game!), removed some
+unused code and rewritten some of it to make it more compact. I have
+not cut out any more of the gameplay, so ideally these changes should
+be almost invisible to the player.
+
+However, while this is not an official Infocom game, it's still
+Infocom source code, and I assert no rights whatsoever to it.
 
 ## Differences compared to the full game
 
