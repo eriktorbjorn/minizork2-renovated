@@ -274,8 +274,8 @@
 			  <SET V <>>)>)
 		  (T
 		   <SETG P-NOT-HERE 0>
-		   <SETG P-MULT <>>
-		   <COND (<G? .NUM 1> <SETG P-MULT T>)>
+		   ;<SETG P-MULT <>>
+		   ;<COND (<G? .NUM 1> <SETG P-MULT T>)>
 		   <SET TMP <>>
 		   <REPEAT ()
 			   <COND (<G? <SET CNT <+ .CNT 1>> .NUM>
@@ -354,7 +354,7 @@
 			  QUIT RESTART SCORE SCRIPT UNSCRIPT RESTORE> T)
 		  (T <SET V <CLOCKER>>)>)>>
  
-<GLOBAL P-MULT <>>
+;<GLOBAL P-MULT <>>
 
 <GLOBAL P-NOT-HERE 0>
 
