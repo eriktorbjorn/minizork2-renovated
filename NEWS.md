@@ -6,6 +6,25 @@ the final game.
 
 # Release 14 / Serial number ??????
 
+* The debris from the explosion is now just a text, not a proper
+  object. Since the only synonym for the object was KREBF (some sort
+  of in-joke, since it's also a spell name in Enchanter?), this seems
+  like a small loss given the space it saves.
+
+* **KILL _object_ WITH ME** no longer kills you.
+
+* The game now implements `VOWELBIT`, so that the sword is listed as
+  "An elvish sword" rather than "A elvish sword".
+
+* **New bug fixed: The syntax for the `PUT` action now allows you to
+  put objects that you aren't carrying, though it's almost always
+  disallowed by a pre-action. The exception is **PUT SERPENT IN
+  _object_** that I had previously changed. Judging by the full game's
+  response ("Impossible for many reasons."), it wasn't a mistake as I
+  first thought.**
+
+* **OPEN BUCKET** is now handled the same way as **CLOSE BUCKET**.
+
 # Release 13 / Serial number 210220
 
 * The *Fry* spell no longer works on the dog collar after you put it
