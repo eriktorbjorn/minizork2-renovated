@@ -442,7 +442,7 @@ appropriate magic word. (Amazing how credulous these ancients were.)")
 	(ACTION RANDOM-BOOK-F)>
 
 <ROUTINE RANDOM-BOOK-F ()
-	 <COND (<VERB? TAKE MOVE PUT>
+	 <COND (<VERB? TAKE MOVE PUT OPEN>
 		<FSET ,WHITE-BOOK ,TOUCHBIT>
 		<FSET ,PURPLE-BOOK ,TOUCHBIT>
 		<FSET ,BLUE-BOOK ,TOUCHBIT>
