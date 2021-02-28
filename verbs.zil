@@ -4,18 +4,22 @@
 
 "Verb Functions for Game Commands"
 
-<GLOBAL VERBOSITY 1> ;"0 = superbrief, 1 = brief, 2 = verbose"
+<GLOBAL VERBOSE <>>
+<GLOBAL SUPER-BRIEF <>>
+<GDECL (VERBOSE SUPER-BRIEF) <OR ATOM FALSE>>
 
 <ROUTINE V-VERBOSE ()
-	 <SETG VERBOSITY 2>
+	 <SETG VERBOSE T>
+	 <SETG SUPER-BRIEF <>>
 	 <TELL "Maximum verbosity." CR>>
 
 <ROUTINE V-BRIEF ()
-	 <SETG VERBOSITY 1>
+	 <SETG VERBOSE <>>
+	 <SETG SUPER-BRIEF <>>
 	 <TELL "Brief descriptions." CR>>
 
 <ROUTINE V-SUPER-BRIEF ()
-	 <SETG VERBOSITY 0>
+	 <SETG SUPER-BRIEF T>
 	 <TELL "Superbrief descriptions." CR>>
 
 <ROUTINE V-DIAGNOSE ()
@@ -977,7 +981,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 
 <ROUTINE DESCRIBE-ROOM ("OPTIONAL" (LOOK? <>) "AUX" V? STR AV)
 	 <SET AV <LOC ,WINNER>>
-	 <SET V? <OR .LOOK? <EQUAL? ,VERBOSITY 2>>>
+	 <SET V? <OR .LOOK? ,VERBOSE>>
 	 <COND (<NOT ,LIT>
 		<TELL
 "It is pitch black. You are likely to be eaten by a grue." CR>
@@ -991,7 +995,7 @@ your neck, justice being swift and merciful in" ,GUE-NAME>
 		       <TELL ", in the " D .AV>)>
 		<CRLF>)>
 	 <COND (<OR .LOOK?
-		    <G? ,VERBOSITY 0>
+		    <NOT ,SUPER-BRIEF>
 		    <EQUAL? ,HERE ,ZORK3>>
 		<COND (<AND .V? <APPLY <GETP ,HERE ,P?ACTION> ,M-LOOK>>
 		       T) ;"Was RTRUE but that blocks subsequent descriptions."
@@ -1009,7 +1013,7 @@ to collapse." CR>)>)>>
 
 <ROUTINE DESCRIBE-OBJECTS ("OPTIONAL" (V? <>))
 	<COND (<FIRST? ,HERE>
-	       <PRINT-CONT ,HERE <SET V? <OR .V? <EQUAL? ,VERBOSITY 2>>> -1>)>>
+	       <PRINT-CONT ,HERE <SET V? <OR .V? ,VERBOSE>> -1>)>>
 
 "DESCRIBE-OBJECT -- takes object and flag.  if flag is true will print a
 long description (fdesc or ldesc), otherwise will print short."
@@ -1248,7 +1252,7 @@ long description (fdesc or ldesc), otherwise will print short."
 			    <EQUAL? ,WINNER ,ADVENTURER>>
 		       <DESCRIBE-ROOM>
 		       <COND (<AND ,LIT
-				   <G? ,VERBOSITY 0>>
+				   <NOT ,SUPER-BRIEF>>
 			      <DESCRIBE-OBJECTS>)>)>
 		<RTRUE>)>>
 

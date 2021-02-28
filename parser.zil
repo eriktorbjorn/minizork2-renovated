@@ -131,14 +131,13 @@
 	<COND (,RESERVE-PTR
 	       <SET PTR ,RESERVE-PTR>
 	       <STUFF ,RESERVE-LEXV ,P-LEXV>
-	       <COND (<AND <G? ,VERBOSITY 0>
-			   <EQUAL? ,ADVENTURER ,WINNER>>
+	       <COND (<AND <NOT ,SUPER-BRIEF> <EQUAL? ,ADVENTURER ,WINNER>>
 		      <CRLF>)>
 	       <SETG RESERVE-PTR <>>
 	       <SETG P-CONT <>>)
 	      (,P-CONT
 	       <SET PTR ,P-CONT>
-	       <COND (<AND <G? ,VERBOSITY 0>
+	       <COND (<AND <NOT ,SUPER-BRIEF>
 			   <EQUAL? ,ADVENTURER ,WINNER>
 			   <NOT <VERB? SAY>>>
 		      <CRLF>)>
@@ -149,8 +148,7 @@
 	       <COND (<NOT <FSET? <LOC ,WINNER> ,VEHBIT>>
 		      <SETG HERE <LOC ,WINNER>>)>
 	       <SETG LIT <LIT? ,HERE>>
-	       <COND (<G? ,VERBOSITY 0>
-		      <CRLF>)>
+	       <COND (<NOT ,SUPER-BRIEF> <CRLF>)>
 	       <TELL ">">
 	       <READ ,P-INBUF ,P-LEXV>)>
 	<SETG P-LEN <GETB ,P-LEXV ,P-LEXWORDS>>
