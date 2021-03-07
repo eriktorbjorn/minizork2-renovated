@@ -496,7 +496,7 @@ appropriate magic word. (Amazing how credulous these ancients were.)")
 		       <TELL "large">)>
 		<TELL
 " ledge high in the volcano. There is a small opening to the south">
-		<COND (<AND <NOT ,DUSTY-ROOM-NOT-COLLAPSED>
+		<COND (<AND <NOT ,DUSTY-ROOM-FLAG>
 			    <EQUAL? ,HERE ,WIDE-LEDGE>>
 		       <TELL " which is blocked by rubble">)>
 		<TELL ". Imbedded in the rock is a small hook." CR>)>>
@@ -505,9 +505,9 @@ appropriate magic word. (Amazing how credulous these ancients were.)")
       (IN ROOMS)
       (DESC "Wide Ledge")
       (DOWN "It's a long way down.")
-      (SOUTH TO DUSTY-ROOM IF DUSTY-ROOM-NOT-COLLAPSED ELSE
+      (SOUTH TO DUSTY-ROOM IF DUSTY-ROOM-FLAG ELSE
 "The opening is blocked by rubble.")
-      (IN TO DUSTY-ROOM IF DUSTY-ROOM-NOT-COLLAPSED ELSE
+      (IN TO DUSTY-ROOM IF DUSTY-ROOM-FLAG ELSE
 "The opening is blocked by rubble.")
       (FLAGS RLANDBIT NONLANDBIT)
       (GLOBAL HOOK)
@@ -668,10 +668,10 @@ to collapse.")
 "Now you've done it. It seems that the brick is an explosive and you have been
 blown to bits.">
 
-<GLOBAL DUSTY-ROOM-NOT-COLLAPSED T>
+<GLOBAL DUSTY-ROOM-FLAG T>
 
 <ROUTINE I-SAFE ()
-	 <SETG DUSTY-ROOM-NOT-COLLAPSED <>>
+	 <SETG DUSTY-ROOM-FLAG <>>
 	 <COND (<EQUAL? ,HERE ,DUSTY-ROOM>
 		<JIGS-UP
 "The room trembles and 5000 tons of rock fall on you.">)
