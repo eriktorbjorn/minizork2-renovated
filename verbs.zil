@@ -175,6 +175,14 @@ Release ">
 <ROUTINE V-ALARM ()
 	 <TELL "The " D ,PRSO " isn't sleeping." CR>>
 
+<ROUTINE WITH-PRSI-IS (WHAT)
+	 <TELL " with ">
+	 <COND (<PRSI? ,HANDS>
+		<TELL "your bare hands">)
+	       (T
+		<TELL A ,PRSI>)>
+	 <TELL " is " .WHAT ,PERIOD-CR>>
+
 <ROUTINE V-ATTACK ()
 	 <COND (<NOT <FSET? ,PRSO ,ACTORBIT>>
 		<TELL "Fight " A ,PRSO "!?!" CR>
@@ -184,12 +192,8 @@ Release ">
 		       <SETG PRSI ,SWORD>)
 		      (T
 		       <SETG PRSI ,HANDS>)>)>
-	 <TELL "Trying to attack " A ,PRSO " with ">
-	 <COND (<PRSI? ,HANDS>
-		<TELL "your bare hands">)
-	       (T
-		<TELL A ,PRSI>)>
-	 <TELL " is suicidal." CR>>
+	 <TELL "Trying to attack " A ,PRSO>
+	 <WITH-PRSI-IS "suicidal">>
 
 <ROUTINE V-BLAST ()
 	 <TELL "You can't blast anything by using words." CR>>
@@ -640,12 +644,8 @@ D ,PRSO ,PERIOD-CR>)>>
 <ROUTINE V-MUNG ()
 	 <COND (<OR <NOT ,PRSI>
 		    <NOT <FSET? ,PRSI ,WEAPONBIT>>>
-		<TELL "Trying to destroy the " D ,PRSO " with ">
-		<COND (<NOT ,PRSI>
-		       <TELL "your bare hands">)
-		      (T
-		       <TELL A ,PRSI>)>
-		<TELL " is futile." CR>)
+		<TELL "Trying to destroy the " D ,PRSO>
+		<WITH-PRSI-IS "futile">)
 	       (<FSET? ,PRSO ,ACTORBIT>
 		<PERFORM ,V?ATTACK ,PRSO>
 		<RTRUE>)
