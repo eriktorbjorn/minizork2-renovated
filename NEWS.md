@@ -4,7 +4,16 @@ informing the player when a room goes dark after the last light source
 has been removed, or the numerous changes made to reduce the size of
 the final game.
 
-# Release 14 / Serial number ??????
+# Release 15 / Serial number 210307
+
+* Added WRITING as a synonym for the crypt, for "READ WRITING".
+
+* The library books now all get TOUCHBIT if you open one of them.
+  Before, opening the purple book would cause it to be listed after
+  the white book, even though the white book refers to the purple book
+  in its description.
+
+# Release 14 / Serial number 210225
 
 * The debris from the explosion is now just a text, not a proper
   object. Since the only synonym for the object was KREBF (some sort
