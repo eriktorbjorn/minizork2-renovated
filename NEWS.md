@@ -54,13 +54,13 @@ the final game.
 * It is no longer possible to remove the collar from Cerberus by using
   the *Fry* spell.
 
-* When the Wizard uses the `Float` spell on you, it's no longer
+* When the Wizard uses the *Float* spell on you, it's no longer
   possible to pick up objects from containers in the room, or picking
   up objects automatically.
 
 * **X** can now be used as a synonym for **EXAMINE**.
 
-* The `Freeze` spell no longer prevents you from saving, restoring,
+* The *Freeze* spell no longer prevents you from saving, restoring,
   restarting and quitting.
 
 * **DROP ALL** and similar commands no longer prints messages about
